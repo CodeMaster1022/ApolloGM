@@ -14,7 +14,7 @@ const initialState = {
   chats: [
     {
       id: 1,
-      name: 'Ri Jong',
+      name: 'Tomson',
       avatar: One_avartar,
       lastMessage: 'How are you doing well?',
       online_status: 'available',
@@ -39,7 +39,7 @@ const initialState = {
     },
     {
       id: 2,
-      name: 'Ri Jong',
+      name: 'Annette Black',
       avatar: One_avartar,
       lastMessage: 'How are you doing well?',
       online_status: 'available',
@@ -70,7 +70,7 @@ const initialState = {
     },
     {
       id: 3,
-      name: 'Ri Jong',
+      name: 'Annette Black',
       avatar: One_avartar,
       lastMessage: 'How are you doing well?',
       online_status: 'available',
@@ -121,21 +121,21 @@ const initialState = {
   users: [
     {
       id: '1',
-      name: 'Ri Jong',
+      name: 'James Black',
       avatar: One_avartar,
       lastMessage: 'How are you doing well?',
       online_status: 'available'
     },
     {
       id: '2',
-      name: 'Ri Jong',
+      name: 'Smith Ben',
       avatar: Two_avartar,
       lastMessage: 'How are you doing well?',
       online_status: 'available'
     },
     {
       id: '3',
-      name: 'Ri Sol',
+      name: 'Soroa',
       avatar: Third_avartar,
       lastMessage: 'How are you doing well?',
       online_status: 'available'
