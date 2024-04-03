@@ -74,7 +74,7 @@ const Header = ({ list }) => {
     <View style={styles.mainContainer}>
       <View style={styles.container}>
         <View style={styles.leftColumn}>
-          <Image src={Logo} style={styles.image} />
+          {/* <Image src={Logo} style={styles.image} /> */}
           <Text style={[styles.caption, { marginTop: 4 }]}>{`#${list?.invoice_id}`}</Text>
         </View>
         <View style={styles.detailColumn}>
