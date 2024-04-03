@@ -37,7 +37,8 @@ const AuthLogin = () => {
   const { login } = useAuth();
   const scriptedRef = useScriptRef();
 
-  const [showPassword, setShowPassword] = React.useState(false);
+  // const [showPassword, setShowPassword] = React.useState(false);
+  const showPassword = false;
   // const handleClickShowPassword = () => {
   //   setShowPassword(!showPassword);
   // };

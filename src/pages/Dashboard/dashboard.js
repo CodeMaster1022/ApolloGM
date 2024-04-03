@@ -7,21 +7,10 @@ import { Box, Grid, MenuItem, Stack, TextField, Typography } from '@mui/material
 // project import
 import MainCard from 'components/MainCard';
 import IconButton from 'components/@extended/IconButton';
-// import UsersCardChart from 'sections/dashboard/analytics/UsersCardChart';
-// import OrdersCardChart from 'sections/dashboard/analytics/OrdersCardChart';
-// import SalesCardChart from 'sections/dashboard/analytics/SalesCardChart';
-// import MarketingCardChart from 'sections/dashboard/analytics/MarketingCardChart';
-// import AnalyticsDataCard from 'components/cards/statistics/AnalyticsDataCard';
-
-// import IncomeAreaChart from 'sections/dashboard/default/IncomeAreaChart';
-// import MonthlyBarChart from 'sections/dashboard/default/MonthlyBarChart';
-// import Breadcrumbs from 'components/@extended/Breadcrumbs';
-// import DropdownButton from 'components/@extended/FundButton';
-// import ReportChart from 'sections/dashboard/analytics/ReportChart';
 import IncomeChart from 'sections/dashboard/analytics/IncomeChart';
 import DoughnutChat from 'sections/dashboard/analytics/DoughnutChart';
 import SalesChart from 'sections/dashboard/SalesChart';
-// import AcquisitionChannels from 'sections/dashboard/analytics/AcquisitionChannels';
+
 const status = [
   {
     value: 'today',
@@ -43,9 +32,12 @@ import { DownloadOutlined } from '@ant-design/icons';
 const Dashboard = () => {
   const theme = useTheme();
 
-  const [value, setValue] = useState('today');
-  const [slot, setSlot] = useState('week');
-  const [quantity, setQuantity] = useState('By volume');
+  const value = 'today';
+  const slot = 'week';
+  const quantity = 'By volume';
+  // const [value, setValue] = useState('today');
+  // const [slot, setSlot] = useState('week');
+  // const [quantity, setQuantity] = useState('By volume');
 
   // const handleQuantity = (e) => {
   //   setQuantity(e.target.value);
