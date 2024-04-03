@@ -46,8 +46,8 @@ const MainLayout = () => {
     <Box sx={{ display: 'flex', width: '100%' }}>
       <Header />
       {!isHorizontal ? <Drawer /> : <HorizontalBar />}
-      <Box component="main" sx={{ width: 'calc(100% - 260px)', flexGrow: 1, p: { xs: 2, sm: 3 } }}>
-        <Toolbar sx={{ mt: isHorizontal ? 8 : 'inherit' }} />
+      <Box sx={{ width: 'calc(100% - 270px)', flexGrow: 1, p: { xs: 2, sm: 3 } }}>
+        <Toolbar sx={{ mt: isHorizontal ? 4 : 'inherit' }} />
         <Container
           maxWidth={container ? 'calc(100% - 10px)' : false}
           sx={{
@@ -58,19 +58,11 @@ const MainLayout = () => {
             flexDirection: 'column'
           }}
         >
-          <Container
-            sx={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              mb: 2
-            }}
-          >
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', paddingX: '12px' }}>
             {currentLocation.pathname === '/dashboard-page' && <button>dashboard</button>}
             {currentLocation.pathname === '/funds/fund-view' && (
               <>
-                <h3>funds&nbsp;-&nbsp;fund-view</h3>
-                {/* <Breadcrumbs navigation={navigation} title titleBottom card={false} divider={false} /> */}
+                <Breadcrumbs navigation={navigation} title titleBottom card={false} divider={false} />
                 <FundViewDropdownButton title="actions" />
               </>
             )}
@@ -80,7 +72,7 @@ const MainLayout = () => {
                 <FundButton title="Add Fund" />
               </>
             )}
-          </Container>
+          </Box>
           <Outlet />
           <Footer />
         </Container>

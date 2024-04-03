@@ -211,7 +211,7 @@ const NavCollapse = ({ menu, level, parentId, setSelectedItems, selectedItems, s
   const borderIcon = level === 1 ? <BorderOutlined style={{ fontSize: '1rem' }} /> : false;
   const Icon = menu.icon;
   const menuIcon = menu.icon ? <Icon style={{ fontSize: drawerOpen ? '1rem' : '1.25rem' }} /> : borderIcon;
-  const textColor = theme.palette.mode === ThemeMode.DARK ? 'grey.400' : 'text.primary';
+  const textColor = theme.palette.mode === ThemeMode.DARK ? 'grey.400' : 'white';
   const iconSelectedColor = theme.palette.mode === ThemeMode.DARK && drawerOpen ? theme.palette.text.primary : theme.palette.primary.main;
   const popperId = miniMenuOpened ? `collapse-pop-${menu.id}` : undefined;
   const FlexBox = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' };
@@ -230,7 +230,7 @@ const NavCollapse = ({ menu, level, parentId, setSelectedItems, selectedItems, s
               py: !drawerOpen && level === 1 ? 1.25 : 1,
               ...(drawerOpen && {
                 '&:hover': {
-                  bgcolor: theme.palette.mode === ThemeMode.DARK ? 'divider' : 'primary.lighter'
+                  bgcolor: theme.palette.mode === ThemeMode.DARK ? 'divider' : '#008080'
                 },
                 '&.Mui-selected': {
                   bgcolor: 'transparent',

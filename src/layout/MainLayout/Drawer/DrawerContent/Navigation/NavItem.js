@@ -62,8 +62,8 @@ const NavItem = ({ item, level }) => {
     // eslint-disable-next-line
   }, [pathname]);
 
-  const textColor = theme.palette.mode === ThemeMode.DARK ? 'grey.400' : 'text.primary';
-  const iconSelectedColor = theme.palette.mode === ThemeMode.DARK && drawerOpen ? 'text.primary' : 'primary.main';
+  const textColor = theme.palette.mode === ThemeMode.DARK ? 'grey.400' : 'white';
+  const iconSelectedColor = theme.palette.mode === ThemeMode.DARK && drawerOpen ? 'text.primary' : 'white';
 
   return (
     <>
@@ -78,7 +78,7 @@ const NavItem = ({ item, level }) => {
             py: !drawerOpen && level === 1 ? 1.25 : 1,
             ...(drawerOpen && {
               '&:hover': {
-                bgcolor: theme.palette.mode === ThemeMode.DARK ? 'divider' : 'primary.lighter'
+                bgcolor: theme.palette.mode === ThemeMode.DARK ? 'divider' : '#008080'
               },
               '&.Mui-selected': {
                 bgcolor: theme.palette.mode === ThemeMode.DARK ? 'divider' : 'primary.lighter',
@@ -86,7 +86,7 @@ const NavItem = ({ item, level }) => {
                 color: iconSelectedColor,
                 '&:hover': {
                   color: iconSelectedColor,
-                  bgcolor: theme.palette.mode === ThemeMode.DARK ? 'divider' : 'primary.lighter'
+                  bgcolor: theme.palette.mode === ThemeMode.DARK ? 'divider' : '#008080'
                 }
               }
             }),
@@ -136,7 +136,7 @@ const NavItem = ({ item, level }) => {
           {(drawerOpen || (!drawerOpen && level !== 1)) && (
             <ListItemText
               primary={
-                <Typography variant="h6" sx={{ color: isSelected ? iconSelectedColor : textColor }}>
+                <Typography variant="h6" sx={{ color: isSelected ? 'blue' : textColor }}>
                   {item.title}
                 </Typography>
               }

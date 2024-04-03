@@ -11,7 +11,7 @@ import AnimateButton from 'components/@extended/AnimateButton';
 // ==============================|| DRAWER CONTENT - NAVIGATION CARD ||============================== //
 
 const NavCard = () => (
-  <MainCard sx={{ bgcolor: 'grey.50', m: 3 }}>
+  <MainCard sx={{ bgcolor: '#008080', m: 3 }}>
     <Stack alignItems="center" spacing={2.5}>
       <CardMedia component="img" image={avatar} />
       <Stack alignItems="center">

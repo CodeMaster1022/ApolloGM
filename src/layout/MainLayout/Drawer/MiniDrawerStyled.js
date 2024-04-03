@@ -13,6 +13,7 @@ const openedMixin = (theme) => ({
     duration: theme.transitions.duration.enteringScreen
   }),
   overflowX: 'hidden',
+  backgroundColor: '#003333',
   boxShadow: theme.palette.mode === ThemeMode.DARK ? theme.customShadows.z1 : 'none'
 });
 
@@ -24,6 +25,7 @@ const closedMixin = (theme) => ({
   overflowX: 'hidden',
   width: theme.spacing(7.5),
   borderRight: 'none',
+  backgroundColor: '#003333',
   boxShadow: theme.customShadows.z1
 });
 
@@ -32,6 +34,7 @@ const closedMixin = (theme) => ({
 const MiniDrawerStyled = styled(Drawer, { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open }) => ({
   width: DRAWER_WIDTH,
   flexShrink: 0,
+  backgroundColor: '#003333',
   whiteSpace: 'nowrap',
   boxSizing: 'border-box',
   ...(open && {

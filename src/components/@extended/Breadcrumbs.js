@@ -136,7 +136,7 @@ const Breadcrumbs = ({
           </Grid>
           {title && titleBottom && (
             <Grid item sx={{ mt: card === false ? 0.25 : 1 }}>
-              <Typography variant="h2">{main.title}</Typography>
+              <Typography variant="h4">{main.title}</Typography>
             </Grid>
           )}
         </Grid>
@@ -176,7 +176,7 @@ const Breadcrumbs = ({
           >
             {title && !titleBottom && (
               <Grid item>
-                <Typography variant="h2">{item.title}</Typography>
+                <Typography variant="h4">{item.title}</Typography>
               </Grid>
             )}
             <Grid item>
@@ -192,7 +192,7 @@ const Breadcrumbs = ({
             </Grid>
             {title && titleBottom && (
               <Grid item sx={{ mt: card === false ? 0.25 : 1 }}>
-                <Typography variant="h2">{item.title}</Typography>
+                <Typography variant="h4">{item.title}</Typography>
               </Grid>
             )}
           </Grid>

@@ -272,7 +272,7 @@ const NavGroup = ({ item, lastItem, remItems, lastItemId, setSelectedItems, sele
               primary={
                 <Typography
                   variant="body1"
-                  color={selectedID === currentItem.id ? theme.palette.primary.main : theme.palette.secondary.dark}
+                  color={selectedID === currentItem.id ? theme.palette.primary.main : 'theme.palette.secondary.dark'}
                 >
                   {currentItem.id === lastItemId ? <FormattedMessage id="More Items" /> : currentItem.title}
                 </Typography>

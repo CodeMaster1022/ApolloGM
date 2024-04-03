@@ -412,10 +412,10 @@ const Fund_View = () => {
   return (
     <div>
       <MainCard>
-        <Typography variant="body2" sx={{ fontSize: '22px', paddingBottom: '20px', fontWeight: 'bold' }}>
+        <Typography variant="body2" sx={{ fontSize: '20px', paddingBottom: '10px', fontWeight: 'bold' }}>
           Global Tech Ventures III
         </Typography>
-        <Typography variant="body2" sx={{ fontSize: '18px' }}>
+        <Typography variant="body2" sx={{ fontSize: '16px' }}>
           Global Tech Ventures III (GTV III) is our flagship fund focused on early-stage technology startups with the potential to disrupt
           markets. Our investment strategy revolves around nurturing innovation in the fintech, healthtech, and greentech sectors. Since its
           inception in 2015, GTV III has managed to consistently outperform benchmarks and deliver superior returns to our investors.

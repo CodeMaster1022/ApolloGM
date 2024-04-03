@@ -47,6 +47,7 @@ const MainDrawer = ({ window }) => {
           sx={{
             display: { xs: 'block', lg: 'none' },
             '& .MuiDrawer-paper': {
+              backgroundColor: '#003333',
               boxSizing: 'border-box',
               width: DRAWER_WIDTH,
               borderRight: `1px solid ${theme.palette.divider}`,
