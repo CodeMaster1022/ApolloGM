@@ -26,7 +26,7 @@ const MainLayout = () => {
   const currentLocation = useLocation();
 
   const theme = useTheme();
-  const matchDownXL = useMediaQuery(theme.breakpoints.down('xl'));
+  const matchDownXL = useMediaQuery(theme.breakpoints.down('lg'));
   const downLG = useMediaQuery(theme.breakpoints.down('lg'));
 
   const { container, miniDrawer, menuOrientation } = useConfig();
@@ -35,7 +35,6 @@ const MainLayout = () => {
 
   // set media wise responsive drawer
   useEffect(() => {
-    console.log(currentLocation.pathname, 'hiddddddd');
     if (!miniDrawer) {
       dispatch(openDrawer(!matchDownXL));
     }
@@ -43,7 +42,7 @@ const MainLayout = () => {
   }, [matchDownXL]);
 
   return (
-    <Box sx={{ display: 'flex', width: '100%' }}>
+    <Box sx={{ display: 'flex', width: '100%', height: '100vh' }}>
       <Header />
       {/* {!isHorizontal ? <Drawer /> : <HorizontalBar />} */}
       <Drawer />

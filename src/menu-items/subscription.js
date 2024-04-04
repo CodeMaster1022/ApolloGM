@@ -2,29 +2,11 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import {
-  BorderOutlined,
-  BoxPlotOutlined,
-  ChromeOutlined,
-  DeploymentUnitOutlined,
-  GatewayOutlined,
-  MenuUnfoldOutlined,
-  QuestionOutlined,
-  SmileOutlined,
-  StopOutlined
-} from '@ant-design/icons';
+import { SubnodeOutlined } from '@ant-design/icons';
 
 // icons
 const icons = {
-  ChromeOutlined,
-  MenuUnfoldOutlined,
-  BoxPlotOutlined,
-  StopOutlined,
-  BorderOutlined,
-  SmileOutlined,
-  GatewayOutlined,
-  QuestionOutlined,
-  DeploymentUnitOutlined
+  SubnodeOutlined
 };
 
 // ==============================|| MENU ITEMS - SUPPORT ||============================== //
@@ -38,7 +20,7 @@ const Subscription_Item = {
     {
       id: 'subscription-page',
       title: <FormattedMessage id="Subscriptions" />,
-      icon: icons.ChromeOutlined,
+      icon: icons.SubnodeOutlined,
       type: 'item',
       url: 'subscription-page'
     }

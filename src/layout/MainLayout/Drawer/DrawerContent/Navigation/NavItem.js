@@ -81,7 +81,7 @@ const NavItem = ({ item, level }) => {
                 bgcolor: theme.palette.mode === ThemeMode.DARK ? 'divider' : '#008080'
               },
               '&.Mui-selected': {
-                bgcolor: theme.palette.mode === ThemeMode.DARK ? 'divider' : 'primary.lighter',
+                bgcolor: theme.palette.mode === ThemeMode.DARK ? 'divider' : 'white',
                 borderRight: `2px solid ${theme.palette.primary.main}`,
                 color: iconSelectedColor,
                 '&:hover': {
@@ -92,13 +92,13 @@ const NavItem = ({ item, level }) => {
             }),
             ...(!drawerOpen && {
               '&:hover': {
-                bgcolor: 'transparent'
+                bgcolor: '#008080'
               },
               '&.Mui-selected': {
                 '&:hover': {
-                  bgcolor: 'transparent'
+                  bgcolor: '#008080'
                 },
-                bgcolor: 'transparent'
+                bgcolor: '#008080'
               }
             })
           }}
@@ -118,14 +118,14 @@ const NavItem = ({ item, level }) => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   '&:hover': {
-                    bgcolor: theme.palette.mode === ThemeMode.DARK ? 'secondary.light' : 'secondary.lighter'
+                    bgcolor: theme.palette.mode === ThemeMode.DARK ? 'secondary.light' : '#008080'
                   }
                 }),
                 ...(!drawerOpen &&
                   isSelected && {
-                    bgcolor: theme.palette.mode === ThemeMode.DARK ? 'primary.900' : 'primary.lighter',
+                    bgcolor: theme.palette.mode === ThemeMode.DARK ? 'primary.900' : 'white',
                     '&:hover': {
-                      bgcolor: theme.palette.mode === ThemeMode.DARK ? 'primary.darker' : 'primary.lighter'
+                      bgcolor: theme.palette.mode === ThemeMode.DARK ? 'primary.darker' : '#FFFFFF'
                     }
                   })
               }}
@@ -137,7 +137,7 @@ const NavItem = ({ item, level }) => {
             <ListItemText
               primary={
                 <Typography variant="h6" sx={{ color: isSelected ? 'blue' : textColor }}>
-                  {item.title}
+                  &nbsp; &nbsp;{item.title}
                 </Typography>
               }
             />

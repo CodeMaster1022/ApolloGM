@@ -2,29 +2,11 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import {
-  BorderOutlined,
-  BoxPlotOutlined,
-  ChromeOutlined,
-  DeploymentUnitOutlined,
-  GatewayOutlined,
-  MenuUnfoldOutlined,
-  QuestionOutlined,
-  SmileOutlined,
-  StopOutlined
-} from '@ant-design/icons';
+import { FormOutlined } from '@ant-design/icons';
 
 // icons
 const icons = {
-  ChromeOutlined,
-  MenuUnfoldOutlined,
-  BoxPlotOutlined,
-  StopOutlined,
-  BorderOutlined,
-  SmileOutlined,
-  GatewayOutlined,
-  QuestionOutlined,
-  DeploymentUnitOutlined
+  FormOutlined
 };
 
 // ==============================|| MENU ITEMS - SUPPORT ||============================== //
@@ -38,7 +20,7 @@ const Note_Item = {
     {
       id: 'note-page',
       title: <FormattedMessage id="Notes" />,
-      icon: icons.ChromeOutlined,
+      icon: icons.FormOutlined,
       type: 'item',
       url: 'note-page'
     }

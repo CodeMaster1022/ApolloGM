@@ -2,29 +2,11 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import {
-  BorderOutlined,
-  BoxPlotOutlined,
-  ChromeOutlined,
-  DeploymentUnitOutlined,
-  GatewayOutlined,
-  MenuUnfoldOutlined,
-  QuestionOutlined,
-  SmileOutlined,
-  StopOutlined
-} from '@ant-design/icons';
+import { PieChartOutlined } from '@ant-design/icons';
 
 // icons
 const icons = {
-  ChromeOutlined,
-  MenuUnfoldOutlined,
-  BoxPlotOutlined,
-  StopOutlined,
-  BorderOutlined,
-  SmileOutlined,
-  GatewayOutlined,
-  QuestionOutlined,
-  DeploymentUnitOutlined
+  PieChartOutlined
 };
 
 // ==============================|| MENU ITEMS - SUPPORT ||============================== //
@@ -38,7 +20,7 @@ const Valuation_Item = {
     {
       id: 'valuation-page',
       title: <FormattedMessage id="Valuation tools" />,
-      icon: icons.ChromeOutlined,
+      icon: icons.PieChartOutlined,
       type: 'item',
       url: 'valuation-page'
     }

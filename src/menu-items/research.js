@@ -2,29 +2,11 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import {
-  BorderOutlined,
-  BoxPlotOutlined,
-  ChromeOutlined,
-  DeploymentUnitOutlined,
-  GatewayOutlined,
-  MenuUnfoldOutlined,
-  QuestionOutlined,
-  SmileOutlined,
-  StopOutlined
-} from '@ant-design/icons';
+import { SearchOutlined } from '@ant-design/icons';
 
 // icons
 const icons = {
-  ChromeOutlined,
-  MenuUnfoldOutlined,
-  BoxPlotOutlined,
-  StopOutlined,
-  BorderOutlined,
-  SmileOutlined,
-  GatewayOutlined,
-  QuestionOutlined,
-  DeploymentUnitOutlined
+  SearchOutlined
 };
 
 // ==============================|| MENU ITEMS - SUPPORT ||============================== //
@@ -38,7 +20,7 @@ const Research_Item = {
     {
       id: 'research-page',
       title: <FormattedMessage id="Research" />,
-      icon: icons.ChromeOutlined,
+      icon: icons.SearchOutlined,
       type: 'item',
       url: 'research-page'
     }

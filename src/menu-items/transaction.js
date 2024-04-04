@@ -2,27 +2,11 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import {
-  BuildOutlined,
-  CalendarOutlined,
-  CustomerServiceOutlined,
-  FileTextOutlined,
-  MessageOutlined,
-  ShoppingCartOutlined,
-  UserOutlined,
-  AppstoreAddOutlined
-} from '@ant-design/icons';
+import { CreditCardOutlined } from '@ant-design/icons';
 
 // icons
 const icons = {
-  BuildOutlined,
-  CalendarOutlined,
-  CustomerServiceOutlined,
-  MessageOutlined,
-  ShoppingCartOutlined,
-  UserOutlined,
-  AppstoreAddOutlined,
-  FileTextOutlined
+  CreditCardOutlined
 };
 // ==============================|| MENU ITEMS - APPLICATIONS ||============================== //
 
@@ -36,7 +20,7 @@ const Transaction_Item = {
       id: 'Transaction',
       title: <FormattedMessage id="Transactions" />,
       type: 'collapse',
-      icon: icons.CustomerServiceOutlined,
+      icon: icons.CreditCardOutlined,
       children: [
         {
           id: 'Transaction-1',

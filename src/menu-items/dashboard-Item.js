@@ -2,29 +2,11 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import {
-  BorderOutlined,
-  BoxPlotOutlined,
-  ChromeOutlined,
-  DeploymentUnitOutlined,
-  GatewayOutlined,
-  MenuUnfoldOutlined,
-  QuestionOutlined,
-  SmileOutlined,
-  StopOutlined
-} from '@ant-design/icons';
+import { AppstoreFilled } from '@ant-design/icons';
 
 // icons
 const icons = {
-  ChromeOutlined,
-  MenuUnfoldOutlined,
-  BoxPlotOutlined,
-  StopOutlined,
-  BorderOutlined,
-  SmileOutlined,
-  GatewayOutlined,
-  QuestionOutlined,
-  DeploymentUnitOutlined
+  AppstoreFilled
 };
 
 // ==============================|| MENU ITEMS - SUPPORT ||============================== //
@@ -38,7 +20,7 @@ const Dashboard_Item = {
     {
       id: 'dashboard-page',
       title: <FormattedMessage id="Dashboard" />,
-      icon: icons.ChromeOutlined,
+      icon: icons.AppstoreFilled,
       type: 'item',
       url: 'dashboard-page'
     }

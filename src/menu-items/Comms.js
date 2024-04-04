@@ -2,27 +2,27 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import { SettingOutlined } from '@ant-design/icons';
+import { MacCommandOutlined } from '@ant-design/icons';
 
 // icons
 const icons = {
-  SettingOutlined
+  MacCommandOutlined
 };
 
 // ==============================|| MENU ITEMS - SUPPORT ||============================== //
 
-const Administration_Item = {
+const Comms_Item = {
   type: 'group',
   url: 'administration-page',
   children: [
     {
       id: 'administration-page',
-      title: <FormattedMessage id="Administration" />,
-      icon: icons.SettingOutlined,
+      title: <FormattedMessage id="Comms Center" />,
+      icon: icons.MacCommandOutlined,
       type: 'item',
       url: '#'
     }
   ]
 };
 
-export default Administration_Item;
+export default Comms_Item;

@@ -211,8 +211,9 @@ const NavCollapse = ({ menu, level, parentId, setSelectedItems, selectedItems, s
   const borderIcon = level === 1 ? <BorderOutlined style={{ fontSize: '1rem' }} /> : false;
   const Icon = menu.icon;
   const menuIcon = menu.icon ? <Icon style={{ fontSize: drawerOpen ? '1rem' : '1.25rem' }} /> : borderIcon;
+  //com
   const textColor = theme.palette.mode === ThemeMode.DARK ? 'grey.400' : 'white';
-  const iconSelectedColor = theme.palette.mode === ThemeMode.DARK && drawerOpen ? theme.palette.text.primary : theme.palette.primary.main;
+  const iconSelectedColor = theme.palette.mode === ThemeMode.DARK && drawerOpen ? theme.palette.text.primary : 'white';
   const popperId = miniMenuOpened ? `collapse-pop-${menu.id}` : undefined;
   const FlexBox = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' };
 
@@ -246,7 +247,7 @@ const NavCollapse = ({ menu, level, parentId, setSelectedItems, selectedItems, s
                   '&:hover': {
                     bgcolor: 'transparent'
                   },
-                  bgcolor: 'transparent'
+                  bgcolor: '#008080'
                 }
               })
             }}
@@ -283,13 +284,13 @@ const NavCollapse = ({ menu, level, parentId, setSelectedItems, selectedItems, s
               <ListItemText
                 primary={
                   <Typography variant="h6" color={selected === menu.id ? 'primary' : textColor}>
-                    {menu.title}
+                    &nbsp;&nbsp;&nbsp;{menu.title}
                   </Typography>
                 }
                 secondary={
                   menu.caption && (
                     <Typography variant="caption" color="secondary">
-                      {menu.caption}
+                      &nbsp;&nbsp;&nbsp;{menu.caption}
                     </Typography>
                   )
                 }
@@ -297,9 +298,9 @@ const NavCollapse = ({ menu, level, parentId, setSelectedItems, selectedItems, s
             )}
             {(drawerOpen || (!drawerOpen && level !== 1)) &&
               (miniMenuOpened || open ? (
-                <UpOutlined style={{ fontSize: '0.625rem', marginLeft: 1, color: theme.palette.primary.main }} />
+                <UpOutlined style={{ fontSize: '0.625rem', marginLeft: 1, color: 'white' }} />
               ) : (
-                <DownOutlined style={{ fontSize: '0.625rem', marginLeft: 1 }} />
+                <DownOutlined style={{ fontSize: '0.625rem', marginLeft: 1, color: 'white' }} />
               ))}
 
             {!drawerOpen && (
@@ -335,6 +336,7 @@ const NavCollapse = ({ menu, level, parentId, setSelectedItems, selectedItems, s
                       <ClickAwayListener onClickAway={handleClose}>
                         <SimpleBar
                           sx={{
+                            backgroundColor: '#009080',
                             overflowX: 'hidden',
                             overflowY: 'auto',
                             maxHeight: 'calc(100vh - 170px)'
@@ -367,7 +369,7 @@ const NavCollapse = ({ menu, level, parentId, setSelectedItems, selectedItems, s
             aria-describedby={popperId}
             sx={{
               '&.Mui-selected': {
-                bgcolor: 'transparent'
+                bgcolor: 'balck'
               }
             }}
           >
@@ -379,7 +381,7 @@ const NavCollapse = ({ menu, level, parentId, setSelectedItems, selectedItems, s
               )}
               {!menuIcon && level !== 1 && (
                 <ListItemIcon
-                  sx={{ my: 'auto', minWidth: !menu.icon ? 18 : 36, bgcolor: 'transparent', '&:hover': { bgcolor: 'transparent' } }}
+                  sx={{ my: 'auto', minWidth: !menu.icon ? 18 : 36, bgcolor: 'transparent', '&:hover': { bgcolor: '#008080' } }}
                 >
                   <Dot size={4} color={isSelected ? 'primary' : 'secondary'} />
                 </ListItemIcon>
@@ -387,7 +389,7 @@ const NavCollapse = ({ menu, level, parentId, setSelectedItems, selectedItems, s
               <ListItemText
                 primary={
                   <Typography variant="body1" color="inherit" sx={{ my: 'auto' }}>
-                    {menu.title}
+                    &nbsp;&nbsp;&nbsp;{menu.title}
                   </Typography>
                 }
               />

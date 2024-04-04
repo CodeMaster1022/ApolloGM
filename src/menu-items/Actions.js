@@ -2,27 +2,27 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import { SettingOutlined } from '@ant-design/icons';
+import { InteractionFilled } from '@ant-design/icons';
 
 // icons
 const icons = {
-  SettingOutlined
+  InteractionFilled
 };
 
 // ==============================|| MENU ITEMS - SUPPORT ||============================== //
 
-const Administration_Item = {
+const Action_Item = {
   type: 'group',
   url: 'administration-page',
   children: [
     {
       id: 'administration-page',
-      title: <FormattedMessage id="Administration" />,
-      icon: icons.SettingOutlined,
+      title: <FormattedMessage id="Actions" />,
+      icon: icons.InteractionFilled,
       type: 'item',
       url: '#'
     }
   ]
 };
 
-export default Administration_Item;
+export default Action_Item;

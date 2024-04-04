@@ -1,42 +1,22 @@
 // third-party
 import { FormattedMessage } from 'react-intl';
-
-// assets
-import {
-  BuildOutlined,
-  CalendarOutlined,
-  CustomerServiceOutlined,
-  FileTextOutlined,
-  MessageOutlined,
-  ShoppingCartOutlined,
-  UserOutlined,
-  AppstoreAddOutlined
-} from '@ant-design/icons';
-
+import { FileCopy } from '@mui/icons-material';
 // icons
 const icons = {
-  BuildOutlined,
-  CalendarOutlined,
-  CustomerServiceOutlined,
-  MessageOutlined,
-  ShoppingCartOutlined,
-  UserOutlined,
-  AppstoreAddOutlined,
-  FileTextOutlined
+  FileCopy
 };
 // ==============================|| MENU ITEMS - APPLICATIONS ||============================== //
 
 const Document_Item = {
   //   id: 'group-applications',
   //   title: <FormattedMessage id="applications" />,
-  icon: icons.AppstoreAddOutlined,
   type: 'group',
   children: [
     {
       id: 'document',
       title: <FormattedMessage id="Documents" />,
       type: 'collapse',
-      icon: icons.CustomerServiceOutlined,
+      icon: icons.FileCopy,
       children: [
         {
           id: 'document-1',

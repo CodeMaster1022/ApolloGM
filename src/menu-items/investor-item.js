@@ -2,41 +2,24 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import {
-  BuildOutlined,
-  CalendarOutlined,
-  CustomerServiceOutlined,
-  FileTextOutlined,
-  MessageOutlined,
-  ShoppingCartOutlined,
-  UserOutlined,
-  AppstoreAddOutlined
-} from '@ant-design/icons';
-
+import { UsergroupAddOutlined } from '@ant-design/icons';
 // icons
 const icons = {
-  BuildOutlined,
-  CalendarOutlined,
-  CustomerServiceOutlined,
-  MessageOutlined,
-  ShoppingCartOutlined,
-  UserOutlined,
-  AppstoreAddOutlined,
-  FileTextOutlined
+  UsergroupAddOutlined
 };
 // ==============================|| MENU ITEMS - APPLICATIONS ||============================== //
 
 const Investor_Item = {
   //   id: 'group-applications',
   //   title: <FormattedMessage id="applications" />,
-  icon: icons.AppstoreAddOutlined,
+  // icon: icons.UserOutlined,
   type: 'group',
   children: [
     {
       id: 'Investor',
       title: <FormattedMessage id="Investors" />,
       type: 'collapse',
-      icon: icons.CustomerServiceOutlined,
+      icon: icons.UsergroupAddOutlined,
       children: [
         {
           id: 'Investor-1',

@@ -13,7 +13,9 @@ import Research_Item from './research';
 import Subscription_Item from './subscription';
 import Transaction_Item from './transaction';
 import Valuation_Item from './valuation';
-
+import Action_Item from './Actions';
+import Analytics_Item from './Analytics';
+import Comms_Item from './Comms';
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {
@@ -29,6 +31,9 @@ const menuItems = {
     Note_Item,
     Research_Item,
     Valuation_Item,
+    Analytics_Item,
+    Action_Item,
+    Comms_Item,
     Administration_Item
   ]
 };

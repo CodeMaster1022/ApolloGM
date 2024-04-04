@@ -2,27 +2,11 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import {
-  BuildOutlined,
-  CalendarOutlined,
-  CustomerServiceOutlined,
-  FileTextOutlined,
-  MessageOutlined,
-  ShoppingCartOutlined,
-  UserOutlined,
-  AppstoreAddOutlined
-} from '@ant-design/icons';
+import { AccountBookFilled } from '@ant-design/icons';
 
 // icons
 const icons = {
-  BuildOutlined,
-  CalendarOutlined,
-  CustomerServiceOutlined,
-  MessageOutlined,
-  ShoppingCartOutlined,
-  UserOutlined,
-  AppstoreAddOutlined,
-  FileTextOutlined
+  AccountBookFilled
 };
 // ==============================|| MENU ITEMS - APPLICATIONS ||============================== //
 
@@ -36,7 +20,7 @@ const Portofolio_Item = {
       id: 'Portofolio',
       title: <FormattedMessage id="Portofolios" />,
       type: 'collapse',
-      icon: icons.CustomerServiceOutlined,
+      icon: icons.AccountBookFilled,
       children: [
         {
           id: 'portofolio-1',
