@@ -66,9 +66,10 @@ const MainLayout = () => {
                 <FundViewDropdownButton title="actions" />
               </>
             )}
-            {currentLocation.pathname === '/funds/funds' && (
+            {currentLocation.pathname === '/funds' && (
               <>
-                <Breadcrumbs navigation={navigation} title titleBottom card={false} divider={false} />
+                {/* <Breadcrumbs navigation={navigation} title titleBottom card={false} divider={false} /> */}
+                <h2>Funds</h2>
                 <FundButton title="Add Fund" />
               </>
             )}

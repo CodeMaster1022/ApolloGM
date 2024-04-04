@@ -39,6 +39,7 @@ const Funds_Item = {
       title: <FormattedMessage id="Funds" />,
       type: 'collapse',
       icon: icons.AppstoreFilled,
+      url: 'funds',
       children: [
         {
           id: 'Fund-view',

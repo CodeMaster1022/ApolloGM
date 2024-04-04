@@ -119,6 +119,7 @@ export function FundButton(props) {
           borderRadius: '12px',
           color: 'white',
           paddingX: '42px',
+          height: '42px',
           '&:hover': {
             backgroundColor: '#005353' // Darken color on hover
           }

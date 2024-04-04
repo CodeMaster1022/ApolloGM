@@ -1,12 +1,14 @@
 // material-ui
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TablePagination } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TablePagination, Fab } from '@mui/material';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 import LinearWithLabel from 'components/@extended/progress/LinearWithLabel';
+import pings from '../../../assets/images/icons/pings.svg';
 // import MainCard from 'components/MainCard';
 import circle from '../../../assets/images/icons/circle.svg';
+import { EditOutlined } from '@mui/icons-material';
 // import { CSVExport } from 'components/third-party/ReactTable';
 // ==============================|| MUI TABLE - BASIC ||============================== //
 export const header = [
@@ -50,6 +52,16 @@ const columns_Porto = [
   { id: 'Industry', label: '3 Yr', minWidth: 100 },
   { id: 'Country', label: 'Result', minWidth: 100 },
   { id: 'Status', label: 'Status', minWidth: 100 }
+];
+const columns_Fund = [
+  { id: 'A', label: 'Name', minWidth: 100 },
+  { id: 'B', label: 'Size', minWidth: 100 },
+  { id: 'C', label: 'GP name', minWidth: 100 },
+  { id: 'D', label: 'Investment Amount', minWidth: 100 },
+  { id: 'E', label: 'Net IRR', minWidth: 100 },
+  { id: 'F', label: 'Investment Date', minWidth: 100 },
+  { id: 'G', label: 'Maturity Date', minWidth: 100 },
+  { id: 'Status', label: 'Action', minWidth: 100 }
 ];
 
 export function TableFunds({ rows }) {
@@ -317,7 +329,7 @@ export function TablePorto({ rows }) {
   };
   return (
     <>
-      <TableContainer sx={{ maxHeight: 430, marginTop: '40px' }}>
+      <TableContainer sx={{ maxHeight: 630, marginTop: '40px' }}>
         <Table sx={{ minWidth: 350, width: '100%' }} stickyHeader aria-label="sticky table">
           <TableHead
             sx={{
@@ -396,6 +408,149 @@ export function TablePorto({ rows }) {
     </>
   );
 }
+export function TableFund({ rows }) {
+  const theme = useTheme();
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event?.target?.value);
+    setPage(0);
+  };
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  return (
+    <>
+      <TableContainer sx={{ maxHeight: 630, marginTop: '40px' }}>
+        <Table sx={{ minWidth: 350, width: '100%' }} stickyHeader aria-label="sticky table">
+          <TableHead
+            sx={{
+              '& th': {
+                borderTop: `1px solid ${theme.palette.divider}`,
+                borderBottom: `2px solid ${theme.palette.divider} !important`
+              }
+            }}
+          >
+            <TableRow>
+              {columns_Fund.map((column) => (
+                <TableCell
+                  sx={{ minWidth: column.minWidth, position: 'sticky !important', fontWeight: 'bold' }}
+                  key={column.id}
+                  align={column.align}
+                >
+                  {column.label}
+                </TableCell>
+              ))}
+            </TableRow>
+          </TableHead>
+          <TableHead
+            sx={{
+              '& th': {
+                borderTop: `1px solid ${theme.palette.divider}`,
+                borderBottom: `2px solid ${theme.palette.divider} !important`
+              }
+            }}
+          >
+            <TableRow>
+              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
+                <Button variant="outlined" color="info" sx={{ height: '52px', borderRadius: '15px' }}>
+                  <img src={pings} alt="Description" />
+                  Apex Grow...
+                </Button>
+              </TableCell>
+              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
+                <Button variant="outlined" color="info" sx={{ height: '52px', borderRadius: '15px' }}>
+                  <img src={pings} alt="Description" />
+                </Button>
+              </TableCell>
+              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
+                <Button variant="outlined" color="info" sx={{ width: '52px', height: '52px', borderRadius: '15px' }}>
+                  <img src={pings} alt="Description" />
+                </Button>
+              </TableCell>
+              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
+                <Button variant="outlined" color="info" sx={{ width: '52px', height: '52px', borderRadius: '15px' }}>
+                  <img src={pings} alt="Description" />
+                </Button>
+              </TableCell>
+              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
+                <Button variant="outlined" color="info" sx={{ width: '52px', height: '52px', borderRadius: '15px' }}>
+                  <img src={pings} alt="Description" />
+                </Button>
+              </TableCell>
+              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
+                <Button variant="outlined" color="info" sx={{ width: '52px', height: '52px', borderRadius: '15px' }}>
+                  <img src={pings} alt="Description" />
+                </Button>
+              </TableCell>
+              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
+                <Button variant="outlined" color="info" sx={{ width: '52px', height: '52px', borderRadius: '15px' }}>
+                  <img src={pings} alt="Description" />
+                </Button>
+              </TableCell>
+              <TableCell align="left" sx={{ minWidth: '50px', position: 'sticky !important', fontWeight: 'bold' }}></TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody sx={{ backgroundColor: 'white', borderRadius: '5px' }}>
+            {/* <MainCard content={false} > */}
+            {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
+              <TableRow hover key={row.name}>
+                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                  {row.A}
+                </TableCell>
+                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                  {row.B}
+                </TableCell>
+                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                  {row.C}
+                </TableCell>
+                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                  {row.D}
+                </TableCell>
+                <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
+                  {row.E}
+                </TableCell>
+                <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
+                  {row.F}
+                </TableCell>
+                <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
+                  {row.G}
+                </TableCell>
+                <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
+                  {row.status == true ? (
+                    <>
+                      <Button color="info">
+                        <EditOutlined style={{ fontSize: '1.3rem' }} />
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <Button>
+                        <EditOutlined style={{ fontSize: '1.3rem' }} />
+                      </Button>
+                    </>
+                  )}
+                </TableCell>
+              </TableRow>
+            ))}
+            {/* </MainCard> */}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <TablePagination
+        rowsPerPageOptions={[10, 25, 100]}
+        component="div"
+        count={rows.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+      />
+    </>
+  );
+}
 TablePorto.propTypes = {
   rows: PropTypes.arrayOf(
     PropTypes.shape({
@@ -405,6 +560,19 @@ TablePorto.propTypes = {
       invest: PropTypes.number,
       industry: PropTypes.string,
       country: PropTypes.string,
+      status: PropTypes.bool
+    })
+  ).isRequired
+};
+TableFund.propTypes = {
+  rows: PropTypes.arrayOf(
+    PropTypes.shape({
+      A: PropTypes.string,
+      B: PropTypes.string,
+      C: PropTypes.string,
+      D: PropTypes.number,
+      F: PropTypes.string,
+      G: PropTypes.string,
       status: PropTypes.bool
     })
   ).isRequired

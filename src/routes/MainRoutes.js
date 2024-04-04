@@ -15,12 +15,13 @@ const MaintenanceComingSoon = Loadable(lazy(() => import('pages/maintenance/comi
 const WidgetStatistics = Loadable(lazy(() => import('pages/widget/statistics')));
 const WidgetData = Loadable(lazy(() => import('pages/widget/data')));
 const WidgetChart = Loadable(lazy(() => import('pages/widget/chart')));
+
 //dashboard
 const Dashboard = Loadable(lazy(() => import('pages/Dashboard/dashboard')));
 
 //Funds
-const Fund_View = Loadable(lazy(() => import('pages/funds/fund-view')));
 const Funds = Loadable(lazy(() => import('pages/funds/Funds')));
+const Funds_View = Loadable(lazy(() => import('pages/funds/fund-view')));
 
 // render - sample page
 const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')));
@@ -47,15 +48,15 @@ const MainRoutes = {
           element: <Dashboard />
         },
         {
-          path: 'Funds',
+          path: 'funds',
           children: [
             {
-              path: 'funds',
-              element: <Funds />
+              path: 'fund-view',
+              element: <Funds_View />
             },
             {
-              path: 'fund-view',
-              element: <Fund_View />
+              path: '',
+              element: <Funds />
             }
           ]
         },

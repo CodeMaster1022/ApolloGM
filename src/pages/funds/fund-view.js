@@ -9,7 +9,6 @@ import { TableFunds, TableCap, TableDocument, TableBench, TablePorto } from 'pag
 import Vector from '../../assets/images/icons/vector.svg';
 import janny from '../../assets/images/users/janny.png';
 import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import MainCard from 'components/MainCard';
 import { DateRangePicker } from '@mui/x-date-pickers-pro';
