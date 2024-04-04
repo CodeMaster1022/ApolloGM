@@ -12,7 +12,7 @@ export function IGRCharts() {
           </Stack>
         </Grid>
         <Grid item xs={12} md={6} lg={4}>
-          <Stack spacing={2.5} sx={{ backgroundColor: 'white', borderRadius: '12px', minHeight: '490px' }}>
+          <Stack spacing={2.5} sx={{ backgroundColor: 'white', borderRadius: '12px', minHeight: '290px' }}>
             <PieChart />
           </Stack>
         </Grid>
