@@ -7,15 +7,15 @@ import { AppBar, Toolbar, useMediaQuery } from '@mui/material';
 // project import
 import AppBarStyled from './AppBarStyled';
 import HeaderContent from './HeaderContent';
-import IconButton from 'components/@extended/IconButton';
+// import IconButton from 'components/@extended/IconButton';
 
-import { MenuOrientation, ThemeMode } from 'config';
+import { MenuOrientation } from 'config';
 import useConfig from 'hooks/useConfig';
-import { dispatch, useSelector } from 'store';
-import { openDrawer } from 'store/reducers/menu';
+import { useSelector } from 'store';
+// import { openDrawer } from 'store/reducers/menu';
 
 // assets
-import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+// import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 
 // ==============================|| MAIN LAYOUT - HEADER ||============================== //
 
@@ -32,13 +32,13 @@ const Header = () => {
   // header content
   const headerContent = useMemo(() => <HeaderContent />, []);
 
-  const iconBackColorOpen = theme.palette.mode === ThemeMode.DARK ? 'grey.200' : 'grey.300';
-  const iconBackColor = theme.palette.mode === ThemeMode.DARK ? 'background.default' : 'grey.100';
+  // const iconBackColorOpen = theme.palette.mode === ThemeMode.DARK ? 'grey.200' : 'grey.300';
+  // const iconBackColor = theme.palette.mode === ThemeMode.DARK ? 'background.default' : 'grey.100';
 
   // common header
   const mainHeader = (
     <Toolbar>
-      {!isHorizontal ? (
+      {/* {!isHorizontal ? (
         <IconButton
           aria-label="open drawer"
           onClick={() => dispatch(openDrawer(!drawerOpen))}
@@ -49,7 +49,7 @@ const Header = () => {
         >
           {!drawerOpen ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </IconButton>
-      ) : null}
+      ) : null} */}
       {headerContent}
     </Toolbar>
   );

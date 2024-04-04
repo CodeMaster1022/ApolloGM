@@ -9,7 +9,7 @@ import { useMediaQuery, Box, Container, Toolbar } from '@mui/material';
 import Drawer from './Drawer';
 import Header from './Header';
 import Footer from './Footer';
-import HorizontalBar from './Drawer/HorizontalBar';
+// import HorizontalBar from './Drawer/HorizontalBar';
 import Breadcrumbs from 'components/@extended/Breadcrumbs';
 import { FundViewDropdownButton, FundButton } from 'components/@extended/FundButton';
 
@@ -45,7 +45,8 @@ const MainLayout = () => {
   return (
     <Box sx={{ display: 'flex', width: '100%' }}>
       <Header />
-      {!isHorizontal ? <Drawer /> : <HorizontalBar />}
+      {/* {!isHorizontal ? <Drawer /> : <HorizontalBar />} */}
+      <Drawer />
       <Box sx={{ width: 'calc(100% - 270px)', flexGrow: 1, p: { xs: 2, sm: 3 } }}>
         <Toolbar sx={{ mt: isHorizontal ? 4 : 'inherit' }} />
         <Container

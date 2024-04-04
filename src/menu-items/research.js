@@ -30,18 +30,18 @@ const icons = {
 // ==============================|| MENU ITEMS - SUPPORT ||============================== //
 
 const Research_Item = {
-//   id: 'Dashboard',
-//   title: <FormattedMessage id="Dashboard" />,
+  //   id: 'Dashboard',
+  //   title: <FormattedMessage id="Dashboard" />,
   type: 'group',
-  url:"research-page",
-  children:[
+  url: 'research-page',
+  children: [
     {
       id: 'research-page',
-      title: <FormattedMessage id= 'Research' />,
+      title: <FormattedMessage id="Research" />,
       icon: icons.ChromeOutlined,
-      type:'item',
-      url: 'research-page',
-    }, 
+      type: 'item',
+      url: 'research-page'
+    }
   ]
 };
 

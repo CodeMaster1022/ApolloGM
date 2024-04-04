@@ -30,18 +30,18 @@ const icons = {
 // ==============================|| MENU ITEMS - SUPPORT ||============================== //
 
 const Dashboard_Item = {
-//   id: 'Dashboard',
-//   title: <FormattedMessage id="Dashboard" />,
+  //   id: 'Dashboard',
+  //   title: <FormattedMessage id="Dashboard" />,
   type: 'group',
-  url:"dashboard-page",
-  children:[
+  url: 'dashboard-page',
+  children: [
     {
       id: 'dashboard-page',
-      title: <FormattedMessage id= 'Dashboard' />,
+      title: <FormattedMessage id="Dashboard" />,
       icon: icons.ChromeOutlined,
-      type:'item',
-      url: 'dashboard-page',
-    }, 
+      type: 'item',
+      url: 'dashboard-page'
+    }
   ]
 };
 

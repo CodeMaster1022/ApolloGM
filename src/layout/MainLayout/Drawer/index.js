@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
-import { Box, Drawer, useMediaQuery } from '@mui/material';
+import { Box, Drawer } from '@mui/material';
 
 // project import
 import DrawerHeader from './DrawerHeader';
@@ -18,8 +18,8 @@ import { openDrawer } from 'store/reducers/menu';
 
 const MainDrawer = ({ window }) => {
   const theme = useTheme();
-  const matchDownMD = useMediaQuery(theme.breakpoints.down('lg'));
-
+  // const matchDownMD = useMediaQuery(theme.breakpoints.down('sm'));
+  const matchDownMD = false;
   const menu = useSelector((state) => state.menu);
   const { drawerOpen } = menu;
 

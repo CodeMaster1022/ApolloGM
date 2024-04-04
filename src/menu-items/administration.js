@@ -31,16 +31,16 @@ const icons = {
 
 const Administration_Item = {
   type: 'group',
-  url:"administration-page",
-  children:[
+  url: 'administration-page',
+  children: [
     {
       id: 'administration-page',
-      title: <FormattedMessage id= 'Administration' />,
+      title: <FormattedMessage id="Administration" />,
       icon: icons.ChromeOutlined,
-      type:'item',
-      url: '#',
-    }, 
+      type: 'item',
+      url: '#'
+    }
   ]
 };
 
-export default Administration_Item
+export default Administration_Item;

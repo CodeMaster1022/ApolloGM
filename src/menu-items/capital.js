@@ -27,8 +27,8 @@ const icons = {
 // ==============================|| MENU ITEMS - APPLICATIONS ||============================== //
 
 const Capital_Item = {
-//   id: 'group-applications',
-//   title: <FormattedMessage id="applications" />,
+  //   id: 'group-applications',
+  //   title: <FormattedMessage id="applications" />,
   icon: icons.AppstoreAddOutlined,
   type: 'group',
   children: [

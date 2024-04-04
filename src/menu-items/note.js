@@ -30,18 +30,18 @@ const icons = {
 // ==============================|| MENU ITEMS - SUPPORT ||============================== //
 
 const Note_Item = {
-//   id: 'Dashboard',
-//   title: <FormattedMessage id="Dashboard" />,
+  //   id: 'Dashboard',
+  //   title: <FormattedMessage id="Dashboard" />,
   type: 'group',
-  url:"dashboard-page",
-  children:[
+  url: 'dashboard-page',
+  children: [
     {
       id: 'note-page',
-      title: <FormattedMessage id= 'Notes' />,
+      title: <FormattedMessage id="Notes" />,
       icon: icons.ChromeOutlined,
-      type:'item',
-      url: 'note-page',
-    }, 
+      type: 'item',
+      url: 'note-page'
+    }
   ]
 };
 
