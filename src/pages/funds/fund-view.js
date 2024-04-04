@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-// import { useTheme } from '@mui/material/styles';
 import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, InputAdornment, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
@@ -9,20 +8,18 @@ import ReactApexChart from 'react-apexcharts';
 import { TableFunds, TableCap, TableDocument, TableBench, TablePorto } from 'pages/tables/mui-table/basic';
 import Vector from '../../assets/images/icons/vector.svg';
 import janny from '../../assets/images/users/janny.png';
-// project import
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
 import MainCard from 'components/MainCard';
-// Calendar
-// import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
 import { DateRangePicker } from '@mui/x-date-pickers-pro';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-// import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import Button from '@mui/material/Button';
 import PortoCard from 'components/cards/CustomCard/pfrofil-card';
-// const AppChat = Loadable(lazy(() => import('pages/apps/chat')));
 import Chat from 'pages/apps/chat';
-// import { update } from 'lodash';
-// table data
+import { PlotOptionChart, CheckboxButtonGroup } from 'sections/Charts/Funds/Charts';
+
 function createData(name, content) {
   return { name, content };
 }
@@ -531,8 +528,6 @@ const Fund_View = () => {
               <img src={Vector} alt="Description" />
             </Button>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
-              {/* <DemoContainer components={['DateRangePicker', 'DateRangePicker', 'DateRangePicker']}> */}
-              {/* <DemoItem label="" component="DateRangePicker"> */}
               <DateRangePicker
                 calendars={1}
                 localeText={{ start: 'From', end: 'To' }}
@@ -553,36 +548,54 @@ const Fund_View = () => {
                   }
                 }}
               />
-              {/* </DemoItem> */}
-              {/* </DemoContainer> */}
             </LocalizationProvider>
           </Grid>
           <Grid>
             <ReactApexChart options={chartData.options} series={chartData.series} type="line" height={350} />
           </Grid>
         </TabPanel>
-        <TabPanel value={value} index={2}>
-          <Accordion>
-            <AccordionSummary aria-controls="panel1d-content" id="panel1d-header"></AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-        </TabPanel>
+        {/* Inverstor Tab */}
+        <TabPanel value={value} index={2}></TabPanel>
         <TabPanel value={value} index={3}>
           <TablePorto rows={Prows} />
         </TabPanel>
+        {/* Charts Tab */}
         <TabPanel value={value} index={4}>
-          <Accordion>
-            <AccordionSummary aria-controls="panel1d-content" id="panel1d-header"></AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+          <Grid sx={{ display: 'flex', justifyContent: 'center' }} gap={2}>
+            <Button variant="shadow" color="secondary" sx={{ width: '52px', height: '52px', borderRadius: '15px' }}>
+              <img src={Vector} alt="Description" />
+            </Button>
+            <FormControl>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                // value={contact}
+                // onChange={handleChangeContact}
+                // placeholder="Contact"
+                sx={{ height: '53px', borderRadius: '12px', width: '200px' }}
+              >
+                {/* <MenuItem value={1}>
+                  <h4>Hi</h4>
+                </MenuItem> */}
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={12} sx={{ mt: 2 }}>
+            <Grid container sx={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
+              <Grid item xs={12} sm={7}>
+                <PlotOptionChart />
+                <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                  <button style={{ width: '20px', height: '20px', border: 'none' }} />
+                  <span>&nbsp;&nbsp;Invested&nbsp;&nbsp;</span>
+                  <button style={{ width: '20px', height: '20px', border: 'none', backgroundColor: '#008080' }} />
+                  <span>&nbsp;&nbsp;Profit&nbsp;&nbsp;</span>
+                </Box>
+              </Grid>
+              <Grid item xs={12} sm={2} sx={{ display: 'flex', alignItems: 'center' }}>
+                <CheckboxButtonGroup />
+              </Grid>
+            </Grid>
+          </Grid>
         </TabPanel>
         <TabPanel value={value} index={5}>
           <TableDocument rows={Drows} />
