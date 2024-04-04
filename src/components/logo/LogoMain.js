@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import { ThemeMode } from 'config';
 import LogoIcon from './LogoIcon';
-import { Box, Stack, Grid } from '@mui/material';
+import { Stack, Grid } from '@mui/material';
 /**
  * if you want to use image instead of <svg> uncomment following.
  *
