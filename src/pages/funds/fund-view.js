@@ -471,7 +471,7 @@ const Fund_View = () => {
               sx={{ borderRadius: '12px', paddingY: '20px', background: 'white' }}
             >
               <Typography variant="body1" fontSize={22} color="#008080">
-                Financial
+                Financial Terms
               </Typography>
             </AccordionSummary>
             <AccordionDetails sx={{ border: 'white' }}>
@@ -500,6 +500,90 @@ const Fund_View = () => {
             >
               <Typography variant="body1" fontSize={22} color="#008080">
                 Performance
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails sx={{ border: 'white' }}>
+              <Grid item xs={12}>
+                <Grid container spacing={0} alignItems="center">
+                  <Grid item xs={12} sm={6}>
+                    <Stack spacing={0}>
+                      <TableFunds rows={rows} />
+                    </Stack>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Stack spacing={0} className={classes.tableWithBorder}>
+                      <TableFunds rows={rows_R} />
+                    </Stack>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </AccordionDetails>
+          </Accordion>
+          <Box sx={{ paddingTop: '32px' }} />
+          <Accordion sx={{ borderRadius: '12px', border: 'white' }}>
+            <AccordionSummary
+              aria-controls="panel1d-content"
+              id="panel1d-header"
+              sx={{ borderRadius: '12px', paddingY: '20px', background: 'white' }}
+            >
+              <Typography variant="body1" fontSize={22} color="#008080">
+                Subscriptions
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails sx={{ border: 'white' }}>
+              <Grid item xs={12}>
+                <Grid container spacing={0} alignItems="center">
+                  <Grid item xs={12} sm={6}>
+                    <Stack spacing={0}>
+                      <TableFunds rows={rows} />
+                    </Stack>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Stack spacing={0} className={classes.tableWithBorder}>
+                      <TableFunds rows={rows_R} />
+                    </Stack>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </AccordionDetails>
+          </Accordion>
+          <Box sx={{ paddingTop: '32px' }} />
+          <Accordion sx={{ borderRadius: '12px', border: 'white' }}>
+            <AccordionSummary
+              aria-controls="panel1d-content"
+              id="panel1d-header"
+              sx={{ borderRadius: '12px', paddingY: '20px', background: 'white' }}
+            >
+              <Typography variant="body1" fontSize={22} color="#008080">
+                Subscriptions
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails sx={{ border: 'white' }}>
+              <Grid item xs={12}>
+                <Grid container spacing={0} alignItems="center">
+                  <Grid item xs={12} sm={6}>
+                    <Stack spacing={0}>
+                      <TableFunds rows={rows} />
+                    </Stack>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Stack spacing={0} className={classes.tableWithBorder}>
+                      <TableFunds rows={rows_R} />
+                    </Stack>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </AccordionDetails>
+          </Accordion>
+          <Box sx={{ paddingTop: '32px' }} />
+          <Accordion sx={{ borderRadius: '12px', border: 'white' }}>
+            <AccordionSummary
+              aria-controls="panel1d-content"
+              id="panel1d-header"
+              sx={{ borderRadius: '12px', paddingY: '20px', background: 'white' }}
+            >
+              <Typography variant="body1" fontSize={22} color="#008080">
+                Holdings
               </Typography>
             </AccordionSummary>
             <AccordionDetails sx={{ border: 'white' }}>

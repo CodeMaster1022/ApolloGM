@@ -131,7 +131,37 @@ export function FundButton(props) {
     </>
   );
 }
+export function WidgetButton(props) {
+  // const [add, setAddOpen] = useState(false);
+  // const handleAddOpen = () => setAddOpen(true);
+  // const handleAddClose = () => setAddOpen(false);
+  return (
+    <>
+      <Button
+        aria-controls="simple-menu"
+        aria-haspopup="true"
+        // onClick={handleAddOpen}
+        sx={{
+          backgroundColor: '#008080',
+          borderRadius: '12px',
+          color: 'white',
+          paddingX: '42px',
+          height: '42px',
+          '&:hover': {
+            backgroundColor: '#005353' // Darken color on hover
+          }
+        }}
+      >
+        {props.title}
+      </Button>
+      {/* <Fund_Modal fundOpen={add} handleFundClose={handleAddClose} /> */}
+    </>
+  );
+}
 FundButton.propTypes = {
+  title: PropTypes.string.isRequired
+};
+WidgetButton.propTypes = {
   title: PropTypes.string.isRequired
 };
 FundViewDropdownButton.propTypes = {

@@ -11,7 +11,7 @@ import Header from './Header';
 import Footer from './Footer';
 // import HorizontalBar from './Drawer/HorizontalBar';
 import Breadcrumbs from 'components/@extended/Breadcrumbs';
-import { FundViewDropdownButton, FundButton } from 'components/@extended/FundButton';
+import { FundViewDropdownButton, FundButton, WidgetButton } from 'components/@extended/FundButton';
 
 import { MenuOrientation } from 'config';
 import navigation from 'menu-items';
@@ -59,7 +59,12 @@ const MainLayout = () => {
           }}
         >
           <Box sx={{ display: 'flex', justifyContent: 'space-between', paddingX: '12px' }}>
-            {currentLocation.pathname === '/dashboard-page' && <button>dashboard</button>}
+            {currentLocation.pathname === '/dashboard-page' && (
+              <>
+                <Breadcrumbs navigation={navigation} title titleBottom card={false} divider={false} />
+                <WidgetButton title="Add Widget" />
+              </>
+            )}
             {currentLocation.pathname === '/funds/fund-view' && (
               <>
                 <Breadcrumbs navigation={navigation} title titleBottom card={false} divider={false} />
