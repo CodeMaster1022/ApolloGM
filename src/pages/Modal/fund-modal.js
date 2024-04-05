@@ -26,8 +26,10 @@ const style = {
   bgcolor: 'background.paper',
   borderRadius: '5px',
   boxShadow: 24,
-  p: 4,
-  width: '60%'
+  maxHeight: '80vh',
+  overflow: 'auto',
+  p: 2
+  // width: '60%'
 };
 const steps = [
   { label: 'General Information' },
@@ -66,7 +68,7 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
     <Modal open={fundOpen} onClose={handleFundClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
       <Box sx={style}>
         <Grid items xs={12}>
-          <Grid container spacing={3} sx={{ padding: '20px' }}>
+          <Grid container spacing={3} sx={{ padding: '10px' }}>
             <Grid item xs={12} sm={4}>
               <Typography id="modal-modal-title" variant="h3" component="h2" sx={{ color: '#008080' }}>
                 GreenTech Growth Fund
@@ -91,7 +93,7 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
               </Stepper>
             </Grid>
             {activeStep === 0 && (
-              <Grid xs={12} sm={8}>
+              <Grid item xs={12} sm={8}>
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
                     <Stack spacing={1}>
@@ -160,18 +162,39 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                     // onChange={(e) => setPassword(e.target.value)}
                   />
                 </Stack>
-                <Box sx={{ paddingTop: '20px', display: 'flex', justifyContent: 'center' }} gap={4}>
+                <Stack spacing={1}>
+                  <InputLabel sx={{ paddingTop: '40px' }}>Description</InputLabel>
+                  <TextField
+                    multiline
+                    rows={7}
+                    margin="normal"
+                    required
+                    placeholder="Fund Objectives"
+                    fullWidth
+                    name="Fund Objectives"
+                    id="Fund Objectives"
+                    type="text"
+                    InputProps={{
+                      sx: {
+                        padding: '6px',
+                        borderRadius: '12px'
+                      }
+                    }}
+                    // onChange={(e) => setPassword(e.target.value)}
+                  />
+                </Stack>
+                <Box sx={{ marginTop: '50px', display: 'flex', justifyContent: 'center', height: '60px' }} gap={4}>
                   <Button
                     variant="outlined"
                     color="secondary"
-                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px' }}
+                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
                   >
                     Cancel
                   </Button>
                   <Button
                     variant="contained"
                     color="secondary"
-                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px' }}
+                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
                     onClick={handleNext}
                   >
                     Next
@@ -243,7 +266,7 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <Stack spacing={1}>
-                      <InputLabel sx={{ paddingTop: '20px' }}>Fund Strategy </InputLabel>
+                      <InputLabel sx={{ paddingTop: '30px' }}>Fund Strategy </InputLabel>
                       <Select
                         margin="normal"
                         required
@@ -305,7 +328,7 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                   <Button
                     variant="outlined"
                     color="secondary"
-                    sx={{ padding: '6px', borderRadius: '12px', width: '170px', height: '48px' }}
+                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
                   >
                     Cancel
                   </Button>
@@ -313,7 +336,7 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                     variant="contained"
                     color="secondary"
                     onClick={handleNext}
-                    sx={{ padding: '6px', borderRadius: '12px', width: '170px', height: '48px' }}
+                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
                   >
                     Next
                   </Button>
@@ -537,11 +560,11 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                     // onChange={(e) => setPassword(e.target.value)}
                   />
                 </Stack>
-                <Box sx={{ paddingTop: '50px', display: 'flex', justifyContent: 'center' }} gap={4}>
+                <Box sx={{ paddingTop: '20px', display: 'flex', justifyContent: 'center' }} gap={4}>
                   <Button
                     variant="outlined"
                     color="secondary"
-                    sx={{ padding: '6px', borderRadius: '12px', width: '170px', height: '48px' }}
+                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
                   >
                     Cancel
                   </Button>
@@ -549,7 +572,7 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                     variant="contained"
                     color="secondary"
                     onClick={handleNext}
-                    sx={{ padding: '6px', borderRadius: '12px', width: '170px', height: '48px' }}
+                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
                   >
                     Next
                   </Button>
@@ -653,11 +676,21 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                     // onChange={(e) => setPassword(e.target.value)}
                   />
                 </Stack>
-                <Box sx={{ paddingTop: '50px', display: 'flex', justifyContent: 'center', mb: '10px' }} gap={4}>
+                <Box
+                  sx={{
+                    paddingTop: '50px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    mb: '10px',
+                    height: '220px',
+                    alignItems: 'flex-end'
+                  }}
+                  gap={4}
+                >
                   <Button
                     variant="outlined"
                     color="secondary"
-                    sx={{ padding: '6px', borderRadius: '12px', width: '170px', height: '48px' }}
+                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
                   >
                     Cancel
                   </Button>
@@ -665,7 +698,7 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                     variant="contained"
                     color="secondary"
                     onClick={handleNext}
-                    sx={{ padding: '6px', borderRadius: '12px', width: '170px', height: '48px' }}
+                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
                   >
                     Next
                   </Button>
@@ -830,7 +863,7 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                   <Button
                     variant="outlined"
                     color="secondary"
-                    sx={{ padding: '6px', borderRadius: '12px', width: '170px', height: '48px' }}
+                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
                   >
                     Cancel
                   </Button>
@@ -838,7 +871,7 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                     variant="contained"
                     color="secondary"
                     // onClick={handleNext}
-                    sx={{ padding: '6px', borderRadius: '12px', width: '170px', height: '48px' }}
+                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
                   >
                     Save
                   </Button>
