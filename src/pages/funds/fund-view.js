@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Box, InputAdornment, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ReactApexChart from 'react-apexcharts';
-import { TableFunds, TableCap, TableDocument, TableBench, TablePorto } from 'pages/tables/mui-table/basic';
+import { TableFunds, TableCap, TableDocument, TableBench, TablePorto, TableInvest } from 'pages/tables/mui-table/basic';
 import Vector from '../../assets/images/icons/vector.svg';
 import janny from '../../assets/images/users/janny.png';
 import Select from '@mui/material/Select';
@@ -36,6 +36,10 @@ function BcreateData(Index, Mo, TMo, OYr, TYr, Result) {
 //Portfolio Data
 function PcreateData(company, on, currency, invest, industry, country, status) {
   return { company, on, currency, invest, industry, country, status };
+}
+//Invest Table
+function IcreateData(A, B, C, D, E, F, G, status) {
+  return { A, B, C, D, E, F, G, status };
 }
 //Card data
 const cardDatas = [
@@ -321,6 +325,11 @@ const Drows = [
   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.')
+];
+//Invest Table
+const Invest_rows = [
+  IcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
+  IcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true)
 ];
 //Financial Table
 // const Frows = [
@@ -662,7 +671,9 @@ const Fund_View = () => {
           </Grid>
         </TabPanel>
         {/* Inverstor Tab */}
-        <TabPanel value={value} index={2}></TabPanel>
+        <TabPanel value={value} index={2}>
+          <TableInvest rows={Invest_rows} />
+        </TabPanel>
         <TabPanel value={value} index={3}>
           <TablePorto rows={Prows} />
         </TabPanel>

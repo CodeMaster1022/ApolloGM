@@ -48,10 +48,10 @@ const Funds_Item = {
           url: '/funds/fund-view'
         },
         {
-          id: 'Investred',
-          title: <FormattedMessage id="Invested" />,
+          id: 'invested',
+          title: <FormattedMessage id="invested" />,
           type: 'item',
-          url: '/funds/Investred'
+          url: '/funds/Invested'
         },
         {
           id: 'Invited',

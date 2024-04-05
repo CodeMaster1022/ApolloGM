@@ -1,24 +1,24 @@
 import { TableFund } from 'pages/tables/mui-table/basic';
-function PcreateData(A, B, C, D, E, F, G, status) {
-  return { A, B, C, D, E, F, G, status };
+function PcreateData(A, B, C, D, E, status) {
+  return { A, B, C, D, E, status };
 }
 const Fund_rows = [
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true)
+  PcreateData('GreenTech Growth Fund', '$150 Million', ' January 1, 2020', '25', 'John Doe', true),
+  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
+  PcreateData('GreenTech Growth Fund', '$150 Million', ' January 1, 2020', '25', 'John Doe', true),
+  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
+  PcreateData('GreenTech Growth Fund', '$150 Million', ' January 1, 2020', '25', 'John Doe', true),
+  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
+  PcreateData('GreenTech Growth Fund', '$150 Million', ' January 1, 2020', '25', 'John Doe', true),
+  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
+  PcreateData('GreenTech Growth Fund', '$150 Million', ' January 1, 2020', '25', 'John Doe', true),
+  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
+  PcreateData('GreenTech Growth Fund', '$150 Million', ' January 1, 2020', '25', 'John Doe', true),
+  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
+  PcreateData('GreenTech Growth Fund', '$150 Million', ' January 1, 2020', '25', 'John Doe', true),
+  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
+  PcreateData('GreenTech Growth Fund', '$150 Million', ' January 1, 2020', '25', 'John Doe', true),
+  PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true)
 ];
 const Funds = () => {
   return (

@@ -22,7 +22,7 @@ const Dashboard = Loadable(lazy(() => import('pages/Dashboard/dashboard')));
 //Funds
 const Funds = Loadable(lazy(() => import('pages/funds/Funds')));
 const Funds_View = Loadable(lazy(() => import('pages/funds/fund-view')));
-
+const Invest = Loadable(lazy(() => import('pages/funds/Invest')));
 // render - sample page
 const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')));
 
@@ -57,6 +57,10 @@ const MainRoutes = {
             {
               path: '',
               element: <Funds />
+            },
+            {
+              path: 'invested',
+              element: <Invest />
             }
           ]
         },
