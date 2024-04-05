@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
-import { Box, ButtonBase, CardContent, ClickAwayListener, Grid, Paper, Popper, Stack, Typography } from '@mui/material';
+import { Box, ButtonBase, ClickAwayListener, Paper, Popper, Stack } from '@mui/material';
 
 // project import
 import ProfileTab from './ProfileTab';
@@ -21,7 +21,7 @@ import useAuth from 'hooks/useAuth';
 import avatar1 from 'assets/images/users/avatar-11.png';
 // import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { ArrowDropDown } from '@mui/icons-material';
-import { borderRadius } from '@mui/system';
+// import { borderRadius } from '@mui/system';
 
 // tab panel wrapper
 function TabPanel({ children, value, index, ...other }) {
@@ -52,6 +52,7 @@ const Profile = () => {
   const navigate = useNavigate();
 
   const { logout, user } = useAuth();
+  console.log(user);
   const handleLogout = async () => {
     try {
       await logout();
