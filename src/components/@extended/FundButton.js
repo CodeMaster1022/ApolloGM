@@ -45,9 +45,10 @@ export function FundViewDropdownButton(props) {
         endIcon={<ArrowDropDownIcon />}
         sx={{
           backgroundColor: '#008080',
+          width: '160px',
           borderRadius: '12px',
           color: 'white',
-          paddingX: '42px',
+          paddingX: '35px',
           '&:hover': {
             backgroundColor: '#005353' // Darken color on hover
           }
@@ -63,7 +64,7 @@ export function FundViewDropdownButton(props) {
         onClose={handleClose}
         PaperProps={{
           style: {
-            width: 150 // Set the width of the menu
+            width: 160 // Set the width of the menu
           }
         }}
       >
@@ -145,7 +146,7 @@ export function WidgetButton(props) {
           backgroundColor: '#008080',
           borderRadius: '12px',
           color: 'white',
-          paddingX: '42px',
+          paddingX: '50px',
           height: '42px',
           '&:hover': {
             backgroundColor: '#005353' // Darken color on hover

@@ -65,7 +65,7 @@ const MainLayout = () => {
                 <WidgetButton title="Add Widget" />
               </>
             )}
-            {currentLocation.pathname === '/funds/fund-view' && (
+            {currentLocation.pathname.includes('/funds/') && (
               <>
                 <Breadcrumbs navigation={navigation} title titleBottom card={false} divider={false} />
                 <FundViewDropdownButton title="actions" />
