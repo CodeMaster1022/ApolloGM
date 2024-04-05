@@ -24,7 +24,7 @@ const style = {
   boxShadow: 24,
   maxHeight: '90vh',
   overflow: 'auto',
-  p: 2
+  p: 4
 };
 const avatar_style = {
   borderRadius: '100%',
