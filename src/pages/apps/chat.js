@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 // import CssBaseline from '@mui/material/CssBaseline';
 // material-ui
 import { useTheme } from '@mui/material/styles';
-import { ThemeMode } from 'config';
+// import { ThemeMode } from 'config';
 // import EmojiPicker, { SkinTones } from 'emoji-picker-react';
 import InputEmoji from 'react-input-emoji';
 import UserAvatar from 'sections/apps/chat/UserAvatar';
