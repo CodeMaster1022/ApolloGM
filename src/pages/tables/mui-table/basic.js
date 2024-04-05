@@ -270,7 +270,6 @@ export function TableBench({ rows }) {
           <TableHead
             sx={{
               '& th': {
-                color: (theme) => (theme.palette.mode === 'dark' ? '#1E1E1E' : 'white'),
                 borderTop: `1px solid ${theme.palette.divider}`,
                 borderBottom: `2px solid ${theme.palette.divider} !important`
               }
