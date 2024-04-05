@@ -17,13 +17,28 @@ export default function PortoCard({ cardData }) {
         <img src={cardData.image} alt="This is" />
       </Box>
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div" align="center" color="#7E8487" fontSize="14px">
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="div"
+          align="center"
+          fontSize="14px"
+          sx={{ color: (theme) => (theme.palette.mode === 'dark' ? 'white' : '#7E8487') }}
+        >
           {cardData.role}
         </Typography>
-        <Typography gutterBottom variant="h5" component="div" align="center" color="#002626" fontSize="14px" fontWeight="bold">
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="div"
+          align="center"
+          sx={{ color: (theme) => (theme.palette.mode === 'dark' ? 'white' : '#7E8487') }}
+          fontSize="14px"
+          fontWeight="bold"
+        >
           {cardData.name}
         </Typography>
-        <Typography color="text.secondary" fontSize="12px">
+        <Typography sx={{ color: (theme) => (theme.palette.mode === 'dark' ? 'white' : 'text.secondary') }} fontSize="12px">
           {cardData.content}
         </Typography>
       </CardContent>

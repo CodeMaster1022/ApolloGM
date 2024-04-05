@@ -120,7 +120,7 @@ export function TableCap({ rows }) {
               ))}
             </TableRow>
           </TableHead>
-          <TableBody sx={{ backgroundColor: 'white', borderRadius: '5px' }}>
+          <TableBody sx={{ color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white'), borderRadius: '5px' }}>
             {/* <MainCard content={false} > */}
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
               <TableRow hover key={row.name}>
@@ -200,7 +200,7 @@ export function TableDocument({ rows }) {
               ))}
             </TableRow>
           </TableHead>
-          <TableBody sx={{ backgroundColor: 'white', borderRadius: '5px' }}>
+          <TableBody sx={{ color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white'), borderRadius: '5px' }}>
             {/* <MainCard content={false} > */}
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
               <TableRow hover key={row.name}>
@@ -216,7 +216,7 @@ export function TableDocument({ rows }) {
                 <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
                   {row.Access}
                 </TableCell>
-                <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
+                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
                   {row.Description}
                 </TableCell>
               </TableRow>
@@ -257,6 +257,7 @@ export function TableBench({ rows }) {
           <TableHead
             sx={{
               '& th': {
+                color: (theme) => (theme.palette.mode === 'dark' ? '#1E1E1E' : 'white'),
                 borderTop: `1px solid ${theme.palette.divider}`,
                 borderBottom: `2px solid ${theme.palette.divider} !important`
               }
@@ -274,7 +275,7 @@ export function TableBench({ rows }) {
               ))}
             </TableRow>
           </TableHead>
-          <TableBody sx={{ backgroundColor: 'white', borderRadius: '5px' }}>
+          <TableBody sx={{ color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white'), borderRadius: '5px' }}>
             {/* <MainCard content={false} > */}
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
               <TableRow hover key={row.name}>
@@ -351,7 +352,7 @@ export function TablePorto({ rows }) {
               ))}
             </TableRow>
           </TableHead>
-          <TableBody sx={{ backgroundColor: 'white', borderRadius: '5px' }}>
+          <TableBody sx={{ color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white'), borderRadius: '5px' }}>
             {/* <MainCard content={false} > */}
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
               <TableRow hover key={row.name}>
@@ -455,45 +456,45 @@ export function TableFund({ rows }) {
           >
             <TableRow>
               <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" color="info" sx={{ height: '52px', borderRadius: '15px' }}>
+                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
                   <img src={pings} alt="Description" />
                   Apex Grow...
                 </Button>
               </TableCell>
               <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" color="info" sx={{ height: '52px', borderRadius: '15px' }}>
+                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
               <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" color="info" sx={{ width: '52px', height: '52px', borderRadius: '15px' }}>
+                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
               <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" color="info" sx={{ width: '52px', height: '52px', borderRadius: '15px' }}>
+                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
               <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" color="info" sx={{ width: '52px', height: '52px', borderRadius: '15px' }}>
+                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
               <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" color="info" sx={{ width: '52px', height: '52px', borderRadius: '15px' }}>
+                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
               <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" color="info" sx={{ width: '52px', height: '52px', borderRadius: '15px' }}>
+                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
               <TableCell align="left" sx={{ minWidth: '50px', position: 'sticky !important', fontWeight: 'bold' }}></TableCell>
             </TableRow>
           </TableHead>
-          <TableBody sx={{ backgroundColor: 'white', borderRadius: '5px' }}>
+          <TableBody sx={{ color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white'), borderRadius: '5px' }}>
             {/* <MainCard content={false} > */}
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
               <TableRow hover key={row.name}>

@@ -85,7 +85,7 @@ const Chat = () => {
             <MainCard
               content={false}
               sx={{
-                bgcolor: theme.palette.mode === ThemeMode.DARK ? 'dark.main' : 'grey.100',
+                bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white'),
                 borderRadius: '12px',
                 width: '100%'
                 // transition: theme.transitions.create('width', {
@@ -96,7 +96,12 @@ const Chat = () => {
             >
               {chats.map((chat, index) => (
                 <Stack key={index}>
-                  <Grid container spacing={0} bgcolor="white" borderRadius="12px">
+                  <Grid
+                    container
+                    spacing={0}
+                    sx={{ bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white') }}
+                    borderRadius="12px"
+                  >
                     <Grid
                       item
                       xs={12}

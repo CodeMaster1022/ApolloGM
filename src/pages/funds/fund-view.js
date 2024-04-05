@@ -440,9 +440,13 @@ const Fund_View = () => {
             <AccordionSummary
               aria-controls="panel1d-content"
               id="panel1d-header"
-              sx={{ borderRadius: '12px', paddingY: '20px', background: 'white' }}
+              sx={{
+                borderRadius: '12px',
+                paddingY: '20px',
+                backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1E1E1E' : 'white')
+              }}
             >
-              <Typography variant="body1" fontSize={22} color="#008080">
+              <Typography variant="body1" fontSize={22} sx={{ color: (theme) => (theme.palette.mode === 'dark' ? 'white' : '#7E8487') }}>
                 Fund Detail
               </Typography>
             </AccordionSummary>
@@ -468,9 +472,13 @@ const Fund_View = () => {
             <AccordionSummary
               aria-controls="panel1d-content"
               id="panel1d-header"
-              sx={{ borderRadius: '12px', paddingY: '20px', background: 'white' }}
+              sx={{
+                borderRadius: '12px',
+                paddingY: '20px',
+                backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1E1E1E' : 'white')
+              }}
             >
-              <Typography variant="body1" fontSize={22} color="#008080">
+              <Typography variant="body1" fontSize={22} sx={{ Color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white') }}>
                 Financial Terms
               </Typography>
             </AccordionSummary>
@@ -496,9 +504,13 @@ const Fund_View = () => {
             <AccordionSummary
               aria-controls="panel1d-content"
               id="panel1d-header"
-              sx={{ borderRadius: '12px', paddingY: '20px', background: 'white' }}
+              sx={{
+                borderRadius: '12px',
+                paddingY: '20px',
+                backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1E1E1E' : 'white')
+              }}
             >
-              <Typography variant="body1" fontSize={22} color="#008080">
+              <Typography variant="body1" fontSize={22} sx={{ Color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white') }}>
                 Performance
               </Typography>
             </AccordionSummary>
@@ -524,9 +536,13 @@ const Fund_View = () => {
             <AccordionSummary
               aria-controls="panel1d-content"
               id="panel1d-header"
-              sx={{ borderRadius: '12px', paddingY: '20px', background: 'white' }}
+              sx={{
+                borderRadius: '12px',
+                paddingY: '20px',
+                backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1E1E1E' : 'white')
+              }}
             >
-              <Typography variant="body1" fontSize={22} color="#008080">
+              <Typography variant="body1" fontSize={22} sx={{ Color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white') }}>
                 Subscriptions
               </Typography>
             </AccordionSummary>
@@ -552,9 +568,13 @@ const Fund_View = () => {
             <AccordionSummary
               aria-controls="panel1d-content"
               id="panel1d-header"
-              sx={{ borderRadius: '12px', paddingY: '20px', background: 'white' }}
+              sx={{
+                borderRadius: '12px',
+                paddingY: '20px',
+                backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1E1E1E' : 'white')
+              }}
             >
-              <Typography variant="body1" fontSize={22} color="#008080">
+              <Typography variant="body1" fontSize={22} sx={{ Color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white') }}>
                 Subscriptions
               </Typography>
             </AccordionSummary>
@@ -580,9 +600,13 @@ const Fund_View = () => {
             <AccordionSummary
               aria-controls="panel1d-content"
               id="panel1d-header"
-              sx={{ borderRadius: '12px', paddingY: '20px', background: 'white' }}
+              sx={{
+                borderRadius: '12px',
+                paddingY: '20px',
+                backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1E1E1E' : 'white')
+              }}
             >
-              <Typography variant="body1" fontSize={22} color="#008080">
+              <Typography variant="body1" fontSize={22} sx={{ color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white') }}>
                 Holdings
               </Typography>
             </AccordionSummary>
@@ -681,10 +705,10 @@ const Fund_View = () => {
           </Grid>
         </TabPanel>
         <TabPanel value={value} index={5}>
-          <TableDocument rows={Drows} />
+          <TableCap rows={Crows} />
         </TabPanel>
         <TabPanel value={value} index={6}>
-          <TableCap rows={Crows} />
+          <TableDocument rows={Drows} />
         </TabPanel>
         <TabPanel value={value} index={7}>
           <TableBench rows={Brows} />
