@@ -22,7 +22,9 @@ const style = {
   bgcolor: 'background.paper',
   borderRadius: '5px',
   boxShadow: 24,
-  p: 4
+  maxHeight: '90vh',
+  overflow: 'auto',
+  p: 2
 };
 const avatar_style = {
   borderRadius: '100%',
