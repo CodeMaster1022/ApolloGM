@@ -1,7 +1,7 @@
 // material-ui
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TablePagination, Box } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TablePagination, Box, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 import LinearWithLabel from 'components/@extended/progress/LinearWithLabel';
@@ -644,26 +644,42 @@ export function TableFund({ rows }) {
                 </Button>
               </TableCell>
               <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Select value={actionState} sx={{ height: '53px', borderRadius: '12px', width: '155px' }} onChange={handleChangeAction}>
-                  <MenuItem value={1}>
+                <Select
+                  value={actionState}
+                  sx={{
+                    height: '53px',
+                    borderRadius: '12px',
+                    width: '155px',
+                    background: 'white'
+                  }}
+                  onChange={handleChangeAction}
+                >
+                  <MenuItem value={1} sx={{ backgroundColor: 'white' }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', padding: '3px' }}>
                       <img src={pings} alt="action" />
                       <img src={ActiveIcon} alt="action" />
-                      &nbsp;Active
+                      &nbsp;
+                      <Typography variant="h6" color="primary">
+                        Active
+                      </Typography>
                     </Box>
                   </MenuItem>
-                  <MenuItem value={2}>
+                  <MenuItem value={2} sx={{ backgroundColor: 'white' }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', padding: '3px' }}>
                       <img src={pings} alt="action" />
                       <img src={InactiveIcon} alt="action" />
-                      &nbsp;InActive
+                      <Typography variant="h6" color="primary">
+                        &nbsp;InActive
+                      </Typography>
                     </Box>
                   </MenuItem>
-                  <MenuItem value={3}>
+                  <MenuItem value={3} sx={{ backgroundColor: 'white' }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', padding: '3px' }}>
                       <img src={pings} alt="action" />
                       <img src={DraftIcon} alt="action" />
-                      &nbsp;Draft
+                      <Typography variant="h6" color="primary">
+                        &nbsp;Draft
+                      </Typography>
                     </Box>
                   </MenuItem>
                 </Select>
