@@ -1,36 +1,22 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
-import { Modal, Select } from '@mui/material';
+import { Modal, Select, useMediaQuery } from '@mui/material';
 import { Box, Typography, Grid, TextField, InputLabel, Stack } from '@mui/material';
-// import { width } from '@mui/system';
 import { CalendarIcon } from '@mui/x-date-pickers';
 import Divider from '@mui/material/Divider';
 import FormControl from '@mui/material/FormControl';
-// import country from '../../assets/images/icons/country.svg';
 import InputAdornment from '@mui/material/InputAdornment';
 import LinearWithLabel from 'components/@extended/progress/LinearWithLabel';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-// import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
 import { DatePicker } from '@mui/x-date-pickers-pro';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-// import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  bgcolor: 'background.paper',
-  borderRadius: '5px',
-  boxShadow: 24,
-  maxHeight: '80vh',
-  overflow: 'auto',
-  p: 2
-  // width: '60%'
-};
+import { useTheme } from '@mui/material/styles';
+import { makeStyles } from '@material-ui/core/styles';
+
 const steps = [
   { label: 'General Information' },
   { label: 'Fund Details' },
@@ -38,7 +24,24 @@ const steps = [
   { label: 'Fund Manager & LLC' },
   { label: 'Investor Information' }
 ];
+
 const Fund_Modal = ({ fundOpen, handleFundClose }) => {
+  const classes = useStyles();
+  const theme = useTheme();
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const modalstyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    bgcolor: 'background.paper',
+    borderRadius: '5px',
+    boxShadow: 24,
+    width: isMediumScreen ? 'auto' : '50%',
+    maxHeight: '90vh',
+    overflow: 'auto',
+    p: 4
+  };
   // stepper
   const [activeStep, setActiveStep] = React.useState(0);
 
@@ -66,7 +69,7 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
   };
   return (
     <Modal open={fundOpen} onClose={handleFundClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-      <Box sx={style}>
+      <Box sx={modalstyle}>
         <Grid items xs={12}>
           <Grid container spacing={3} sx={{ padding: '10px' }}>
             <Grid item xs={12} sm={4}>
@@ -184,19 +187,10 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                   />
                 </Stack>
                 <Box sx={{ marginTop: '50px', display: 'flex', justifyContent: 'center', height: '60px' }} gap={4}>
-                  <Button
-                    variant="outlined"
-                    color="secondary"
-                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
-                  >
+                  <Button variant="outlined" color="secondary" className={classes.buttonstyle}>
                     Cancel
                   </Button>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
-                    onClick={handleNext}
-                  >
+                  <Button variant="contained" color="secondary" className={classes.buttonstyle} onClick={handleNext}>
                     Next
                   </Button>
                 </Box>
@@ -325,19 +319,10 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                   />
                 </Stack>
                 <Box sx={{ paddingTop: '50px', display: 'flex', justifyContent: 'center', alignItems: 'flex-end' }} gap={4}>
-                  <Button
-                    variant="outlined"
-                    color="secondary"
-                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
-                  >
+                  <Button variant="outlined" color="secondary" className={classes.buttonstyle}>
                     Cancel
                   </Button>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    onClick={handleNext}
-                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
-                  >
+                  <Button variant="contained" color="secondary" onClick={handleNext} className={classes.buttonstyle}>
                     Next
                   </Button>
                 </Box>
@@ -561,19 +546,10 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                   />
                 </Stack>
                 <Box sx={{ paddingTop: '20px', display: 'flex', justifyContent: 'center' }} gap={4}>
-                  <Button
-                    variant="outlined"
-                    color="secondary"
-                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
-                  >
+                  <Button variant="outlined" color="secondary" className={classes.buttonstyle}>
                     Cancel
                   </Button>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    onClick={handleNext}
-                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
-                  >
+                  <Button variant="contained" color="secondary" onClick={handleNext} className={classes.buttonstyle}>
                     Next
                   </Button>
                 </Box>
@@ -687,19 +663,10 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                   }}
                   gap={4}
                 >
-                  <Button
-                    variant="outlined"
-                    color="secondary"
-                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
-                  >
+                  <Button variant="outlined" color="secondary" className={classes.buttonstyle}>
                     Cancel
                   </Button>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    onClick={handleNext}
-                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
-                  >
+                  <Button variant="contained" color="secondary" onClick={handleNext} className={classes.buttonstyle}>
                     Next
                   </Button>
                 </Box>
@@ -860,18 +827,14 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                   </Grid>
                 </Grid>
                 <Box sx={{ paddingTop: '50px', display: 'flex', justifyContent: 'center', mb: '10px' }} gap={4}>
-                  <Button
-                    variant="outlined"
-                    color="secondary"
-                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
-                  >
+                  <Button variant="outlined" color="secondary" className={classes.buttonstyle}>
                     Cancel
                   </Button>
                   <Button
                     variant="contained"
                     color="secondary"
                     // onClick={handleNext}
-                    sx={{ padding: '6px', borderRadius: '20px', width: '150px', height: '40px', marginTop: '20px' }}
+                    className={classes.buttonstyle}
                   >
                     Save
                   </Button>
@@ -884,7 +847,23 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
     </Modal>
   );
 };
-
+const useStyles = makeStyles(() => ({
+  buttonstyle: {
+    padding: '6px',
+    borderRadius: '10px',
+    width: '180px',
+    height: '48px',
+    marginTop: '20px'
+  },
+  textstyle: {
+    fontSize: '14px',
+    marginLeft: '12px'
+  },
+  textboxstyle: {
+    display: 'flex',
+    alignItems: 'center'
+  }
+}));
 Fund_Modal.propTypes = {
   fundOpen: PropTypes.bool,
   handleFundClose: PropTypes.func

@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import PropTypes from 'prop-types';
 import MenuItem from '@mui/material/MenuItem';
 import FormHelperText from '@mui/material/FormHelperText';
-import { Modal } from '@mui/material';
+import { Modal, useMediaQuery } from '@mui/material';
 import { Box, Typography, Grid, TextField, InputLabel, Stack } from '@mui/material';
 import MainCard from 'components/MainCard';
 import { Formik } from 'formik';
@@ -13,12 +13,26 @@ import Select from '@mui/material/Select';
 import Avatar from '../../assets/images/icons/avatar.svg';
 import * as yup from 'yup';
 import { makeStyles } from '@material-ui/core/styles';
-
+import { useTheme } from '@mui/material/styles';
 import UploadSingleFile from 'components/third-party/dropzone/SingleFile';
 
 const Document_Modal = ({ documentOpen, handleDocumentClose }) => {
   const classes = useStyles();
-
+  const theme = useTheme();
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const modalstyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    bgcolor: 'background.paper',
+    borderRadius: '5px',
+    boxShadow: 24,
+    width: isMediumScreen ? 'auto' : '50%',
+    maxHeight: '90vh',
+    overflow: 'auto',
+    p: 4
+  };
   const [contact, setContact] = useState('');
   const handleChangeContact = (event) => {
     event.preventDefault();
@@ -227,24 +241,12 @@ const useStyles = makeStyles(() => ({
   },
   textstyle: {
     fontSize: '14px',
-    ml: '12px'
+    marginLeft: '12px'
   },
   textboxstyle: {
     display: 'flex',
     alignItems: 'center'
   }
 }));
-const modalstyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  bgcolor: 'background.paper',
-  borderRadius: '5px',
-  boxShadow: 24,
-  maxHeight: '90vh',
-  overflow: 'auto',
-  p: 4
-  // width: '50%'
-};
+
 export default Document_Modal;

@@ -2,24 +2,31 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import PropTypes from 'prop-types';
 import MenuItem from '@mui/material/MenuItem';
-import { Modal } from '@mui/material';
+import { Modal, useMediaQuery } from '@mui/material';
 import { Box, Typography, Grid, TextField, InputLabel, Stack } from '@mui/material';
 import { CalendarIcon } from '@mui/x-date-pickers';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Avatar from '../../assets/images/icons/avatar.svg';
 import { makeStyles } from '@material-ui/core/styles';
-
-const avatar_style = {
-  backgroundImage: `url(${Avatar})`,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'contain',
-  backgroundPosition: 'center',
-  width: '30px',
-  height: '30px'
-};
+import { useTheme } from '@mui/material/styles';
 const Capital_Modal = ({ capitalOpen, handleCapitalClose }) => {
   const classes = useStyles();
+  const theme = useTheme();
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const modalstyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    bgcolor: 'background.paper',
+    borderRadius: '5px',
+    boxShadow: 24,
+    width: isMediumScreen ? 'auto' : '50%',
+    maxHeight: '90vh',
+    overflow: 'auto',
+    p: 4
+  };
   const [contact, setContact] = useState('');
   const handleChangeContact = (event) => {
     event.preventDefault();
@@ -109,33 +116,33 @@ const Capital_Modal = ({ capitalOpen, handleCapitalClose }) => {
                     sx={{ height: '53px', borderRadius: '12px' }}
                   >
                     <MenuItem value={1}>
-                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Box sx={avatar_style} />
-                        <Typography sx={{ fontSize: '14px', ml: '12px' }}>Institutional Investor</Typography>
+                      <Box className={classes.textboxstyle}>
+                        <Box className={classes.avatarstyle} />
+                        <Typography className={classes.textstyle}>Institutional Investor</Typography>
                       </Box>
                     </MenuItem>
                     <MenuItem value={2}>
-                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Box sx={avatar_style} />
-                        <Typography sx={{ fontSize: '14px', ml: '12px' }}>Pension Fund</Typography>
+                      <Box className={classes.textboxstyle}>
+                        <Box className={classes.avatarstyle} />
+                        <Typography className={classes.textstyle}>Pension Fund</Typography>
                       </Box>
                     </MenuItem>
                     <MenuItem value={3}>
-                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Box sx={avatar_style} />
-                        <Typography sx={{ fontSize: '14px', ml: '12px' }}>Family Office</Typography>
+                      <Box className={classes.textboxstyle}>
+                        <Box className={classes.avatarstyle} />
+                        <Typography className={classes.textstyle}>Family Office</Typography>
                       </Box>
                     </MenuItem>
                     <MenuItem value={4}>
-                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Box sx={avatar_style} />
-                        <Typography sx={{ fontSize: '14px', ml: '12px' }}>Venture Capital Firm</Typography>
+                      <Box className={classes.textboxstyle}>
+                        <Box className={classes.avatarstyle} />
+                        <Typography className={classes.textstyle}>Venture Capital Firm</Typography>
                       </Box>
                     </MenuItem>
                     <MenuItem value={5}>
-                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Box sx={avatar_style} />
-                        <Typography sx={{ fontSize: '14px', ml: '12px' }}>Angel Group</Typography>
+                      <Box className={classes.textboxstyle}>
+                        <Box className={classes.avatarstyle} />
+                        <Typography className={classes.textstyle}>Angel Group</Typography>
                       </Box>
                     </MenuItem>
                   </Select>
@@ -209,7 +216,7 @@ const useStyles = makeStyles(() => ({
   },
   textstyle: {
     fontSize: '14px',
-    ml: '12px'
+    marginLeft: '12px'
   },
   textboxstyle: {
     display: 'flex',
@@ -217,18 +224,6 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const modalstyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  bgcolor: 'background.paper',
-  borderRadius: '5px',
-  boxShadow: 24,
-  maxHeight: '90vh',
-  overflow: 'auto',
-  p: 4
-};
 Capital_Modal.propTypes = {
   capitalOpen: PropTypes.bool.isRequired,
   handleCapitalClose: PropTypes.func.isRequired
