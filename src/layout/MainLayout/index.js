@@ -11,7 +11,7 @@ import Header from './Header';
 import Footer from './Footer';
 // import HorizontalBar from './Drawer/HorizontalBar';
 import Breadcrumbs from 'components/@extended/Breadcrumbs';
-import { FundViewDropdownButton, FundButton, WidgetButton } from 'components/@extended/FundButton';
+import { FundViewDropdownButton, FundButton, WidgetButton } from 'components/FundButton';
 
 import { MenuOrientation } from 'config';
 import navigation from 'menu-items';

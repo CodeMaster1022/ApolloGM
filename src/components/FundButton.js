@@ -10,8 +10,10 @@ import Fund_Modal from 'pages/Modal/fund-modal';
 import Capital_Modal from 'pages/Modal/addCapital-modal';
 import Document_Modal from 'pages/Modal/addDocument-modal';
 import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
 
 export function FundViewDropdownButton(props) {
+  const classes = useStyles();
   const [documentOpen, setDocumentOpen] = useState(false);
   const handleDocumentOpen = () => setDocumentOpen(true);
   const handleDocumentClose = () => setDocumentOpen(false);
@@ -38,22 +40,7 @@ export function FundViewDropdownButton(props) {
 
   return (
     <div>
-      <Button
-        aria-controls="simple-menu"
-        aria-haspopup="true"
-        onClick={handleClick}
-        endIcon={<ArrowDropDownIcon />}
-        sx={{
-          backgroundColor: '#008080',
-          width: '160px',
-          borderRadius: '12px',
-          color: 'white',
-          paddingX: '35px',
-          '&:hover': {
-            backgroundColor: '#005353' // Darken color on hover
-          }
-        }}
-      >
+      <Button onClick={handleClick} endIcon={<ArrowDropDownIcon />} className={classes.styeledButton}>
         {props.title}
       </Button>
       <Menu
@@ -106,26 +93,13 @@ export function FundViewDropdownButton(props) {
 }
 
 export function FundButton(props) {
+  const classes = useStyles();
   const [add, setAddOpen] = useState(false);
   const handleAddOpen = () => setAddOpen(true);
   const handleAddClose = () => setAddOpen(false);
   return (
     <>
-      <Button
-        aria-controls="simple-menu"
-        aria-haspopup="true"
-        onClick={handleAddOpen}
-        sx={{
-          backgroundColor: '#008080',
-          borderRadius: '12px',
-          color: 'white',
-          paddingX: '42px',
-          height: '42px',
-          '&:hover': {
-            backgroundColor: '#005353' // Darken color on hover
-          }
-        }}
-      >
+      <Button onClick={handleAddOpen} endIcon={<ArrowDropDownIcon />} className={classes.styeledButton}>
         {props.title}
       </Button>
       <Fund_Modal fundOpen={add} handleFundClose={handleAddClose} />
@@ -168,3 +142,16 @@ WidgetButton.propTypes = {
 FundViewDropdownButton.propTypes = {
   title: PropTypes.string.isRequired
 };
+const useStyles = makeStyles(() => ({
+  styeledButton: {
+    width: '150px',
+    backgroundColor: '#008080',
+    borderRadius: '12px',
+    color: 'white',
+    paddingX: '50px',
+    height: '42px',
+    '&:hover': {
+      backgroundColor: '#005353' // Darken color on hover
+    }
+  }
+}));

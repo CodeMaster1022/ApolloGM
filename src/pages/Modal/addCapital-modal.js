@@ -1,31 +1,15 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import PropTypes from 'prop-types';
-// import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-// import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-// import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
 import { Modal } from '@mui/material';
 import { Box, Typography, Grid, TextField, InputLabel, Stack } from '@mui/material';
-// import { width } from '@mui/system';
 import { CalendarIcon } from '@mui/x-date-pickers';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-// import { EventBusyTwoTone } from '@mui/icons-material';
 import Avatar from '../../assets/images/icons/avatar.svg';
+import { makeStyles } from '@material-ui/core/styles';
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  bgcolor: 'background.paper',
-  borderRadius: '5px',
-  boxShadow: 24,
-  maxHeight: '90vh',
-  overflow: 'auto',
-  p: 4
-};
 const avatar_style = {
   backgroundImage: `url(${Avatar})`,
   backgroundRepeat: 'no-repeat',
@@ -35,11 +19,7 @@ const avatar_style = {
   height: '30px'
 };
 const Capital_Modal = ({ capitalOpen, handleCapitalClose }) => {
-  // const [type, setType] = useState('');
-  // const handleChangeType = (event) => {
-  //   event.preventDefault();
-  //   setType(event.target.value);
-  // };
+  const classes = useStyles();
   const [contact, setContact] = useState('');
   const handleChangeContact = (event) => {
     event.preventDefault();
@@ -47,7 +27,7 @@ const Capital_Modal = ({ capitalOpen, handleCapitalClose }) => {
   };
   return (
     <Modal open={capitalOpen} onClose={handleCapitalClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-      <Box sx={style}>
+      <Box sx={modalstyle}>
         <Typography id="modal-modal-title" variant="h3" component="h2">
           Add Investor
         </Typography>
@@ -77,7 +57,6 @@ const Capital_Modal = ({ capitalOpen, handleCapitalClose }) => {
                       borderRadius: '12px'
                     }
                   }}
-                  // onChange={(e) => setPassword(e.target.value)}
                 />
               </Stack>
               <Stack spacing={1}>
@@ -96,7 +75,6 @@ const Capital_Modal = ({ capitalOpen, handleCapitalClose }) => {
                       borderRadius: '12px'
                     }
                   }}
-                  // onChange={(e) => setPassword(e.target.value)}
                 />
               </Stack>
             </Grid>
@@ -117,7 +95,6 @@ const Capital_Modal = ({ capitalOpen, handleCapitalClose }) => {
                       borderRadius: '12px'
                     }
                   }}
-                  // onChange={(e) => setPassword(e.target.value)}
                 />
               </Stack>
               <Stack spacing={1}>
@@ -182,10 +159,8 @@ const Capital_Modal = ({ capitalOpen, handleCapitalClose }) => {
                   borderRadius: '12px'
                 }
               }}
-              // onChange={(e) => setPassword(e.target.value)}
             />
           </Stack>
-          {/* ----------------------------------------------This is part that have to fix--------------------------------------------- */}
           <Stack spacing={1}>
             <InputLabel sx={{ paddingTop: '10px' }}>Status</InputLabel>
             <TextField
@@ -202,14 +177,13 @@ const Capital_Modal = ({ capitalOpen, handleCapitalClose }) => {
                   borderRadius: '12px'
                 }
               }}
-              // onChange={(e) => setPassword(e.target.value)}
             />
           </Stack>
           <Box sx={{ paddingTop: '20px', display: 'flex', justifyContent: 'center' }} gap={4}>
-            <Button variant="outlined" color="secondary" sx={{ padding: '6px', borderRadius: '10px', width: '180px', height: '48px' }}>
+            <Button variant="outlined" color="secondary" className={classes.buttonstyle}>
               Discard
             </Button>
-            <Button variant="contained" color="secondary" sx={{ padding: '6px', borderRadius: '10px', width: '180px', height: '48px' }}>
+            <Button variant="contained" color="secondary" className={classes.buttonstyle}>
               Add
             </Button>
           </Box>
@@ -218,7 +192,43 @@ const Capital_Modal = ({ capitalOpen, handleCapitalClose }) => {
     </Modal>
   );
 };
+const useStyles = makeStyles(() => ({
+  avatarstyle: {
+    backgroundImage: `url(${Avatar})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'contain',
+    backgroundPosition: 'center',
+    width: '30px',
+    height: '30px'
+  },
+  buttonstyle: {
+    padding: '6px',
+    borderRadius: '10px',
+    width: '180px',
+    height: '48px'
+  },
+  textstyle: {
+    fontSize: '14px',
+    ml: '12px'
+  },
+  textboxstyle: {
+    display: 'flex',
+    alignItems: 'center'
+  }
+}));
 
+const modalstyle = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  bgcolor: 'background.paper',
+  borderRadius: '5px',
+  boxShadow: 24,
+  maxHeight: '90vh',
+  overflow: 'auto',
+  p: 4
+};
 Capital_Modal.propTypes = {
   capitalOpen: PropTypes.bool.isRequired,
   handleCapitalClose: PropTypes.func.isRequired
