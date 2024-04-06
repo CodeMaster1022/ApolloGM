@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Box, InputAdornment, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ReactApexChart from 'react-apexcharts';
-import { TableFunds, TableCap, TableDocument, TableBench, TablePorto, TableInvest } from 'pages/tables/mui-table/basic';
+import { TableFunds, TableCap, TableDocument, TableBench, TablePorto, TableInvest } from 'pages/tables/FundTable';
 import Vector from '../../assets/images/icons/vector.svg';
 import janny from '../../assets/images/users/janny.png';
 import Select from '@mui/material/Select';

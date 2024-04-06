@@ -1,4 +1,4 @@
-import { TableInvest } from 'pages/tables/mui-table/basic';
+import { TableInvest } from 'pages/tables/FundTable';
 function PcreateData(A, B, C, D, E, F, G, status) {
   return { A, B, C, D, E, F, G, status };
 }

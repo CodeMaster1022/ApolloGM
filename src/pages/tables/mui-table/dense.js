@@ -2,7 +2,7 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 
 // project imports
-import { header } from './basic';
+import { header } from '../FundTable';
 import MainCard from 'components/MainCard';
 import { CSVExport } from 'components/third-party/ReactTable';
 

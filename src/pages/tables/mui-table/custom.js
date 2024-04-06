@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, tableCellClasses } from '@mui/material';
 
 // project imports
-import { header } from './basic';
+import { header } from '../FundTable';
 import MainCard from 'components/MainCard';
 import { CSVExport } from 'components/third-party/ReactTable';
 

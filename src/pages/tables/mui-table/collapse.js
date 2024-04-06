@@ -12,7 +12,7 @@ import { CSVExport } from 'components/third-party/ReactTable';
 
 // assets
 import { UpOutlined, DownOutlined } from '@ant-design/icons';
-import { header } from './basic';
+import { header } from '../FundTable';
 
 // table data
 function createData(name, calories, fat, carbs, protein, price) {

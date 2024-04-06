@@ -33,7 +33,7 @@ const Palette = (mode, presetColor) => {
     greyPrimary = ['#000000', '#141414', '#1e1e1e', '#595959', '#8c8c8c', '#bfbfbf', '#d9d9d9', '#f0f0f0', '#f5f5f5', '#fafafa', '#ffffff'];
     // greyPrimary.reverse();
     greyAscent = ['#fafafa', '#bfbfbf', '#434343', '#1f1f1f'];
-    greyConstant = ['#121212', '#d3d8db'];
+    greyConstant = ['#040309', '#d3d8db'];
   }
   colors.grey = [...greyPrimary, ...greyAscent, ...greyConstant];
 

@@ -6,16 +6,15 @@ import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 import LinearWithLabel from 'components/@extended/progress/LinearWithLabel';
 import MenuItem from '@mui/material/MenuItem';
-import pings from '../../../assets/images/icons/pings.svg';
-// import MainCard from 'components/MainCard';
-import circle from '../../../assets/images/icons/circle.svg';
+import pings from 'assets/images/icons/pings.svg';
+import circle from 'assets/images/icons/circle.svg';
 import { EditOutlined } from '@mui/icons-material';
 import Select from '@mui/material/Select';
 import ActiveIcon from 'assets/images/icons/ButtonState/Active.svg';
 import InactiveIcon from 'assets/images/icons/ButtonState/Inactive.svg';
 import DraftIcon from 'assets/images/icons/ButtonState/Draft.svg';
-// import { CSVExport } from 'components/third-party/ReactTable';
-// ==============================|| MUI TABLE - BASIC ||============================== //
+import { makeStyles } from '@material-ui/core/styles';
+
 export const header = [
   { label: 'Capital Call ID', key: 'ID' },
   { label: 'Date Issued', key: 'Issued' },
@@ -98,6 +97,7 @@ export function TableFunds({ rows }) {
   );
 }
 export function TableCap({ rows }) {
+  const classes = useStyles();
   const theme = useTheme();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -137,25 +137,25 @@ export function TableCap({ rows }) {
             {/* <MainCard content={false} > */}
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
               <TableRow hover key={row.name}>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.name}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.Issued}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.CDate}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.Amount}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.Purpose}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.Sent}
                 </TableCell>
-                <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.Status}
                 </TableCell>
               </TableRow>
@@ -178,6 +178,7 @@ export function TableCap({ rows }) {
 }
 
 export function TableDocument({ rows }) {
+  const classes = useStyles();
   const theme = useTheme();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -217,19 +218,19 @@ export function TableDocument({ rows }) {
             {/* <MainCard content={false} > */}
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
               <TableRow hover key={row.name}>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.Title}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.Date}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.Document}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.Access}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.Description}
                 </TableCell>
               </TableRow>
@@ -252,6 +253,7 @@ export function TableDocument({ rows }) {
 }
 
 export function TableBench({ rows }) {
+  const classes = useStyles();
   const theme = useTheme();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -291,16 +293,16 @@ export function TableBench({ rows }) {
             {/* <MainCard content={false} > */}
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
               <TableRow hover key={row.name}>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.Index}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.Mo}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.TMo}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.OYr}
                 </TableCell>
                 <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
@@ -329,6 +331,7 @@ export function TableBench({ rows }) {
 }
 
 export function TablePorto({ rows }) {
+  const classes = useStyles();
   const theme = useTheme();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -368,22 +371,22 @@ export function TablePorto({ rows }) {
             {/* <MainCard content={false} > */}
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
               <TableRow hover key={row.name}>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.company}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.on}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.currency}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.invest}
                 </TableCell>
-                <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styeledcell}>
                   {row.industry}
                 </TableCell>
-                <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styeledcell}>
                   {row.country}
                 </TableCell>
                 <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
@@ -422,6 +425,7 @@ export function TablePorto({ rows }) {
   );
 }
 export function TableInvest({ rows }) {
+  const classes = useStyles();
   const theme = useTheme();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -467,39 +471,39 @@ export function TableInvest({ rows }) {
             }}
           >
             <TableRow>
-              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
+              <TableCell align="left" className={classes.styledcell}>
+                <Button className={classes.styleIVButton}>
                   <img src={pings} alt="Description" />
                   Apex Grow...
                 </Button>
               </TableCell>
-              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
+              <TableCell align="left" className={classes.styledcell}>
+                <Button className={classes.styleIVButton}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
-              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
+              <TableCell align="left" className={classes.styledcell}>
+                <Button className={classes.styleIVButton}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
-              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
+              <TableCell align="left" className={classes.styledcell}>
+                <Button className={classes.styleIVButton}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
-              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
+              <TableCell align="left" className={classes.styledcell}>
+                <Button className={classes.styleIVButton}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
-              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
+              <TableCell align="left" className={classes.styledcell}>
+                <Button className={classes.styleIVButton}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
-              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
+              <TableCell align="left" className={classes.styledcell}>
+                <Button className={classes.styleIVButton}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
@@ -510,16 +514,16 @@ export function TableInvest({ rows }) {
             {/* <MainCard content={false} > */}
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
               <TableRow hover key={row.name}>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.A}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.B}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.C}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.D}
                 </TableCell>
                 <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
@@ -565,6 +569,7 @@ export function TableInvest({ rows }) {
   );
 }
 export function TableFund({ rows }) {
+  const classes = useStyles();
   const [actionState, setAction] = useState(1);
   const handleChangeAction = (event) => {
     event.preventDefault();
@@ -616,33 +621,33 @@ export function TableFund({ rows }) {
             }}
           >
             <TableRow>
-              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
+              <TableCell align="left">
+                <Button variant="outlined" color="info" className={classes.styleIVButton}>
                   <img src={pings} alt="Description" />
                   GreenTech...
                 </Button>
               </TableCell>
-              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
+              <TableCell align="left">
+                <Button variant="outlined" color="info" className={classes.styleIVButton}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
-              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
+              <TableCell align="left">
+                <Button variant="outlined" color="info" className={classes.styleIVButton}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
-              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
+              <TableCell align="left">
+                <Button variant="outlined" color="info" className={classes.styleIVButton}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
-              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
-                <Button variant="outlined" sx={{ height: '52px', borderRadius: '15px', backgroundColor: 'white' }}>
+              <TableCell align="left">
+                <Button variant="outlined" color="info" className={classes.styleIVButton}>
                   <img src={pings} alt="Description" />
                 </Button>
               </TableCell>
-              <TableCell align="left" sx={{ minWidth: '100px', position: 'sticky !important', fontWeight: 'bold' }}>
+              <TableCell align="left">
                 <Select
                   value={actionState}
                   sx={{
@@ -690,16 +695,16 @@ export function TableFund({ rows }) {
             {/* <MainCard content={false} > */}
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
               <TableRow hover key={row.name}>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.A}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.B}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.C}
                 </TableCell>
-                <TableCell align="left" sx={{ pb: 4, fontSize: '12px' }}>
+                <TableCell align="left" className={classes.styledcell}>
                   {row.D}
                 </TableCell>
                 <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
@@ -744,6 +749,19 @@ export function TableFund({ rows }) {
     </>
   );
 }
+const useStyles = makeStyles(() => ({
+  styeledcell: {
+    minWidth: '100px',
+    position: 'sticky !important',
+    fontWeight: 'bold',
+    pb: 4
+  },
+  styleIVButton: {
+    height: '52px',
+    borderRadius: '15px',
+    backgroundColor: 'white'
+  }
+}));
 TablePorto.propTypes = {
   rows: PropTypes.arrayOf(
     PropTypes.shape({

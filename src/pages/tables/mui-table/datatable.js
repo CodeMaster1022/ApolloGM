@@ -18,7 +18,7 @@ import {
 import { visuallyHidden } from '@mui/utils';
 
 // project imports
-import { header } from './basic';
+import { header } from '../FundTable';
 import MainCard from 'components/MainCard';
 import { CSVExport, TableRowSelection } from 'components/third-party/ReactTable';
 
