@@ -14,27 +14,38 @@ import UserAvatar from 'sections/apps/chat/UserAvatar';
 // import { Tree, TreeNode } from 'react-organizational-chart';
 // import InputAdornment from '@mui/material/InputAdornment';
 import SimpleBar from 'components/third-party/SimpleBar';
-import { Box, Grid, Stack, Typography } from '@mui/material';
+import { Box, Grid, Stack, Typography, useMediaQuery } from '@mui/material';
 import MainCard from 'components/MainCard';
 
 import { dispatch, useSelector } from 'store';
 // import { openDrawer } from 'store/reducers/menu';
 import { openSnackbar } from 'store/reducers/snackbar';
 import { insertChat } from 'store/reducers/chat';
+import { openDrawer } from 'store/reducers/menu';
 
 const Chat = () => {
+  const theme = useTheme();
+
+  const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
+  // const matchDownMD = useMediaQuery(theme.breakpoints.down('md'));
   //setUser
   // const [data, setData] = useState([]);
   const [currentUser, setUser] = useState('');
   const { chats, user } = useSelector((state) => state.chat);
-
+  const [openChatDrawer, setOpenChatDrawer] = useState(true);
   useEffect(() => {
     setUser(user);
   }, [user]);
+  useEffect(() => {
+    dispatch(openDrawer(false));
+  }, []);
+  useEffect(() => {
+    setOpenChatDrawer(!matchDownSM);
+  }, [matchDownSM]);
   //Chat Message
   const [message, setMessage] = useState('');
   const textInput = useRef(null);
-  const theme = useTheme();
+
   const handleOnSend = () => {
     if (message.trim() === '') {
       console.log('This is trime');
@@ -62,6 +73,9 @@ const Chat = () => {
     }
     setMessage('');
   };
+  const handleDrawerOpen = () => {
+    setOpenChatDrawer((prevState) => !prevState);
+  };
 
   const handleEnter = () => {
     console.log(message, 'ddd');
@@ -72,8 +86,8 @@ const Chat = () => {
   }, [message]);
   return (
     <>
-      <Box sx={{ display: 'flex', borderRadius: '12px' }} gap={2}>
-        <ChatDrawer setUser={setUser} />
+      <Box sx={{ display: 'flex', borderRadius: '12px', width: '100%' }} gap={2}>
+        <ChatDrawer openChatDrawer={openChatDrawer} handleDrawerOpen={handleDrawerOpen} setUser={setUser} />
         <SimpleBar
           sx={{
             overflowX: 'hidden',
