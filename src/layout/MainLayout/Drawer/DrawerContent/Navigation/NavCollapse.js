@@ -210,7 +210,7 @@ const NavCollapse = ({ menu, level, parentId, setSelectedItems, selectedItems, s
   const isSelected = selected === menu.id;
   const borderIcon = level === 1 ? <BorderOutlined style={{ fontSize: '1rem' }} /> : false;
   const Icon = menu.icon;
-  const menuIcon = menu.icon ? <Icon style={{ fontSize: drawerOpen ? '1rem' : '1.25rem' }} /> : borderIcon;
+  const menuIcon = menu.icon ? <Icon style={{ fontSize: drawerOpen ? '1.25rem' : '1.25rem' }} /> : borderIcon;
   //com
   const textColor = theme.palette.mode === ThemeMode.DARK ? 'grey.400' : 'white';
   const iconSelectedColor = theme.palette.mode === ThemeMode.DARK && drawerOpen ? 'white' : 'white';
