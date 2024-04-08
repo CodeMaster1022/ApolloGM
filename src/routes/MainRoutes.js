@@ -21,10 +21,12 @@ const Dashboard = Loadable(lazy(() => import('pages/Dashboard/dashboard')));
 
 //Funds
 const Funds = Loadable(lazy(() => import('pages/funds/Funds')));
-const Funds_View = Loadable(lazy(() => import('pages/funds/fund-view')));
-const Invest = Loadable(lazy(() => import('pages/funds/Invest')));
+const FundsView = Loadable(lazy(() => import('pages/funds/fund-view')));
+const FundList = Loadable(lazy(() => import('pages/funds/fund-list')));
 // render - sample page
 const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')));
+//Investors
+const Investor = Loadable(lazy(() => import('pages/Investors/investor')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -49,18 +51,32 @@ const MainRoutes = {
         },
         {
           path: 'funds',
+          // element: <Funds />,
           children: [
             {
+              path: 'fund-list',
+              element: <FundList />
+            },
+            {
               path: 'fund-view',
-              element: <Funds_View />
+              element: <FundsView />
             },
             {
               path: '',
               element: <Funds />
+            }
+          ]
+        },
+        {
+          path: 'investors',
+          children: [
+            {
+              path: 'fund-view',
+              element: <FundsView />
             },
             {
-              path: 'invested',
-              element: <Invest />
+              path: '',
+              element: <Investor />
             }
           ]
         },

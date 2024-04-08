@@ -18,7 +18,7 @@ import { Stack, Grid } from '@mui/material';
 const LogoMain = ({ reverse }) => {
   const theme = useTheme();
   return (
-    <Grid sx={{ marginTop: '20px', display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+    <Grid sx={{ marginTop: '10px', display: 'flex', justifyContent: 'space-between', width: '100%' }}>
       <Stack sx={{ paddingY: '10px' }}>
         <LogoIcon />
       </Stack>

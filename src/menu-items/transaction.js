@@ -19,22 +19,22 @@ const Transaction_Item = {
     {
       id: 'Transaction',
       title: <FormattedMessage id="Transactions" />,
-      type: 'collapse',
-      icon: icons.CreditCardOutlined,
-      children: [
-        {
-          id: 'Transaction-1',
-          title: <FormattedMessage id="Transaction-1" />,
-          type: 'item',
-          url: '/transaction/transaction'
-        },
-        {
-          id: 'Transaction-2',
-          title: <FormattedMessage id="Transaction-2" />,
-          type: 'item',
-          url: '#'
-        }
-      ]
+      type: 'item',
+      icon: icons.CreditCardOutlined
+      // children: [
+      //   {
+      //     id: 'Transaction-1',
+      //     title: <FormattedMessage id="Transaction-1" />,
+      //     type: 'item',
+      //     url: '/transaction/transaction'
+      //   },
+      //   {
+      //     id: 'Transaction-2',
+      //     title: <FormattedMessage id="Transaction-2" />,
+      //     type: 'item',
+      //     url: '#'
+      //   }
+      // ]
     }
   ]
 };

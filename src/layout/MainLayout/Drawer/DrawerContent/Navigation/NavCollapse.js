@@ -213,7 +213,7 @@ const NavCollapse = ({ menu, level, parentId, setSelectedItems, selectedItems, s
   const menuIcon = menu.icon ? <Icon style={{ fontSize: drawerOpen ? '1rem' : '1.25rem' }} /> : borderIcon;
   //com
   const textColor = theme.palette.mode === ThemeMode.DARK ? 'grey.400' : 'white';
-  const iconSelectedColor = theme.palette.mode === ThemeMode.DARK && drawerOpen ? theme.palette.text.primary : 'white';
+  const iconSelectedColor = theme.palette.mode === ThemeMode.DARK && drawerOpen ? 'white' : 'white';
   const popperId = miniMenuOpened ? `collapse-pop-${menu.id}` : undefined;
   const FlexBox = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' };
 
@@ -257,7 +257,7 @@ const NavCollapse = ({ menu, level, parentId, setSelectedItems, selectedItems, s
                 onClick={handlerIconLink}
                 sx={{
                   minWidth: 28,
-                  color: selected === menu.id ? 'primary.main' : textColor,
+                  color: selected === menu.id ? 'white' : textColor,
                   ...(!drawerOpen && {
                     borderRadius: 1.5,
                     width: 36,
@@ -270,9 +270,9 @@ const NavCollapse = ({ menu, level, parentId, setSelectedItems, selectedItems, s
                   }),
                   ...(!drawerOpen &&
                     selected === menu.id && {
-                      bgcolor: theme.palette.mode === ThemeMode.DARK ? 'primary.900' : 'primary.lighter',
+                      bgcolor: theme.palette.mode === ThemeMode.DARK ? 'white' : 'primary.lighter',
                       '&:hover': {
-                        bgcolor: theme.palette.mode === ThemeMode.DARK ? 'primary.darker' : 'primary.lighter'
+                        bgcolor: theme.palette.mode === ThemeMode.DARK ? 'white' : 'primary.lighter'
                       }
                     })
                 }}
@@ -283,7 +283,7 @@ const NavCollapse = ({ menu, level, parentId, setSelectedItems, selectedItems, s
             {(drawerOpen || (!drawerOpen && level !== 1)) && (
               <ListItemText
                 primary={
-                  <Typography variant="h6" color={selected === menu.id ? 'primary' : textColor}>
+                  <Typography variant="h6" color={selected === menu.id ? 'white' : textColor}>
                     &nbsp;&nbsp;&nbsp;{menu.title}
                   </Typography>
                 }

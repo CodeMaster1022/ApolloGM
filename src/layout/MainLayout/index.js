@@ -73,11 +73,19 @@ const MainLayout = () => {
             )}
             {currentLocation.pathname === '/funds' && (
               <>
-                {/* <Breadcrumbs navigation={navigation} title titleBottom card={false} divider={false} /> */}
                 <h2>Funds</h2>
                 <FundButton title="Add Fund" />
+
+                {/* <Breadcrumbs navigation={navigation} title titleBottom card={false} divider={false} /> */}
               </>
             )}
+            {/* {currentLocation.pathname === '/investors' && (
+              <Grid sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+                <Typography sx={{ marginBottom: '17px', fontSize: '24px' }}>Performance by Funds</Typography>
+                <InvestorHeader />
+                <FundViewDropdownButton title="actions" />
+              </Grid>
+            )} */}
           </Box>
           <Outlet />
           <Footer />

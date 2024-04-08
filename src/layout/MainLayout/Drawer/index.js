@@ -46,7 +46,7 @@ const MainDrawer = ({ window }) => {
           ModalProps={{ keepMounted: true }}
           sx={{
             display: { xs: 'block', lg: 'none' },
-            marginTop: '50px',
+            marginTop: '20px',
             '& .MuiDrawer-paper': {
               backgroundColor: '#003333',
               boxSizing: 'border-box',

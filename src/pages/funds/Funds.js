@@ -1,4 +1,5 @@
 import { TableFund } from 'pages/tables/FundTable';
+
 function PcreateData(A, B, C, D, E, status) {
   return { A, B, C, D, E, status };
 }

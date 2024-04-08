@@ -38,6 +38,9 @@ const Document_Modal = ({ documentOpen, handleDocumentClose }) => {
     event.preventDefault();
     setContact(event.target.value);
   };
+  const ModalClose = () => {
+    handleDocumentClose();
+  };
   return (
     <Modal open={documentOpen} onClose={handleDocumentClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
       <Box sx={modalstyle}>
@@ -206,10 +209,10 @@ const Document_Modal = ({ documentOpen, handleDocumentClose }) => {
             />
           </Stack>
           <Box sx={{ paddingTop: '20px', display: 'flex', justifyContent: 'center' }} gap={4}>
-            <Button variant="outlined" color="secondary" className={classes.buttonstyle}>
+            <Button variant="outlined" color="secondary" className={classes.buttonstyle} onClick={handleDocumentClose}>
               Discard
             </Button>
-            <Button variant="contained" color="secondary" className={classes.buttonstyle}>
+            <Button variant="contained" color="secondary" className={classes.buttonstyle} onClick={ModalClose}>
               Add
             </Button>
           </Box>

@@ -1,12 +1,12 @@
 // project import
 // import other from './other';
 // import widget from './widget';
-import Dashboard_Item from './dashboard-Item';
-import Funds_Item from './fund-Item';
+import Dashboard_Item from './dashboard';
+import Funds_Item from './funds';
 import Administration_Item from './administration';
 import Capital_Item from './capital';
 import Document_Item from './document';
-import Investor_Item from './investor-item';
+import Investor_Item from './investors';
 import Portofolio_Item from './portofolio';
 import Note_Item from './note';
 import Research_Item from './research';

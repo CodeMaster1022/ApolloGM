@@ -14,7 +14,7 @@ import ActiveIcon from 'assets/images/icons/ButtonState/Active.svg';
 import InactiveIcon from 'assets/images/icons/ButtonState/Inactive.svg';
 import DraftIcon from 'assets/images/icons/ButtonState/Draft.svg';
 import { makeStyles } from '@material-ui/core/styles';
-
+import { Link } from 'react-router-dom';
 export const header = [
   { label: 'Capital Call ID', key: 'ID' },
   { label: 'Date Issued', key: 'Issued' },
@@ -67,9 +67,17 @@ const columns_Fund = [
   { id: 'Status', label: 'Action', minWidth: 100 }
 ];
 const columns_Invest = [
+  { id: 'name', label: 'Name', minWidth: 100 },
+  { id: 'type', label: 'Type', minWidth: 100 },
+  { id: 'amount', label: 'Committed amount', minWidth: 100 },
+  { id: 'cap', label: 'Capital paid-In', minWidth: 100 },
+  { id: 'unfund', label: 'Unfunded Commitment', minWidth: 100 },
+  { id: 'contact', label: 'Contact', minWidth: 100 }
+];
+const columns_List = [
   { id: 'A', label: 'Name', minWidth: 100 },
   { id: 'B', label: 'Size', minWidth: 100 },
-  { id: 'C', label: 'Name', minWidth: 100 },
+  { id: 'C', label: 'GP Name', minWidth: 100 },
   { id: 'D', label: 'Investment Amount', minWidth: 100 },
   { id: 'E', label: 'Net IRR', minWidth: 100 },
   { id: 'F', label: 'Investment Date', minWidth: 100 },
@@ -83,10 +91,10 @@ export function TableFunds({ rows }) {
         <TableBody>
           {rows.map((row) => (
             <TableRow hover key={row.name}>
-              <TableCell sx={{ pl: 3, pr: 3, fontSize: '18px', fontWeight: 'bold' }} component="th" scope="row">
+              <TableCell sx={{ pl: 3, pr: 3, fontSize: '14px', fontWeight: 'bold' }} component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="left" sx={{ pl: 3, pr: 3, fontSize: '18px' }}>
+              <TableCell align="left" sx={{ pl: 3, pr: 3, fontSize: '12px' }}>
                 {row.content}
               </TableCell>
             </TableRow>
@@ -157,6 +165,83 @@ export function TableCap({ rows }) {
                 </TableCell>
                 <TableCell align="left" className={classes.styledcell}>
                   {row.Status}
+                </TableCell>
+              </TableRow>
+            ))}
+            {/* </MainCard> */}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <TablePagination
+        rowsPerPageOptions={[10, 25, 100]}
+        component="div"
+        count={rows.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+      />
+    </>
+  );
+}
+export function TableInvest({ rows }) {
+  const classes = useStyles();
+  const theme = useTheme();
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event?.target?.value);
+    setPage(0);
+  };
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+  return (
+    <>
+      <TableContainer sx={{ maxHeight: 430, marginTop: '40px' }}>
+        <Table sx={{ minWidth: 350, width: '100%' }} stickyHeader aria-label="sticky table">
+          <TableHead
+            sx={{
+              '& th': {
+                borderTop: `1px solid ${theme.palette.divider}`,
+                borderBottom: `2px solid ${theme.palette.divider} !important`
+              }
+            }}
+          >
+            <TableRow>
+              {columns_Invest.map((column) => (
+                <TableCell
+                  sx={{ minWidth: column.minWidth, position: 'sticky !important', fontWeight: 'bold' }}
+                  key={column.id}
+                  align={column.align}
+                >
+                  {column.label}
+                </TableCell>
+              ))}
+            </TableRow>
+          </TableHead>
+          <TableBody sx={{ color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white'), borderRadius: '5px' }}>
+            {/* <MainCard content={false} > */}
+            {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
+              <TableRow hover key={row.name}>
+                <TableCell align="left" className={classes.styledcell}>
+                  {row.name}
+                </TableCell>
+                <TableCell align="left" className={classes.styledcell}>
+                  {row.type}
+                </TableCell>
+                <TableCell align="left" className={classes.styledcell}>
+                  {row.amount}
+                </TableCell>
+                <TableCell align="left" className={classes.styledcell}>
+                  {row.cap}
+                </TableCell>
+                <TableCell align="left" className={classes.styledcell}>
+                  {row.unfund}
+                </TableCell>
+                <TableCell align="left" className={classes.styledcell}>
+                  {row.contact}
                 </TableCell>
               </TableRow>
             ))}
@@ -424,16 +509,21 @@ export function TablePorto({ rows }) {
     </>
   );
 }
-export function TableInvest({ rows }) {
+export function TableFundList({ rows }) {
   const classes = useStyles();
   const theme = useTheme();
+  const [filtername, setFilter] = useState(null);
+  const handlefilter = (columnName) => {
+    setFilter(columnName);
+  };
+
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(+event?.target?.value);
     setPage(0);
   };
-
+  const filterData = rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -451,7 +541,7 @@ export function TableInvest({ rows }) {
             }}
           >
             <TableRow>
-              {columns_Invest.map((column) => (
+              {columns_List.map((column) => (
                 <TableCell
                   sx={{ minWidth: column.minWidth, position: 'sticky !important', fontWeight: 'bold' }}
                   key={column.id}
@@ -472,7 +562,7 @@ export function TableInvest({ rows }) {
           >
             <TableRow>
               <TableCell align="left" className={classes.styledcell}>
-                <Button className={classes.styleIVButton}>
+                <Button className={classes.styleIVButton} onClick={() => handlefilter('Apex Grow')}>
                   <img src={pings} alt="Description" />
                   Apex Grow...
                 </Button>
@@ -510,48 +600,52 @@ export function TableInvest({ rows }) {
               <TableCell align="left" sx={{ minWidth: '50px', position: 'sticky !important', fontWeight: 'bold' }}></TableCell>
             </TableRow>
           </TableHead>
-          <TableBody sx={{ color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white'), borderRadius: '5px' }}>
+          <TableBody sx={{ color: (theme) => (theme.palette.mode === 'dark' ? '' : 'white'), borderRadius: '5px' }}>
             {/* <MainCard content={false} > */}
-            {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
-              <TableRow hover key={row.name}>
-                <TableCell align="left" className={classes.styledcell}>
-                  {row.A}
-                </TableCell>
-                <TableCell align="left" className={classes.styledcell}>
-                  {row.B}
-                </TableCell>
-                <TableCell align="left" className={classes.styledcell}>
-                  {row.C}
-                </TableCell>
-                <TableCell align="left" className={classes.styledcell}>
-                  {row.D}
-                </TableCell>
-                <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
-                  {row.E}
-                </TableCell>
-                <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
-                  {row.F}
-                </TableCell>
-                <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
-                  {row.G}
-                </TableCell>
-                <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
-                  {row.status == true ? (
-                    <>
-                      <Button color="info">
-                        <EditOutlined style={{ fontSize: '1.3rem' }} />
-                      </Button>
-                    </>
-                  ) : (
-                    <>
-                      <Button>
-                        <EditOutlined style={{ fontSize: '1.3rem' }} />
-                      </Button>
-                    </>
-                  )}
-                </TableCell>
-              </TableRow>
-            ))}
+            {filterData
+              .filter((row) => (filtername ? row[filter] : true))
+              .map((row) => (
+                <TableRow hover key={row.name}>
+                  <TableCell align="left" className={classes.styledcell}>
+                    <Link to={'/funds/fund-view'}>
+                      <Typography sx={{ color: (theme) => (theme.palette.mode === 'dark' ? 'white' : '#008080') }}>{row.A}</Typography>
+                    </Link>
+                  </TableCell>
+                  <TableCell align="left" className={classes.styledcell}>
+                    {row.B}
+                  </TableCell>
+                  <TableCell align="left" className={classes.styledcell}>
+                    {row.C}
+                  </TableCell>
+                  <TableCell align="left" className={classes.styledcell}>
+                    {row.D}
+                  </TableCell>
+                  <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
+                    {row.E}
+                  </TableCell>
+                  <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
+                    {row.F}
+                  </TableCell>
+                  <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
+                    {row.G}
+                  </TableCell>
+                  <TableCell align="left" sx={{ pl: 2, pr: 2, fontSize: '12px' }}>
+                    {row.status == true ? (
+                      <>
+                        <Button color="info">
+                          <EditOutlined style={{ fontSize: '1.3rem' }} />
+                        </Button>
+                      </>
+                    ) : (
+                      <>
+                        <Button>
+                          <EditOutlined style={{ fontSize: '1.3rem' }} />
+                        </Button>
+                      </>
+                    )}
+                  </TableCell>
+                </TableRow>
+              ))}
             {/* </MainCard> */}
           </TableBody>
         </Table>
@@ -696,7 +790,9 @@ export function TableFund({ rows }) {
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
               <TableRow hover key={row.name}>
                 <TableCell align="left" className={classes.styledcell}>
-                  {row.A}
+                  <Link to={'/funds/fund-list'}>
+                    <Typography sx={{ color: (theme) => (theme.palette.mode === 'dark' ? 'white' : '#008080') }}>{row.A}</Typography>
+                  </Link>
                 </TableCell>
                 <TableCell align="left" className={classes.styledcell}>
                   {row.B}
@@ -759,7 +855,10 @@ const useStyles = makeStyles(() => ({
   styleIVButton: {
     height: '52px',
     borderRadius: '15px',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    '&:hover': {
+      backgroundColor: 'info'
+    }
   }
 }));
 TablePorto.propTypes = {
@@ -836,11 +935,23 @@ TableFunds.propTypes = {
     })
   ).isRequired
 };
-TableInvest.propTypes = {
+TableFundList.propTypes = {
   rows: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
       content: PropTypes.string
+    })
+  ).isRequired
+};
+TableInvest.propTypes = {
+  rows: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      type: PropTypes.string,
+      amount: PropTypes.string,
+      cap: PropTypes.string,
+      unfund: PropTypes.string,
+      contact: PropTypes.string
     })
   ).isRequired
 };

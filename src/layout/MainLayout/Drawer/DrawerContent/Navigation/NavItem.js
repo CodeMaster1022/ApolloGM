@@ -35,7 +35,7 @@ const NavItem = ({ item, level }) => {
   }
 
   const Icon = item.icon;
-  const itemIcon = item.icon ? <Icon style={{ fontSize: drawerOpen ? '1rem' : '1.25rem' }} /> : false;
+  const itemIcon = item.icon ? <Icon style={{ fontSize: drawerOpen ? '1.25rem' : '1rem' }} /> : false;
 
   const isSelected = openItem.findIndex((id) => id === item.id) > -1;
 
@@ -81,9 +81,9 @@ const NavItem = ({ item, level }) => {
                 bgcolor: theme.palette.mode === ThemeMode.DARK ? 'divider' : '#008080'
               },
               '&.Mui-selected': {
-                bgcolor: theme.palette.mode === ThemeMode.DARK ? 'divider' : 'white',
+                // bgcolor: theme.palette.mode === ThemeMode.DARK ? 'divider' : 'white',
                 borderRight: `2px solid ${theme.palette.primary.main}`,
-                color: iconSelectedColor,
+                // color: iconSelectedColor,
                 '&:hover': {
                   color: iconSelectedColor,
                   bgcolor: theme.palette.mode === ThemeMode.DARK ? 'divider' : '#008080'
@@ -123,7 +123,7 @@ const NavItem = ({ item, level }) => {
                 }),
                 ...(!drawerOpen &&
                   isSelected && {
-                    bgcolor: theme.palette.mode === ThemeMode.DARK ? 'primary.900' : 'white',
+                    // bgcolor: theme.palette.mode === ThemeMode.DARK ? 'primary.900' : 'white',
                     '&:hover': {
                       bgcolor: theme.palette.mode === ThemeMode.DARK ? 'primary.darker' : '#FFFFFF'
                     }

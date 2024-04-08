@@ -39,6 +39,9 @@ const Investor_Modal = ({ investorOpen, handleInvestorClose }) => {
     event.preventDefault();
     setContact(event.target.value);
   };
+  const ModalClose = () => {
+    handleInvestorClose();
+  };
   return (
     <Modal open={investorOpen} onClose={handleInvestorClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
       <Box sx={modalstyle}>
@@ -225,10 +228,10 @@ const Investor_Modal = ({ investorOpen, handleInvestorClose }) => {
             </Grid>
           </Grid>
           <Box sx={{ paddingTop: '20px', display: 'flex', justifyContent: 'center' }} gap={4}>
-            <Button variant="outlined" color="secondary" className={classes.buttonstyle}>
+            <Button variant="outlined" color="secondary" className={classes.buttonstyle} onClick={handleInvestorClose}>
               Discard
             </Button>
-            <Button variant="contained" color="secondary" className={classes.buttonstyle}>
+            <Button variant="contained" color="secondary" className={classes.buttonstyle} onClick={ModalClose}>
               Add
             </Button>
           </Box>

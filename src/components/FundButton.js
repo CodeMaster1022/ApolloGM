@@ -99,7 +99,7 @@ export function FundButton(props) {
   const handleAddClose = () => setAddOpen(false);
   return (
     <>
-      <Button onClick={handleAddOpen} endIcon={<ArrowDropDownIcon />} className={classes.styeledButton}>
+      <Button onClick={handleAddOpen} className={classes.styeledButton}>
         {props.title}
       </Button>
       <Fund_Modal fundOpen={add} handleFundClose={handleAddClose} />

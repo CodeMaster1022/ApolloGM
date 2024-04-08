@@ -15,22 +15,22 @@ const Document_Item = {
     {
       id: 'document',
       title: <FormattedMessage id="Documents" />,
-      type: 'collapse',
-      icon: icons.FileCopy,
-      children: [
-        {
-          id: 'document-1',
-          title: <FormattedMessage id="Document-1" />,
-          type: 'item',
-          url: '/document/fund-view'
-        },
-        {
-          id: 'document-2',
-          title: <FormattedMessage id="Document-2" />,
-          type: 'item',
-          url: '#'
-        }
-      ]
+      type: 'item',
+      icon: icons.FileCopy
+      // children: [
+      //   {
+      //     id: 'document-1',
+      //     title: <FormattedMessage id="Document-1" />,
+      //     type: 'item',
+      //     url: '/document/fund-view'
+      //   },
+      //   {
+      //     id: 'document-2',
+      //     title: <FormattedMessage id="Document-2" />,
+      //     type: 'item',
+      //     url: '#'
+      //   }
+      // ]
     }
   ]
 };

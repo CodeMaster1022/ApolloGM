@@ -10,6 +10,7 @@ import Select from '@mui/material/Select';
 import Avatar from '../../assets/images/icons/avatar.svg';
 import { makeStyles } from '@material-ui/core/styles';
 import { useTheme } from '@mui/material/styles';
+
 const Capital_Modal = ({ capitalOpen, handleCapitalClose }) => {
   const classes = useStyles();
   const theme = useTheme();
@@ -31,6 +32,9 @@ const Capital_Modal = ({ capitalOpen, handleCapitalClose }) => {
   const handleChangeContact = (event) => {
     event.preventDefault();
     setContact(event.target.value);
+  };
+  const ModalClose = () => {
+    handleCapitalClose();
   };
   return (
     <Modal open={capitalOpen} onClose={handleCapitalClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
@@ -187,10 +191,10 @@ const Capital_Modal = ({ capitalOpen, handleCapitalClose }) => {
             />
           </Stack>
           <Box sx={{ paddingTop: '20px', display: 'flex', justifyContent: 'center' }} gap={4}>
-            <Button variant="outlined" color="secondary" className={classes.buttonstyle}>
+            <Button variant="outlined" color="secondary" className={classes.buttonstyle} onClick={handleCapitalClose}>
               Discard
             </Button>
-            <Button variant="contained" color="secondary" className={classes.buttonstyle}>
+            <Button variant="contained" color="secondary" className={classes.buttonstyle} onClick={ModalClose}>
               Add
             </Button>
           </Box>

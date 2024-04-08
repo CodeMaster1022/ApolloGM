@@ -18,13 +18,16 @@ import Button from '@mui/material/Button';
 import PortoCard from 'components/cards/CustomCard/pfrofil-card';
 import Chat from 'pages/apps/chat';
 import { PlotOptionChart, CheckboxButtonGroup } from 'sections/Charts/Funds/Charts';
-
 function createData(name, content) {
   return { name, content };
 }
 //Capital Data
 function CcreateData(name, Issued, CDate, Amount, Purpose, Sent, Status) {
   return { name, Issued, CDate, Amount, Purpose, Sent, Status };
+}
+//Investor Data
+function IcreateData(name, type, amount, cap, unfund, contact) {
+  return { name, type, amount, cap, unfund, contact };
 }
 //Document Data
 function DcreateData(Title, Date, Document, Access, Description) {
@@ -36,10 +39,6 @@ function BcreateData(Index, Mo, TMo, OYr, TYr, Result) {
 //Portfolio Data
 function PcreateData(company, on, currency, invest, industry, country, status) {
   return { company, on, currency, invest, industry, country, status };
-}
-//Invest Table
-function IcreateData(A, B, C, D, E, F, G, status) {
-  return { A, B, C, D, E, F, G, status };
 }
 //Card data
 const cardDatas = [
@@ -153,132 +152,6 @@ const Crows = [
     'To finance Series A investment in FinTech Innovations Inc.',
     '45 investor notices sent',
     'Received $5,000,000 (100% of called capital)'
-  ),
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
-  ),
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
-  ),
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
-  ),
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
-  ),
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
-  ),
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
-  ),
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
-  ),
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
-  ),
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
-  ),
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
-  ),
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
-  ),
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
-  ),
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
-  ),
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
   )
 ];
 const Brows = [
@@ -320,39 +193,43 @@ const Drows = [
   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.')
 ];
 //Invest Table
 const Invest_rows = [
-  IcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true),
-  IcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', '01/15/2027', true)
+  IcreateData(
+    'Oaktree Capital Management',
+    'Institutional Investor',
+    '$20,000,000',
+    '$15,000,000',
+    '$5,000,000',
+    'Jane Doe, Portfolio Manager'
+  ),
+  IcreateData(
+    'Oaktree Capital Management',
+    'Institutional Investor',
+    '$20,000,000',
+    '$15,000,000',
+    '$5,000,000',
+    'Jane Doe, Portfolio Manager'
+  ),
+  IcreateData(
+    'Oaktree Capital Management',
+    'Institutional Investor',
+    '$20,000,000',
+    '$15,000,000',
+    '$5,000,000',
+    'Jane Doe, Portfolio Manager'
+  ),
+  IcreateData(
+    'Oaktree Capital Management',
+    'Institutional Investor',
+    '$20,000,000',
+    '$15,000,000',
+    '$5,000,000',
+    'Jane Doe, Portfolio Manager'
+  )
 ];
-//Financial Table
-// const Frows = [
-//   createData('Status', 'Investing'),
-//   createData('20.00 Billion', '20.00 Billion'),
-//   createData('Amount Raised', '22.30 Billion'),
-//   createData('Amount Invested', '12.77 Billion'),
-//   createData('Paid-In-Capital', '57.30%'),
-//   createData('Drv Powder', '9.60 Billion'),
-//   createData('Unrealised Value', '13.40 Billion'),
-//   createData('Total Investments', '45')
-// ];
-// const Frows_R = [
-//   createData('Active Investments', '45'),
-//   createData('value Proposition', ' '),
-//   createData('Management Fee', 'd '),
-//   createData('Performance Fee', 'd '),
-//   createData('Transaction Fee', ' d'),
-//   createData('Preferred Return', 'd '),
-//   createData('Carried Interest', 'd '),
-//   createData('Catch up Threshold', 'd ')
-// ];
-//Portfolio Table
 const Prows = [
   PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
   PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
@@ -417,6 +294,7 @@ const Fund_View = () => {
   return (
     <div>
       <MainCard>
+        {/* <BasicTable /> */}
         <Typography variant="body2" sx={{ fontSize: '20px', paddingBottom: '10px', fontWeight: 'bold' }}>
           Global Tech Ventures III
         </Typography>
@@ -455,7 +333,7 @@ const Fund_View = () => {
                 backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1E1E1E' : 'white')
               }}
             >
-              <Typography variant="body1" fontSize={22} sx={{ color: (theme) => (theme.palette.mode === 'dark' ? 'white' : '#7E8487') }}>
+              <Typography variant="body1" fontSize={16} sx={{ color: (theme) => (theme.palette.mode === 'dark' ? 'white' : '#7E8487') }}>
                 Fund Detail
               </Typography>
             </AccordionSummary>
@@ -487,7 +365,7 @@ const Fund_View = () => {
                 backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1E1E1E' : 'white')
               }}
             >
-              <Typography variant="body1" fontSize={22} sx={{ Color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white') }}>
+              <Typography variant="body1" fontSize={16} sx={{ Color: (theme) => (theme.palette.mode === 'dark' ? 'white' : '#7E8487') }}>
                 Financial Terms
               </Typography>
             </AccordionSummary>
@@ -519,7 +397,7 @@ const Fund_View = () => {
                 backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1E1E1E' : 'white')
               }}
             >
-              <Typography variant="body1" fontSize={22} sx={{ Color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white') }}>
+              <Typography variant="body1" fontSize={16} sx={{ Color: (theme) => (theme.palette.mode === 'dark' ? 'white' : '#7E8487') }}>
                 Performance
               </Typography>
             </AccordionSummary>
@@ -551,7 +429,7 @@ const Fund_View = () => {
                 backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1E1E1E' : 'white')
               }}
             >
-              <Typography variant="body1" fontSize={22} sx={{ Color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white') }}>
+              <Typography variant="body1" fontSize={16} sx={{ Color: (theme) => (theme.palette.mode === 'dark' ? 'white' : '#7E8487') }}>
                 Subscriptions
               </Typography>
             </AccordionSummary>
@@ -583,39 +461,7 @@ const Fund_View = () => {
                 backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1E1E1E' : 'white')
               }}
             >
-              <Typography variant="body1" fontSize={22} sx={{ Color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white') }}>
-                Subscriptions
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails sx={{ border: 'white' }}>
-              <Grid item xs={12}>
-                <Grid container spacing={0} alignItems="center">
-                  <Grid item xs={12} sm={6}>
-                    <Stack spacing={0}>
-                      <TableFunds rows={rows} />
-                    </Stack>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Stack spacing={0} className={classes.tableWithBorder}>
-                      <TableFunds rows={rows_R} />
-                    </Stack>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </AccordionDetails>
-          </Accordion>
-          <Box sx={{ paddingTop: '32px' }} />
-          <Accordion sx={{ borderRadius: '12px', border: 'white' }}>
-            <AccordionSummary
-              aria-controls="panel1d-content"
-              id="panel1d-header"
-              sx={{
-                borderRadius: '12px',
-                paddingY: '20px',
-                backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1E1E1E' : 'white')
-              }}
-            >
-              <Typography variant="body1" fontSize={22} sx={{ color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : 'white') }}>
+              <Typography variant="body1" fontSize={16} sx={{ color: (theme) => (theme.palette.mode === 'dark' ? 'white' : '#7E8487') }}>
                 Holdings
               </Typography>
             </AccordionSummary>

@@ -35,6 +35,9 @@ const Portfolio_Modal = ({ portfolioOpen, handlePortfolioClose }) => {
     event.preventDefault();
     setContact(event.target.value);
   };
+  const ModalClose = () => {
+    handlePortfolioClose();
+  };
   return (
     <Modal
       open={portfolioOpen}
@@ -225,10 +228,10 @@ const Portfolio_Modal = ({ portfolioOpen, handlePortfolioClose }) => {
             />
           </Stack>
           <Box sx={{ paddingTop: '20px', display: 'flex', justifyContent: 'center' }} gap={4}>
-            <Button variant="outlined" color="secondary" className={classes.buttonstyle}>
+            <Button variant="outlined" color="secondary" className={classes.buttonstyle} onClick={handlePortfolioClose}>
               Discard
             </Button>
-            <Button variant="contained" color="secondary" className={classes.buttonstyle}>
+            <Button variant="contained" color="secondary" className={classes.buttonstyle} onClick={ModalClose}>
               Add
             </Button>
           </Box>

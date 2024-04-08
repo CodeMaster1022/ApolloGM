@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-
+import { Link } from 'react-router-dom';
 // material-ui
 import { useTheme } from '@mui/material/styles';
 import {
@@ -19,15 +19,17 @@ import {
   Typography,
   useMediaQuery
 } from '@mui/material';
-
+import Button from '@mui/material/Button';
 // project import
 import MainCard from 'components/MainCard';
 import IconButton from 'components/@extended/IconButton';
 import Transitions from 'components/@extended/Transitions';
 import { ThemeMode } from 'config';
+import annul from 'assets/images/notification/anul.svg';
+import moon from 'assets/images/notification/moon.svg';
 
 // assets
-import { BellOutlined, CheckCircleOutlined, GiftOutlined, MessageOutlined, SettingOutlined } from '@ant-design/icons';
+import { BellOutlined, CheckCircleOutlined } from '@ant-design/icons';
 
 // sx styles
 const avatarSX = {
@@ -109,7 +111,7 @@ const Notification = () => {
               sx={{
                 boxShadow: theme.customShadows.z1,
                 width: '100%',
-                minWidth: 285,
+                minWidth: 300,
                 maxWidth: 420,
                 [theme.breakpoints.down('md')]: {
                   maxWidth: 285
@@ -154,28 +156,23 @@ const Notification = () => {
                             bgcolor: 'success.lighter'
                           }}
                         >
-                          <GiftOutlined />
+                          {/* <GiftOutlined /> */}
+                          <img src={moon} alt="moon" />
                         </Avatar>
                       </ListItemAvatar>
-                      <ListItemText
-                        primary={
-                          <Typography variant="h6">
-                            It&apos;s{' '}
-                            <Typography component="span" variant="subtitle1">
-                              Cristina danny&apos;s
-                            </Typography>{' '}
-                            birthday today.
-                          </Typography>
-                        }
-                        secondary="2 min ago"
-                      />
+                      <ListItemText primary={<Typography variant="h6">Complete Profile Update</Typography>} />
                       <ListItemSecondaryAction>
                         <Typography variant="caption" noWrap>
                           3:00 AM
                         </Typography>
                       </ListItemSecondaryAction>
                     </ListItemButton>
-                    <Divider />
+                    <Box sx={{ padding: '20px' }}>
+                      <Button variant="contained" color="secondary" sx={{ padding: '10px', borderRadius: '10px' }}>
+                        Take Actions
+                      </Button>
+                    </Box>
+                    <Divider>Actions to Be Taken</Divider>
                     <ListItemButton selected={read > 0}>
                       <ListItemAvatar>
                         <Avatar
@@ -184,57 +181,23 @@ const Notification = () => {
                             bgcolor: 'primary.lighter'
                           }}
                         >
-                          <MessageOutlined />
+                          <img src={annul} alt="annul" />
                         </Avatar>
                       </ListItemAvatar>
-                      <ListItemText
-                        primary={
-                          <Typography variant="h6">
-                            <Typography component="span" variant="subtitle1">
-                              Aida Burg
-                            </Typography>{' '}
-                            commented your post.
-                          </Typography>
-                        }
-                        secondary="5 August"
-                      />
+                      <ListItemText primary={<Typography variant="h6">Annual Investor Survey </Typography>} />
                       <ListItemSecondaryAction>
                         <Typography variant="caption" noWrap>
-                          6:00 PM
+                          3:00 AM
                         </Typography>
                       </ListItemSecondaryAction>
                     </ListItemButton>
-                    <Divider />
-                    <ListItemButton>
-                      <ListItemAvatar>
-                        <Avatar
-                          sx={{
-                            color: 'error.main',
-                            bgcolor: 'error.lighter'
-                          }}
-                        >
-                          <SettingOutlined />
-                        </Avatar>
-                      </ListItemAvatar>
-                      <ListItemText
-                        primary={
-                          <Typography variant="h6">
-                            Your Profile is Complete &nbsp;
-                            <Typography component="span" variant="subtitle1">
-                              60%
-                            </Typography>{' '}
-                          </Typography>
-                        }
-                        secondary="7 hours ago"
-                      />
-                      <ListItemSecondaryAction>
-                        <Typography variant="caption" noWrap>
-                          2:45 PM
-                        </Typography>
-                      </ListItemSecondaryAction>
-                    </ListItemButton>
-                    <Divider />
-                    <ListItemButton>
+                    <Box sx={{ padding: '20px' }}>
+                      <Button variant="contained" color="secondary" sx={{ padding: '10px', borderRadius: '10px' }}>
+                        Participate
+                      </Button>
+                    </Box>
+                    <Divider>Fund Invitations</Divider>
+                    <ListItemButton selected={read > 0}>
                       <ListItemAvatar>
                         <Avatar
                           sx={{
@@ -242,39 +205,26 @@ const Notification = () => {
                             bgcolor: 'primary.lighter'
                           }}
                         >
-                          C
+                          <img src={annul} alt="annul" />
                         </Avatar>
                       </ListItemAvatar>
                       <ListItemText
-                        primary={
-                          <Typography variant="h6">
-                            <Typography component="span" variant="subtitle1">
-                              Cristina Danny
-                            </Typography>{' '}
-                            invited to join{' '}
-                            <Typography component="span" variant="subtitle1">
-                              Meeting.
-                            </Typography>
-                          </Typography>
-                        }
-                        secondary="Daily scrum meeting time"
+                        primary={<Typography variant="h6">Green Energy Fund Opportunity Explore this new venture </Typography>}
                       />
                       <ListItemSecondaryAction>
                         <Typography variant="caption" noWrap>
-                          9:10 PM
+                          3:00 AM
                         </Typography>
                       </ListItemSecondaryAction>
                     </ListItemButton>
+                    <Box sx={{ padding: '20px' }}>
+                      <Link to={'funds/fund-view'}>
+                        <Button variant="contained" color="secondary" sx={{ padding: '10px', borderRadius: '10px' }}>
+                          View Fund
+                        </Button>
+                      </Link>
+                    </Box>
                     <Divider />
-                    <ListItemButton sx={{ textAlign: 'center', py: `${12}px !important` }}>
-                      <ListItemText
-                        primary={
-                          <Typography variant="h6" color="primary">
-                            View All
-                          </Typography>
-                        }
-                      />
-                    </ListItemButton>
                   </List>
                 </MainCard>
               </ClickAwayListener>

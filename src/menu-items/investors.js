@@ -2,35 +2,35 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import { AccountBookFilled } from '@ant-design/icons';
-
+import { UsergroupAddOutlined } from '@ant-design/icons';
 // icons
 const icons = {
-  AccountBookFilled
+  UsergroupAddOutlined
 };
 // ==============================|| MENU ITEMS - APPLICATIONS ||============================== //
 
-const Portofolio_Item = {
+const Investor_Item = {
   //   id: 'group-applications',
   //   title: <FormattedMessage id="applications" />,
-  icon: icons.AppstoreAddOutlined,
+  // icon: icons.UserOutlined,
   type: 'group',
   children: [
     {
-      id: 'Portofolio',
-      title: <FormattedMessage id="Portofolios" />,
+      id: 'investors',
+      title: <FormattedMessage id="investors" />,
       type: 'item',
-      icon: icons.AccountBookFilled
+      url: 'investors',
+      icon: icons.UsergroupAddOutlined
       // children: [
       //   {
-      //     id: 'portofolio-1',
-      //     title: <FormattedMessage id="Portofolio-1" />,
+      //     id: 'Investor-1',
+      //     title: <FormattedMessage id="Investor-1" />,
       //     type: 'item',
-      //     url: '/portofolio/portofolio-1'
+      //     url: '/investor/Investor-1'
       //   },
       //   {
-      //     id: 'portofolio-2',
-      //     title: <FormattedMessage id="Portofolio-2" />,
+      //     id: 'Funds-2',
+      //     title: <FormattedMessage id="Investor-2" />,
       //     type: 'item',
       //     url: '#'
       //   }
@@ -39,4 +39,4 @@ const Portofolio_Item = {
   ]
 };
 
-export default Portofolio_Item;
+export default Investor_Item;

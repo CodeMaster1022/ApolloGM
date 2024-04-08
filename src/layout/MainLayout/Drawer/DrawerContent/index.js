@@ -27,7 +27,7 @@ const DrawerContent = () => {
             '& .simplebar-content': {
               display: 'flex',
               flexDirection: 'column',
-              marginTop: '50px'
+              marginTop: '30px'
               // height: '90vh'
             }
           }}
@@ -42,7 +42,7 @@ const DrawerContent = () => {
             '& .simplebar-content': {
               display: 'flex',
               flexDirection: 'column',
-              marginTop: '60px'
+              marginTop: '20px'
               // height: '90vh'
             }
           }}

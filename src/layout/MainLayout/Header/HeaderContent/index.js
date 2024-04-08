@@ -15,6 +15,7 @@ import MegaMenuSection from './MegaMenuSection';
 import Switch from '@mui/material/Switch';
 import { ThemeMode } from 'config';
 import { useState } from 'react';
+
 // ==============================|| HEADER - CONTENT ||============================== //
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 55,
@@ -85,9 +86,12 @@ const HeaderContent = () => {
 
   return (
     <>
+      <Box sx={{ width: '100%' }}>
+        <h2 style={{ marginBlockEnd: '0', marginBlockStart: '0' }}>Apollo Global managment Inc.</h2>
+      </Box>
       {!matchesXs && <Search />}
       {!matchesXs && megaMenu}
-      {matchesXs && <Box sx={{ width: '100%', ml: 1 }} />}
+      {/* {matchesXs && <Box sx={{ width: '100%', ml: 1 }} />} */}
       <MaterialUISwitch sx={{ m: 1 }} defaultChecked onChange={handleCheckboxChange} />
       <Notification />
       <Message />

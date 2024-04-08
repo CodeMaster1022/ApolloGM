@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
 import { Modal, Select, useMediaQuery } from '@mui/material';
@@ -48,15 +48,18 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
-
   // const handleBack = () => {
   //   setActiveStep((prevActiveStep) => prevActiveStep - 1);
   // };
 
-  // const handleReset = () => {
-  //   setActiveStep(0);
-  // };
-
+  const handleReset = () => {
+    setActiveStep(0);
+  };
+  const ModalClose = () => {
+    handleFundClose();
+    handleReset();
+  };
+  useEffect(() => console.log(activeStep, 'activestep'), [activeStep]);
   // const [type, setType] = useState('');
   // const handleChangeType = (event) => {
   //   event.preventDefault();
@@ -85,7 +88,7 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
               </Box>
               <Divider sx={{ paddingY: '15px' }} />
               <Box sx={{ height: '15px' }} />
-              <LinearWithLabel value={25 * activeStep} color="info" sx={{ height: 12 }} />
+              <LinearWithLabel value={20 * activeStep} color="info" sx={{ height: 12 }} />
               <Divider sx={{ paddingY: '20px' }} />
               <Stepper activeStep={activeStep} orientation="vertical" xs={false}>
                 {steps.map((step, index) => (
@@ -187,7 +190,7 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                   />
                 </Stack>
                 <Box sx={{ marginTop: '50px', display: 'flex', justifyContent: 'center', height: '60px' }} gap={4}>
-                  <Button variant="outlined" color="secondary" className={classes.buttonstyle}>
+                  <Button variant="outlined" color="secondary" className={classes.buttonstyle} onClick={handleFundClose}>
                     Cancel
                   </Button>
                   <Button variant="contained" color="secondary" className={classes.buttonstyle} onClick={handleNext}>
@@ -319,7 +322,7 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                   />
                 </Stack>
                 <Box sx={{ paddingTop: '50px', display: 'flex', justifyContent: 'center', alignItems: 'flex-end' }} gap={4}>
-                  <Button variant="outlined" color="secondary" className={classes.buttonstyle}>
+                  <Button variant="outlined" color="secondary" className={classes.buttonstyle} onClick={handleFundClose}>
                     Cancel
                   </Button>
                   <Button variant="contained" color="secondary" onClick={handleNext} className={classes.buttonstyle}>
@@ -546,10 +549,10 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                   />
                 </Stack>
                 <Box sx={{ paddingTop: '20px', display: 'flex', justifyContent: 'center' }} gap={4}>
-                  <Button variant="outlined" color="secondary" className={classes.buttonstyle}>
+                  <Button variant="outlined" color="secondary" className={classes.buttonstyle} onClick={handleFundClose}>
                     Cancel
                   </Button>
-                  <Button variant="contained" color="secondary" onClick={handleNext} className={classes.buttonstyle}>
+                  <Button variant="contained" color="secondary" className={classes.buttonstyle} onClick={handleNext}>
                     Next
                   </Button>
                 </Box>
@@ -663,7 +666,7 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                   }}
                   gap={4}
                 >
-                  <Button variant="outlined" color="secondary" className={classes.buttonstyle}>
+                  <Button variant="outlined" color="secondary" className={classes.buttonstyle} onClick={handleFundClose}>
                     Cancel
                   </Button>
                   <Button variant="contained" color="secondary" onClick={handleNext} className={classes.buttonstyle}>
@@ -672,7 +675,7 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                 </Box>
               </Grid>
             )}
-            {activeStep === 4 && (
+            {(activeStep === 4 || activeStep === 5) && (
               <Grid item xs={12} sm={8} sx={{ mt: 2 }}>
                 <Grid container spacing={3}>
                   <Grid item xs={12} sm={6}>
@@ -827,17 +830,23 @@ const Fund_Modal = ({ fundOpen, handleFundClose }) => {
                   </Grid>
                 </Grid>
                 <Box sx={{ paddingTop: '50px', display: 'flex', justifyContent: 'center', mb: '10px' }} gap={4}>
-                  <Button variant="outlined" color="secondary" className={classes.buttonstyle}>
+                  <Button variant="outlined" color="secondary" className={classes.buttonstyle} onClick={handleFundClose}>
                     Cancel
                   </Button>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    // onClick={handleNext}
-                    className={classes.buttonstyle}
-                  >
-                    Save
-                  </Button>
+                  {activeStep === 5 ? (
+                    <>
+                      <Button variant="contained" color="secondary" onClick={ModalClose} className={classes.buttonstyle}>
+                        Save
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      {' '}
+                      <Button variant="contained" color="secondary" onClick={handleNext} className={classes.buttonstyle}>
+                        Next
+                      </Button>
+                    </>
+                  )}
                 </Box>
               </Grid>
             )}

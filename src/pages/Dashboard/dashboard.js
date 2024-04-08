@@ -13,7 +13,7 @@ import MainCard from 'components/MainCard';
 
 const Dashboard = () => {
   return (
-    <MainCard title="" sx={{ bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#008080' : '#E5F2F2') }}>
+    <MainCard title="" sx={{ bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#000000' : '#E5F2F2') }}>
       <HFChart />
       <Typography fontSize="20px" sx={{ padding: '20px' }}>
         Portfolio Company Metrics

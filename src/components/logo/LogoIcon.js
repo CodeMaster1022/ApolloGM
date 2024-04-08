@@ -33,22 +33,20 @@ const LogoIcon = () => {
           <img src={ButtonLogo} alt="Button" />
         </a>
       ) : (
-        <Box sx={{ display: 'flex', flexDirection: 'column', marginTop: '50px' }} gap={0}>
-          <button
+        <Box sx={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }} gap={0}>
+          {/* <button
             onClick={handleSubmit}
             style={{ backgroundColor: '#008080', borderRadius: '100%', width: '40px', height: '40px', border: 'none', marginTop: '8px' }}
           >
             <img src={ButtonLogo} alt="Button" />
-          </button>
+          </button> */}
           <button
             onClick={handleSubmit}
-            style={{ backgroundColor: '#008080', borderRadius: '100%', width: '40px', height: '40px', border: 'none', marginTop: '10px' }}
+            style={{ backgroundColor: '#008080', borderRadius: '100%', width: '40px', height: '40px', border: 'none' }}
           >
-            <a href="/dashboard-page" style={{ textDecoration: 'none' }}>
-              <Typography color="white" variant="h4">
-                CE
-              </Typography>
-            </a>
+            <Typography color="white" variant="h4">
+              CE
+            </Typography>
           </button>
         </Box>
       )}

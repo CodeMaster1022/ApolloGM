@@ -18,22 +18,22 @@ const Capital_Item = {
     {
       id: 'Capital',
       title: <FormattedMessage id="Capital calls" />,
-      type: 'collapse',
-      icon: icons.CustomerServiceOutlined,
-      children: [
-        {
-          id: 'capital-1',
-          title: <FormattedMessage id="capital-1" />,
-          type: 'item',
-          url: '#'
-        },
-        {
-          id: 'Capital-2',
-          title: <FormattedMessage id="Capital-2" />,
-          type: 'item',
-          url: '#'
-        }
-      ]
+      type: 'item',
+      icon: icons.CustomerServiceOutlined
+      // children: [
+      //   {
+      //     id: 'capital-1',
+      //     title: <FormattedMessage id="capital-1" />,
+      //     type: 'item',
+      //     url: '#'
+      //   },
+      //   {
+      //     id: 'Capital-2',
+      //     title: <FormattedMessage id="Capital-2" />,
+      //     type: 'item',
+      //     url: '#'
+      //   }
+      // ]
     }
   ]
 };
