@@ -2,99 +2,35 @@ import PropTypes from 'prop-types';
 import { useMemo } from 'react';
 
 // material-ui
-import { Chip, Table, TableBody, TableCell, TableHead, TableRow, Box, Stack } from '@mui/material';
-import Button from '@mui/material/Button';
+import { Chip, Table, TableBody, TableCell, TableHead, TableRow, Box } from '@mui/material';
 import Select from '@mui/material/Select';
 // third-party
 import { useTable, useFilters, useGlobalFilter, usePagination } from 'react-table';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from 'components/@extended/IconButton';
 // project import
-import MainCard from 'components/MainCard';
-import ScrollX from 'components/ScrollX';
 import LinearWithLabel from 'components/@extended/progress/LinearWithLabel';
-import {
-  GlobalFilter,
-  DefaultColumnFilter,
-  SelectColumnFilter,
-  SliderColumnFilter,
-  NumberRangeColumnFilter,
-  renderFilterTypes,
-  filterGreaterThan
-} from 'utils/react-table';
-import { MoreHorizOutlined } from '@mui/icons-material';
+import { DefaultColumnFilter, renderFilterTypes } from 'utils/react-table';
 import { ArrowBackIosOutlined, ArrowBack, ArrowForward, ArrowForwardIosOutlined } from '@mui/icons-material';
+
 // ==============================|| REACT TABLE ||============================== //
 
-// function ReactTable({ columns, data }) {
-//   const filterTypes = useMemo(() => renderFilterTypes, []);
-//   const defaultColumn = useMemo(() => ({ Filter: DefaultColumnFilter }), []);
-//   const initialState = useMemo(() => ({ filters: [{ id: 'status', value: '' }] }), []);
+// Status
+export function StatusCell({ value }) {
+  switch (value) {
+    case 'Complicated':
+      return <Chip color="error" label="Complicated" size="small" variant="light" />;
+    case 'Relationship':
+      return <Chip color="success" label="Relationship" size="small" variant="light" />;
+    case 'Single':
+    default:
+      return <Chip color="info" label="Single" size="small" variant="light" />;
+  }
+}
 
-//   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, state, preGlobalFilteredRows, setGlobalFilter } = useTable(
-//     {
-//       columns,
-//       data,
-//       defaultColumn,
-//       initialState,
-//       filterTypes
-//     },
-//     useGlobalFilter,
-//     useFilters
-//   );
-
-//   const sortingRow = rows.slice(0, 10);
-
-//   return (
-//     <>
-//       <Table {...getTableProps()}>
-//         <TableHead sx={{ borderTopWidth: 2 }}>
-//           {headerGroups.map((headerGroup, i) => (
-//             <TableRow key={i} {...headerGroup.getHeaderGroupProps()}>
-//               {headerGroup.headers.map((column, index) => (
-//                 <TableCell key={index} {...column.getHeaderProps([{ className: column.className }])}>
-//                   {column.render('Header')}
-//                 </TableCell>
-//               ))}
-//             </TableRow>
-//           ))}
-//         </TableHead>
-//         <TableBody {...getTableBodyProps()}>
-//           {headerGroups.map((group, i) => (
-//             <TableRow key={i} {...group.getHeaderGroupProps()}>
-//               {group.headers.map((column, index) => (
-//                 <TableCell key={index} {...column.getHeaderProps([{ className: column.className }])}>
-//                   {column.canFilter ? column.render('Filter') : null}
-//                 </TableCell>
-//               ))}
-//             </TableRow>
-//           ))}
-//           {sortingRow.length > 0 ? (
-//             sortingRow.map((row, i) => {
-//               prepareRow(row);
-//               return (
-//                 <TableRow key={i} {...row.getRowProps()}>
-//                   {row.cells.map((cell, index) => (
-//                     <TableCell key={index} {...cell.getCellProps([{ className: cell.column.className }])}>
-//                       {cell.render('Cell')}
-//                     </TableCell>
-//                   ))}
-//                 </TableRow>
-//               );
-//             })
-//           ) : (
-//             <EmptyTable msg="No Data" colSpan={7} />
-//           )}
-//         </TableBody>
-//       </Table>
-//     </>
-//   );
-// }
-
-// ReactTable.propTypes = {
-//   columns: PropTypes.array,
-//   data: PropTypes.array
-// };
+StatusCell.propTypes = {
+  value: PropTypes.string
+};
 export function FilteringTable({ columns, data }) {
   const filterTypes = useMemo(() => renderFilterTypes, []);
   const defaultColumn = useMemo(() => ({ Filter: DefaultColumnFilter }), []);
@@ -225,129 +161,5 @@ const CellProgress = ({ value }) => <LinearWithLabel value={value} sx={{ minWidt
 CellProgress.propTypes = {
   value: PropTypes.number
 };
-
-// Status
-const StatusCell = ({ value }) => {
-  switch (value) {
-    case 'Complicated':
-      return <Chip color="error" label="Complicated" size="small" variant="light" />;
-    case 'Relationship':
-      return <Chip color="success" label="Relationship" size="small" variant="light" />;
-    case 'Single':
-    default:
-      return <Chip color="info" label="Single" size="small" variant="light" />;
-  }
-};
-
-StatusCell.propTypes = {
-  value: PropTypes.string
-};
-// function PcreateData(A, B, C, D, E, F, status) {
-//   return { A, B, C, D, E, F, status };
-// }
-
-// const FilteringTable = () => {
-//   const Fund_rows = useMemo(
-//     () => [
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true),
-//       PcreateData('Apex Growth Fund', '$500M', 'Apex Ventures', ' $10M', '14%', '01/15/2022', true)
-//     ],
-//     []
-//   );
-//   const columns = useMemo(
-//     () => [
-//       {
-//         Header: 'Name',
-//         accessor: 'A'
-//       },
-//       {
-//         Header: 'GP Name',
-//         accessor: 'B'
-//       },
-//       {
-//         Header: 'Size',
-//         accessor: 'C'
-//       },
-//       {
-//         Header: 'Net IRR',
-//         accessor: 'D'
-//       },
-//       {
-//         Header: 'Investment Date',
-//         accessor: 'E'
-//       },
-//       {
-//         Header: 'Maturity Date',
-//         accessor: 'F'
-//       },
-//       {
-//         Header: 'Action',
-//         accessor: 'status',
-//         disableFilters: true,
-//         Cell: ({ row }) => (
-//           <Button>
-//             <MoreHorizOutlined />
-//           </Button>
-//         )
-//       }
-//       // {
-//       //   Header: 'Age',
-//       //   accessor: 'age',
-//       //   className: 'cell-right',
-//       //   Filter: SliderColumnFilter,
-//       //   filter: 'equals'
-//       // },
-//       // {
-//       //   Header: 'Visits',
-//       //   accessor: 'visits',
-//       //   className: 'cell-right',
-//       //   Filter: NumberRangeColumnFilter,
-//       //   filter: 'between'
-//       // },
-//       // {
-//       //   Header: 'Status',
-//       //   accessor: 'status',
-//       //   Filter: SelectColumnFilter,
-//       //   filter: 'includes',
-//       //   Cell: StatusCell
-//       // },
-//       // {
-//       //   Header: 'Profile Progress',
-//       //   accessor: 'progress',
-//       //   Filter: SliderColumnFilter,
-//       //   filter: filterGreaterThan,
-//       //   Cell: CellProgress
-//       // }
-//     ],
-//     []
-//   );
-
-//   return (
-//     <MainCard content={false}>
-//       <ScrollX>
-//         <ReactTable columns={columns} data={Fund_rows} />
-//       </ScrollX>
-//     </MainCard>
-//   );
-// };
 
 export default FilteringTable;

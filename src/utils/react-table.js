@@ -4,10 +4,11 @@ import React from 'react';
 import { useMemo, useState } from 'react';
 
 // material-ui
+
 import { FormControl, MenuItem, OutlinedInput, Select, Slider, Stack, TextField, Tooltip } from '@mui/material';
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-
+import { TuneOutlined } from '@mui/icons-material';
 // third-party
 import { useAsyncDebounce } from 'react-table';
 import { matchSorter } from 'match-sorter';
@@ -77,6 +78,17 @@ DateColumnFilter.propTypes = {
 export function DefaultColumnFilter({ column: { filterValue, Header, setFilter } }) {
   return (
     <TextField
+      InputProps={{
+        sx: {
+          padding: '4px',
+          borderRadius: '5px'
+        },
+        startAdornment: (
+          <IconButton>
+            <TuneOutlined />
+          </IconButton>
+        )
+      }}
       fullWidth
       value={filterValue || ''}
       onChange={(e) => {
@@ -103,6 +115,11 @@ export function SelectColumnFilter({ column: { filterValue, setFilter, preFilter
 
   return (
     <Select
+      sx={{
+        padding: '4px',
+        borderRadius: '5px',
+        minWidth: '50px'
+      }}
       value={filterValue}
       onChange={(e) => {
         setFilter(e.target.value || undefined);
@@ -161,6 +178,28 @@ SliderColumnFilter.propTypes = {
   column: PropTypes.object
 };
 
+export function NumberColumnFilter({ column: { filterValue = [], preFilteredRows, setFilter, id } }) {
+  const min = useMemo(() => {
+    let min = preFilteredRows.length ? preFilteredRows[0].values[id] : 0;
+    preFilteredRows.forEach((row) => {
+      min = Math.min(row.values[id], min);
+    });
+    return min;
+  }, [id, preFilteredRows]);
+  <Stack direction="row" alignItems="center" spacing={1} sx={{ minWidth: 168, maxWidth: 250 }}>
+    <TextField
+      fullWidth
+      value={filterValue[0] || ''}
+      type="number"
+      onChange={(e) => {
+        const val = e.target.value;
+        setFilter((old = []) => [val ? parseInt(val, 10) : undefined, old[1]]);
+      }}
+      placeholder={`Min (${min})`}
+      size="small"
+    />
+  </Stack>;
+}
 export function NumberRangeColumnFilter({ column: { filterValue = [], preFilteredRows, setFilter, id } }) {
   const [min, max] = useMemo(() => {
     let min = preFilteredRows.length ? preFilteredRows[0].values[id] : 0;
@@ -202,6 +241,9 @@ export function NumberRangeColumnFilter({ column: { filterValue = [], preFiltere
 }
 
 NumberRangeColumnFilter.propTypes = {
+  column: PropTypes.object
+};
+NumberColumnFilter.propTypes = {
   column: PropTypes.object
 };
 
