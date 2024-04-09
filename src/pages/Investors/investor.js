@@ -53,32 +53,32 @@ const data = [
 const data1 = [
   {
     name: 'Year1',
-    Contribution: -80,
-    Distribution: -46,
+    Contribution: 0,
+    Distribution: 0,
     'Gross MOIC': -124,
     'Net TVPI': 200,
     'Net DPI': 190
   },
   {
     name: 'Year2',
-    Contribution: 100,
-    Distribution: 12,
+    Contribution: 0,
+    Distribution: 0,
     'Gross MOIC': -111,
     'Net TVPI': 193,
     'Net DPI': 185
   },
   {
     name: 'Year3',
-    Contribution: 200,
-    Distribution: -200,
+    Contribution: 0,
+    Distribution: 0,
     'Gross MOIC': -107,
     'Net TVPI': 188,
     'Net DPI': 173
   },
   {
     name: 'Year4',
-    Contribution: -20,
-    Distribution: -50,
+    Contribution: -200,
+    Distribution: 200,
     'Gross MOIC': -88,
     'Net TVPI': 183,
     'Net DPI': 173
