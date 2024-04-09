@@ -36,9 +36,9 @@ const MultilineChart = (props) => {
           radius={[15, 15, 0, 0]}
           barSize={40}
         />
-        <Line dataKey="Cashflow" stroke="#004D4D" fill="#8884d8" />
-        <Line type="monotone" dataKey="TVPI" stroke="#8884d8" activeDot={{ r: 8 }} />
-        <Line type="monotone" dataKey="DPI" stroke="#82ca9d" />
+        <Line dataKey="Gross MOIC" stroke="#004D4D" fill="#8884d8" />
+        <Line type="monotone" dataKey="Net TVPI" stroke="#008080" />
+        <Line type="monotone" dataKey="Net DPI" stroke="#008080" />
       </ComposedChart>
     </ResponsiveContainer>
   );

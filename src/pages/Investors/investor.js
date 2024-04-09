@@ -5,48 +5,49 @@ import { FundViewDropdownButton } from 'components/FundButton';
 import FCChart from 'sections/Charts/Investor/Individual/FCCharts';
 import MultilineChart from 'sections/Charts/Investor/Individual/MuiltipleChartLine';
 import MainCard from 'components/MainCard';
+
 const data = [
   {
     name: 'Year1',
     Contribution: -80,
     Distribution: -46,
-    Cashflow: -184
+    'Net Cashflow': -184
   },
   {
     name: 'Year2',
     Contribution: 100,
     Distribution: 12,
-    Cashflow: 174.6
+    'Net Cashflow': 174.6
   },
   {
     name: 'Year3',
     Contribution: 200,
     Distribution: -200,
-    Cashflow: 107
+    'Net Cashflow': 107
   },
   {
     name: 'Year4',
     Contribution: -20,
     Distribution: -50,
-    Cashflow: 133
+    'Net Cashflow': 133
   },
   {
     name: 'Year5',
     Contribution: -150,
     Distribution: -80,
-    Cashflow: 160
+    'Net Cashflow': 160
   },
   {
     name: 'Year6',
     Contribution: 149,
     Distribution: -130,
-    Cashflow: 191
+    'Net Cashflow': 191
   },
   {
     name: 'Year7',
     Contribution: 0,
     Distribution: 200,
-    Cashflow: 10
+    'Net Cashflow': 10
   }
 ];
 const data1 = [
@@ -54,57 +55,57 @@ const data1 = [
     name: 'Year1',
     Contribution: -80,
     Distribution: -46,
-    Cashflow: -124,
-    TVPI: 200,
-    DPI: 190
+    'Gross MOIC': -124,
+    'Net TVPI': 200,
+    'Net DPI': 190
   },
   {
     name: 'Year2',
     Contribution: 100,
     Distribution: 12,
-    Cashflow: -111,
-    TVPI: 193,
-    DPI: 185
+    'Gross MOIC': -111,
+    'Net TVPI': 193,
+    'Net DPI': 185
   },
   {
     name: 'Year3',
     Contribution: 200,
     Distribution: -200,
-    Cashflow: -107,
-    TVPI: 188,
-    DPI: 173
+    'Gross MOIC': -107,
+    'Net TVPI': 188,
+    'Net DPI': 173
   },
   {
     name: 'Year4',
     Contribution: -20,
     Distribution: -50,
-    Cashflow: -88,
-    TVPI: 183,
-    DPI: 173
+    'Gross MOIC': -88,
+    'Net TVPI': 183,
+    'Net DPI': 173
   },
   {
     name: 'Year5',
     Contribution: -150,
     Distribution: -80,
-    Cashflow: -44,
-    TVPI: 192,
-    DPI: 183
+    'Gross MOIC': -44,
+    'Net TVPI': 192,
+    'Net DPI': 183
   },
   {
     name: 'Year6',
     Contribution: 149,
     Distribution: -130,
-    Cashflow: -33,
-    TVPI: 184,
-    DPI: 173
+    'Gross MOIC': -33,
+    'Net TVPI': 184,
+    'Net DPI': 173
   },
   {
     name: 'Year7',
     Contribution: 0,
     Distribution: 200,
-    Cashflow: 10,
-    TVPI: 188,
-    DPI: 174
+    'Gross MOIC': 10,
+    'Net TVPI': 188,
+    'Net DPI': 174
   }
 ];
 const Investor = () => {
@@ -117,7 +118,7 @@ const Investor = () => {
       </Grid>
       <MainCard spacing={3} sx={{ bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#000000' : '#E5F2F2') }}>
         <Box sx={{ backgroundColor: 'white', padding: '10px', borderRadius: '10px', marginTop: '5px' }} height="60vh">
-          <h2>&nbsp;Fund Cashflows</h2>
+          <h2>&nbsp;Fund 'Net Cashflow's</h2>
           <FCChart data={data} />
         </Box>
         <Box sx={{ backgroundColor: 'white', padding: '10px', borderRadius: '10px', marginTop: '15px' }} height="60vh">

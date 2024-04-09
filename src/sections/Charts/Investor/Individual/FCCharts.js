@@ -36,7 +36,7 @@ const FCChart = (props) => {
           radius={[15, 15, 0, 0]}
           barSize={40}
         />
-        <Line dataKey="Cashflow" stroke="#008080" />
+        <Line dataKey="Net Cashflow" stroke="#008080" />
       </ComposedChart>
     </ResponsiveContainer>
   );
