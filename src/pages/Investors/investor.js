@@ -118,7 +118,7 @@ const Investor = () => {
       </Grid>
       <MainCard spacing={3} sx={{ bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#000000' : '#E5F2F2') }}>
         <Box sx={{ backgroundColor: 'white', padding: '10px', borderRadius: '10px', marginTop: '5px' }} height="60vh">
-          <h2>&nbsp;Fund 'Net Cashflow's</h2>
+          <h2>&nbsp;Fund Cashflows</h2>
           <FCChart data={data} />
         </Box>
         <Box sx={{ backgroundColor: 'white', padding: '10px', borderRadius: '10px', marginTop: '15px' }} height="60vh">
