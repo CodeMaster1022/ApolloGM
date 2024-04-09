@@ -15,22 +15,20 @@ const labels = ['Total investment value', 'of Companies'];
 export function IGRCharts() {
   return (
     <>
-      <Grid container spacing={3} alignItems="center">
-        <Grid item xs={12} md={7} lg={5}>
+      <Grid container spacing={2} alignItems="center">
+        <Grid item xs={12} md={5} lg={3} sx={{}}>
+          <Stack spacing={2.5} sx={{ backgroundColor: 'white', borderRadius: '12px' }}>
+            <DonutChart />
+          </Stack>
+        </Grid>
+        <Grid item xs={12} md={7} lg={4}>
           <Stack spacing={2.5} sx={{ backgroundColor: 'white', borderRadius: '12px', padding: '10px' }}>
             <Box height="40vh">
               <GDChart data={GDdata} labels={labels} />
             </Box>
           </Stack>
         </Grid>
-        <Grid item xs={12} md={5} lg={3} sx={{}}>
-          <Stack spacing={2.5} sx={{ backgroundColor: 'white', borderRadius: '12px' }}>
-            <Box height="40vh">
-              <DonutChart />
-            </Box>
-          </Stack>
-        </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid item xs={12} md={12} lg={5}>
           <Stack spacing={2.5} sx={{ backgroundColor: 'white', borderRadius: '12px', padding: '10px' }}>
             <Box height="40vh">
               <Multiline />
