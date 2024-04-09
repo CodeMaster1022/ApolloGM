@@ -20,7 +20,7 @@ const WidgetChart = Loadable(lazy(() => import('pages/widget/chart')));
 const Dashboard = Loadable(lazy(() => import('pages/Dashboard/dashboard')));
 
 //Funds
-const Funds = Loadable(lazy(() => import('pages/funds/Funds')));
+// const Funds = Loadable(lazy(() => import('pages/funds/Funds')));
 const FundsView = Loadable(lazy(() => import('pages/funds/fund-view')));
 const FundList = Loadable(lazy(() => import('pages/funds/fund-list')));
 // render - sample page
@@ -53,17 +53,17 @@ const MainRoutes = {
           path: 'funds',
           // element: <Funds />,
           children: [
-            {
-              path: 'fund-list',
-              element: <FundList />
-            },
+            // {
+            //   path: 'fund-list',
+            //   element: <FundList />
+            // },
             {
               path: 'fund-view',
               element: <FundsView />
             },
             {
               path: '',
-              element: <Funds />
+              element: <FundList />
             }
           ]
         },
