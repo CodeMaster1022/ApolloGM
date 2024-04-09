@@ -86,34 +86,6 @@ const FundList = () => {
           </Button>
         )
       }
-      // {
-      //   Header: 'Age',
-      //   accessor: 'age',
-      //   className: 'cell-right',
-      //   Filter: SliderColumnFilter,
-      //   filter: 'equals'
-      // },
-      // {
-      //   Header: 'Visits',
-      //   accessor: 'visits',
-      //   className: 'cell-right',
-      //   Filter: NumberRangeColumnFilter,
-      //   filter: 'between'
-      // },
-      // {
-      //   Header: 'Status',
-      //   accessor: 'status',
-      //   Filter: SelectColumnFilter,
-      //   filter: 'includes',
-      //   Cell: StatusCell
-      // },
-      // {
-      //   Header: 'Profile Progress',
-      //   accessor: 'progress',
-      //   Filter: SliderColumnFilter,
-      //   filter: filterGreaterThan,
-      //   Cell: CellProgress
-      // }
     ],
     []
   );

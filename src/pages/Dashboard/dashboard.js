@@ -1,7 +1,7 @@
 // material-ui
 import { HFChart } from 'sections/Charts/Dashboard/Two-Col';
 import { IGRCharts } from 'sections/Charts/Dashboard/IGRCharts';
-import { Typography } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import { DFPChart } from 'sections/Charts/Dashboard/DFPCharts';
 import { PortChart } from 'sections/Charts/Dashboard/PortoCharts';
 // project import
@@ -14,11 +14,15 @@ import MainCard from 'components/MainCard';
 const Dashboard = () => {
   return (
     <MainCard title="" sx={{ bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#000000' : '#E5F2F2') }}>
-      <HFChart />
+      <Box sx={{ backgroundColor: 'white', padding: '10px', borderRadius: '10px' }}>
+        <HFChart />
+      </Box>
       <Typography fontSize="20px" sx={{ padding: '20px' }}>
         Portfolio Company Metrics
       </Typography>
-      <IGRCharts />
+      <Box sx={{ backgroundColor: 'white', padding: '10px', borderRadius: '10px' }}>
+        <IGRCharts />
+      </Box>
       <Typography fontSize="20px" sx={{ padding: '20px' }}>
         Deal Flow and Pipeline
       </Typography>

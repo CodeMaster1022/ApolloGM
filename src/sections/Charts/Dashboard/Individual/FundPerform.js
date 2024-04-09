@@ -124,5 +124,5 @@ export function FundPerformChart() {
     }
   };
 
-  return <ReactApexChart options={data.options} series={data.series} type="line" height={450} />;
+  return <ReactApexChart options={data.options} series={data.series} type="line" height={380} />;
 }
