@@ -5,101 +5,101 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Box, InputAdornment, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ReactApexChart from 'react-apexcharts';
-import { TableFunds, TableCap, TableDocument, TableBench, TablePorto, TableInvest } from 'pages/tables/FundTable';
+import { TableFunds, TableInvest } from 'pages/tables/FundTable';
 import Vector from '../../assets/images/icons/vector.svg';
-import janny from '../../assets/images/users/janny.png';
-import Select from '@mui/material/Select';
-import FormControl from '@mui/material/FormControl';
+// import janny from '../../assets/images/users/janny.png';
+// import Select from '@mui/material/Select';
+// import FormControl from '@mui/material/FormControl';
 import MainCard from 'components/MainCard';
 import { DateRangePicker } from '@mui/x-date-pickers-pro';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import Button from '@mui/material/Button';
-import PortoCard from 'components/cards/CustomCard/pfrofil-card';
-import Chat from 'pages/apps/chat';
-import { PlotOptionChart, CheckboxButtonGroup } from 'sections/Charts/Funds/Charts';
+// import Button from '@mui/material/Button';
+// import PortoCard from 'components/cards/CustomCard/pfrofil-card';
+// import Chat from 'pages/apps/chat';
+// import { PlotOptionChart, CheckboxButtonGroup } from 'sections/Charts/Funds/Charts';
 import IconButton from 'components/@extended/IconButton';
 function createData(name, content) {
   return { name, content };
 }
 //Capital Data
-function CcreateData(name, Issued, CDate, Amount, Purpose, Sent, Status) {
-  return { name, Issued, CDate, Amount, Purpose, Sent, Status };
-}
+// function CcreateData(name, Issued, CDate, Amount, Purpose, Sent, Status) {
+//   return { name, Issued, CDate, Amount, Purpose, Sent, Status };
+// }
 //Investor Data
 function IcreateData(name, type, amount, cap, unfund, contact) {
   return { name, type, amount, cap, unfund, contact };
 }
-//Document Data
-function DcreateData(Title, Date, Document, Access, Description) {
-  return { Title, Date, Document, Access, Description };
-}
-function BcreateData(Index, Mo, TMo, OYr, TYr, Result) {
-  return { Index, Mo, TMo, OYr, TYr, Result };
-}
-//Portfolio Data
-function PcreateData(company, on, currency, invest, industry, country, status) {
-  return { company, on, currency, invest, industry, country, status };
-}
+// //Document Data
+// function DcreateData(Title, Date, Document, Access, Description) {
+//   return { Title, Date, Document, Access, Description };
+// }
+// function BcreateData(Index, Mo, TMo, OYr, TYr, Result) {
+//   return { Index, Mo, TMo, OYr, TYr, Result };
+// }
+// //Portfolio Data
+// function PcreateData(company, on, currency, invest, industry, country, status) {
+//   return { company, on, currency, invest, industry, country, status };
+// }
 //Card data
-const cardDatas = [
-  {
-    image: janny,
-    role: 'Project leader',
-    name: 'Savannah Nguyen',
-    content:
-      'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
-  },
-  {
-    image: janny,
-    role: 'Full Stack Developer',
-    name: 'Savannah Nguyen',
-    content:
-      'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
-  },
-  {
-    image: janny,
-    role: 'Full Stack Developer',
-    name: 'Savannah Nguyen',
-    content:
-      'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
-  },
-  {
-    image: janny,
-    role: 'Full Stack Developer',
-    name: 'Savannah Nguyen',
-    content:
-      'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
-  },
-  {
-    image: janny,
-    role: 'Project leader',
-    name: 'Savannah Nguyen',
-    content:
-      'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
-  },
-  {
-    image: janny,
-    role: 'Full Stack Developer',
-    name: 'Savannah Nguyen',
-    content:
-      'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
-  },
-  {
-    image: janny,
-    role: 'Full Stack Developer',
-    name: 'Savannah Nguyen',
-    content:
-      'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
-  },
-  {
-    image: janny,
-    role: 'Full Stack Developer',
-    name: 'Savannah Nguyen',
-    content:
-      'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
-  }
-];
+// const cardDatas = [
+//   {
+//     image: janny,
+//     role: 'Project leader',
+//     name: 'Savannah Nguyen',
+//     content:
+//       'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
+//   },
+//   {
+//     image: janny,
+//     role: 'Full Stack Developer',
+//     name: 'Savannah Nguyen',
+//     content:
+//       'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
+//   },
+//   {
+//     image: janny,
+//     role: 'Full Stack Developer',
+//     name: 'Savannah Nguyen',
+//     content:
+//       'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
+//   },
+//   {
+//     image: janny,
+//     role: 'Full Stack Developer',
+//     name: 'Savannah Nguyen',
+//     content:
+//       'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
+//   },
+//   {
+//     image: janny,
+//     role: 'Project leader',
+//     name: 'Savannah Nguyen',
+//     content:
+//       'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
+//   },
+//   {
+//     image: janny,
+//     role: 'Full Stack Developer',
+//     name: 'Savannah Nguyen',
+//     content:
+//       'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
+//   },
+//   {
+//     image: janny,
+//     role: 'Full Stack Developer',
+//     name: 'Savannah Nguyen',
+//     content:
+//       'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
+//   },
+//   {
+//     image: janny,
+//     role: 'Full Stack Developer',
+//     name: 'Savannah Nguyen',
+//     content:
+//       'With over 20 years of experience in the investment industry, John leads our firm with a keen eye for innovative opportunities and a commitment to sustainable growth. John holds an MBA from Harvard Business School.'
+//   }
+// ];
 
 //for line Charts
 const chartData = {
@@ -135,67 +135,67 @@ const rows_R = [
   createData('Ops Strategv', ' ')
 ];
 //Capital Table
-const Crows = [
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
-  ),
-  CcreateData(
-    'CC-2022-001',
-    '01/10/2024',
-    'July 10, 2022',
-    '$5,000,000',
-    'To finance Series A investment in FinTech Innovations Inc.',
-    '45 investor notices sent',
-    'Received $5,000,000 (100% of called capital)'
-  )
-];
-const Brows = [
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 20),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 60),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 20),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 90),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 40),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 50),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 70),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
-  BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30)
-];
+// const Crows = [
+//   CcreateData(
+//     'CC-2022-001',
+//     '01/10/2024',
+//     'July 10, 2022',
+//     '$5,000,000',
+//     'To finance Series A investment in FinTech Innovations Inc.',
+//     '45 investor notices sent',
+//     'Received $5,000,000 (100% of called capital)'
+//   ),
+//   CcreateData(
+//     'CC-2022-001',
+//     '01/10/2024',
+//     'July 10, 2022',
+//     '$5,000,000',
+//     'To finance Series A investment in FinTech Innovations Inc.',
+//     '45 investor notices sent',
+//     'Received $5,000,000 (100% of called capital)'
+//   )
+// ];
+// const Brows = [
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 20),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 60),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 20),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 90),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 40),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 50),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 70),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30),
+//   BcreateData('CA Global ex US Dev Mkts PE/VC(USS)', '11.6', '33 4', '28.8', '24.9', 30)
+// ];
 //Document Table
-const Drows = [
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
-  DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.')
-];
+// const Drows = [
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.'),
+//   DcreateData('CC-2022-001', '01/10/2024', ' Financial Report', '$5,000,000', 'To finance Series A investment in FinTech Innovations Inc.')
+// ];
 //Invest Table
 const Invest_rows = [
   IcreateData(
@@ -231,33 +231,22 @@ const Invest_rows = [
     'Jane Doe, Portfolio Manager'
   )
 ];
-const Prows = [
-  PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
-  PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
-  PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', false),
-  PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
-  PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
-  PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
-  PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
-  PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', false),
-  PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', false),
-  PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
-  PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true)
-];
-const Tab_Titles = [
-  'Overview',
-  'Performance',
-  'Investor',
-  'Portfolio',
-  'Charts',
-  'Capital calls',
-  'Document',
-  'Benchmark',
-  'Teams',
-  'Team Comms'
-];
+// const Prows = [
+//   PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
+//   PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
+//   PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', false),
+//   PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
+//   PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
+//   PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
+//   PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
+//   PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', false),
+//   PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', false),
+//   PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true),
+//   PcreateData('Sunday Natural Products', '01/10/2024', 'EUR', ' 800M', 'Retail Consumer Staples', 'German', true)
+// ];
+const Tab_Titles = ['Overview', 'Performance', 'Subscriptions', 'Capital Calls', 'Documents', 'Notes'];
 // const theme = useTheme();
-const Fund_View = () => {
+const InvestFundView = () => {
   const classes = useStyles();
   // const [expanded, setExpanded] = useState(false);
   // const theme = useTheme();
@@ -297,7 +286,7 @@ const Fund_View = () => {
       <MainCard>
         {/* <BasicTable /> */}
         <Typography variant="body2" sx={{ fontSize: '20px', paddingBottom: '10px', fontWeight: 'bold' }}>
-          Global Tech Ventures III
+          Apex Growth Fund
         </Typography>
         <Typography variant="body2" sx={{ fontSize: '16px' }}>
           Global Tech Ventures III (GTV III) is our flagship fund focused on early-stage technology startups with the potential to disrupt
@@ -487,7 +476,7 @@ const Fund_View = () => {
         {/* Performance Tab */}
         <TabPanel value={value} index={1}>
           <Grid sx={{ display: 'flex', justifyContent: 'center' }} gap={2}>
-            <IconButton variant="shadow" color="secondary" sx={{ width: '52px', height: '42px', borderRadius: '15px' }}>
+            <IconButton variant="shadow" color="secondary" sx={{ width: '52px', height: '43px', borderRadius: '15px' }}>
               <img src={Vector} alt="Description" />
             </IconButton>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -521,11 +510,11 @@ const Fund_View = () => {
         <TabPanel value={value} index={2}>
           <TableInvest rows={Invest_rows} />
         </TabPanel>
-        <TabPanel value={value} index={3}>
+        {/* <TabPanel value={value} index={3}>
           <TablePorto rows={Prows} />
-        </TabPanel>
+        </TabPanel> */}
         {/* Charts Tab */}
-        <TabPanel value={value} index={4}>
+        {/* <TabPanel value={value} index={4}>
           <Grid sx={{ display: 'flex', justifyContent: 'center' }} gap={2}>
             <Button variant="shadow" color="secondary" sx={{ width: '52px', height: '52px', borderRadius: '15px' }}>
               <img src={Vector} alt="Description" />
@@ -538,11 +527,11 @@ const Fund_View = () => {
                 // onChange={handleChangeContact}
                 // placeholder="Contact"
                 sx={{ height: '53px', borderRadius: '12px', width: '200px' }}
-              >
-                {/* <MenuItem value={1}>
+              > */}
+        {/* <MenuItem value={1}>
                   <h4>Hi</h4>
                 </MenuItem> */}
-              </Select>
+        {/* </Select>
             </FormControl>
           </Grid>
           <Grid item xs={12} sx={{ mt: 2 }}>
@@ -561,14 +550,14 @@ const Fund_View = () => {
               </Grid>
             </Grid>
           </Grid>
-        </TabPanel>
-        <TabPanel value={value} index={5}>
+        </TabPanel> */}
+        {/* <TabPanel value={value} index={5}>
           <TableCap rows={Crows} />
         </TabPanel>
         <TabPanel value={value} index={6}>
           <TableDocument rows={Drows} />
-        </TabPanel>
-        <TabPanel value={value} index={7}>
+        </TabPanel> */}
+        {/* <TabPanel value={value} index={7}>
           <TableBench rows={Brows} />
         </TabPanel>
         <TabPanel value={value} index={8}>
@@ -586,7 +575,7 @@ const Fund_View = () => {
         </TabPanel>
         <TabPanel value={value} index={9}>
           <Chat />
-        </TabPanel>
+        </TabPanel> */}
       </Box>
     </div>
   );
@@ -597,4 +586,4 @@ const useStyles = makeStyles(() => ({
     paddingLeft: '8px' // Optional: Add padding to separate the border from content
   }
 }));
-export default Fund_View;
+export default InvestFundView;

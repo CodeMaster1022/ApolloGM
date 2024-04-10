@@ -27,7 +27,8 @@ const FundList = Loadable(lazy(() => import('pages/funds/fund-list')));
 const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')));
 //Investors
 const Investor = Loadable(lazy(() => import('pages/Investors/investor')));
-
+const InvestorList = Loadable(lazy(() => import('pages/Investors/invest-list')));
+const InvestorView = Loadable(lazy(() => import('pages/Investors/investFund-view')));
 // ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
@@ -72,11 +73,15 @@ const MainRoutes = {
           children: [
             {
               path: 'fund-view',
-              element: <FundsView />
+              element: <InvestorView />
             },
             {
               path: '',
               element: <Investor />
+            },
+            {
+              path: 'investor-list',
+              element: <InvestorList />
             }
           ]
         },

@@ -218,7 +218,7 @@ const Notification = () => {
                       </ListItemSecondaryAction>
                     </ListItemButton>
                     <Box sx={{ padding: '20px' }}>
-                      <Link to={'funds/fund-view'}>
+                      <Link to={'investors/investor-list'}>
                         <Button variant="contained" color="secondary" sx={{ padding: '10px', borderRadius: '10px' }}>
                           View Fund
                         </Button>

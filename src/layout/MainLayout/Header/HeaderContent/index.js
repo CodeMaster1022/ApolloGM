@@ -15,6 +15,7 @@ import MegaMenuSection from './MegaMenuSection';
 import Switch from '@mui/material/Switch';
 import { ThemeMode } from 'config';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 // ==============================|| HEADER - CONTENT ||============================== //
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -64,6 +65,9 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   }
 }));
 const HeaderContent = () => {
+  const location = useLocation();
+  // const { pathname } = location;
+  // const isHome = pathname === '/';
   const matchesXs = useMediaQuery((theme) => theme.breakpoints.down('md'));
   const [isChecked, setIsChecked] = useState(false);
   // const theme = useTheme();
@@ -87,7 +91,11 @@ const HeaderContent = () => {
   return (
     <>
       <Box sx={{ width: '100%' }}>
-        <h2 style={{ marginBlockEnd: '0', marginBlockStart: '0' }}>Apollo Global managment Inc.</h2>
+        {location.pathname.includes('investors') ? (
+          <h2 style={{ marginBlockEnd: '0', marginBlockStart: '0' }}>Hamilton Lane</h2>
+        ) : (
+          <h2 style={{ marginBlockEnd: '0', marginBlockStart: '0' }}>Apollo Global managment Inc.</h2>
+        )}
       </Box>
       {!matchesXs && <Search />}
       {!matchesXs && megaMenu}

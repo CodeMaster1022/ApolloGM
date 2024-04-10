@@ -790,7 +790,7 @@ export function TableFund({ rows }) {
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
               <TableRow hover key={row.name}>
                 <TableCell align="left" className={classes.styledcell}>
-                  <Link to={'/funds/fund-list'}>
+                  <Link to={'/investors/fund-view'}>
                     <Typography sx={{ color: (theme) => (theme.palette.mode === 'dark' ? 'white' : '#008080') }}>{row.A}</Typography>
                   </Link>
                 </TableCell>
