@@ -56,7 +56,7 @@ export function DateColumnFilter({ column: { filterValue, setFilter } }) {
           sx={{
             '& .MuiOutlinedInput-root': {
               '&:hover > fieldset': { borderColor: '#C7C8CD' },
-              height: '45px',
+              height: '50px',
               borderRadius: '12px'
             }
           }}
@@ -87,7 +87,7 @@ export function DefaultColumnFilter({ column: { filterValue, Header, setFilter }
     <TextField
       InputProps={{
         sx: {
-          height: '45px',
+          height: '50px',
           padding: '4px',
           borderRadius: '12px'
         },
@@ -124,7 +124,7 @@ export function SelectColumnFilter({ column: { filterValue, setFilter, preFilter
   return (
     <Select
       sx={{
-        padding: '6px',
+        height: '50px',
         borderRadius: '12px',
         minWidth: '150px'
       }}

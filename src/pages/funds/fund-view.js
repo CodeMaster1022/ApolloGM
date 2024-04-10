@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Box, InputAdornment, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ReactApexChart from 'react-apexcharts';
+import IPMixChart from 'sections/Charts/Funds/Barcharts';
 import { TableFunds, TableCap, TableDocument, TableBench, TablePorto, TableInvest } from 'pages/tables/FundTable';
 import Vector from '../../assets/images/icons/vector.svg';
 import janny from '../../assets/images/users/janny.png';
@@ -316,7 +317,9 @@ const Fund_View = () => {
                 color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : '#7E8487'), // Default color
                 '&.Mui-selected': {
                   color: (theme) => (theme.palette.mode === 'dark' ? '#ffab00' : '#008080') // Color for active tab
-                }
+                },
+                flexGrow: 1, // Make the tab title stretch
+                textAlign: 'center' // Center the text
               }}
             />
           ))}
@@ -547,14 +550,8 @@ const Fund_View = () => {
           </Grid>
           <Grid item xs={12} sx={{ mt: 2 }}>
             <Grid container sx={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
-              <Grid item xs={12} sm={7}>
-                <PlotOptionChart />
-                <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                  <button style={{ width: '20px', height: '20px', border: 'none' }} />
-                  <span>&nbsp;&nbsp;Invested&nbsp;&nbsp;</span>
-                  <button style={{ width: '20px', height: '20px', border: 'none', backgroundColor: '#008080' }} />
-                  <span>&nbsp;&nbsp;Profit&nbsp;&nbsp;</span>
-                </Box>
+              <Grid item xs={12} sm={8} height="50vh">
+                <IPMixChart />
               </Grid>
               <Grid item xs={12} sm={2} sx={{ display: 'flex', alignItems: 'center' }}>
                 <CheckboxButtonGroup />

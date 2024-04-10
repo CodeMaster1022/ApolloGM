@@ -310,7 +310,9 @@ const InvestFundView = () => {
                 color: (theme) => (theme.palette.mode === 'dark' ? '#008080' : '#7E8487'), // Default color
                 '&.Mui-selected': {
                   color: (theme) => (theme.palette.mode === 'dark' ? '#ffab00' : '#008080') // Color for active tab
-                }
+                },
+                flexGrow: 1, // Make the tab title stretch
+                textAlign: 'center' // Center the text
               }}
             />
           ))}
