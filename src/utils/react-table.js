@@ -50,9 +50,16 @@ GlobalFilter.propTypes = {
 
 export function DateColumnFilter({ column: { filterValue, setFilter } }) {
   return (
-    <FormControl sx={{ width: '100%' }}>
+    <FormControl sx={{ width: '90%' }}>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              '&:hover > fieldset': { borderColor: '#C7C8CD' },
+              height: '45px',
+              borderRadius: '12px'
+            }
+          }}
           format="dd/MM/yyyy"
           value={filterValue && new Date(filterValue)}
           onChange={(newValue) => {
@@ -80,12 +87,13 @@ export function DefaultColumnFilter({ column: { filterValue, Header, setFilter }
     <TextField
       InputProps={{
         sx: {
+          height: '45px',
           padding: '4px',
-          borderRadius: '5px'
+          borderRadius: '12px'
         },
         startAdornment: (
           <IconButton>
-            <TuneOutlined />
+            <TuneOutlined fontSize="10px" />
           </IconButton>
         )
       }}
@@ -116,8 +124,8 @@ export function SelectColumnFilter({ column: { filterValue, setFilter, preFilter
   return (
     <Select
       sx={{
-        padding: '4px',
-        borderRadius: '5px',
+        padding: '6px',
+        borderRadius: '12px',
         minWidth: '150px'
       }}
       value={filterValue}
