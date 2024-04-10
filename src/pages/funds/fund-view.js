@@ -18,7 +18,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import Button from '@mui/material/Button';
 import PortoCard from 'components/cards/CustomCard/pfrofil-card';
 import Chat from 'pages/apps/chat';
-import { PlotOptionChart, CheckboxButtonGroup } from 'sections/Charts/Funds/Charts';
+import { CheckboxButtonGroup } from 'sections/Charts/Funds/Charts';
 import IconButton from 'components/@extended/IconButton';
 function createData(name, content) {
   return { name, content };
