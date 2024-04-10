@@ -6,6 +6,7 @@ import { Box, InputAdornment, Grid, Stack, Tab, Tabs, Typography } from '@mui/ma
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ReactApexChart from 'react-apexcharts';
 import { TableFunds, TableInvest } from 'pages/tables/FundTable';
+import { FundViewDropdownButton } from 'components/FundButton';
 import Vector from '../../assets/images/icons/vector.svg';
 // import janny from '../../assets/images/users/janny.png';
 // import Select from '@mui/material/Select';
@@ -283,6 +284,10 @@ const InvestFundView = () => {
 
   return (
     <div>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', paddingX: '12px' }}>
+        <h2>Funds</h2>
+        <FundViewDropdownButton title="actions" />
+      </Box>
       <MainCard>
         {/* <BasicTable /> */}
         <Typography variant="body2" sx={{ fontSize: '20px', paddingBottom: '10px', fontWeight: 'bold' }}>
