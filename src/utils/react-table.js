@@ -63,7 +63,7 @@ export function DateColumnFilter({ column: { filterValue, setFilter } }) {
               console.log(error);
             }
             console.log(formatDateFn);
-            setFilter(undefined);
+            setFilter(formatDateFn);
           }}
         />
       </LocalizationProvider>
@@ -118,7 +118,7 @@ export function SelectColumnFilter({ column: { filterValue, setFilter, preFilter
       sx={{
         padding: '4px',
         borderRadius: '5px',
-        minWidth: '50px'
+        minWidth: '150px'
       }}
       value={filterValue}
       onChange={(e) => {
