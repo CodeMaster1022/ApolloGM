@@ -5,7 +5,8 @@ import { REGISTER, LOGIN, LOGOUT } from './actions';
 export const initialState = {
   isLoggedIn: false,
   isInitialized: false,
-  user: null
+  user: null,
+  currentRole: (JSON.parse(localStorage.getItem('user')) || {}).role
 };
 
 // ==============================|| AUTH REDUCER ||============================== //

@@ -3,7 +3,7 @@ import { createContext, useEffect, useReducer } from 'react';
 
 // third-party
 import { Chance } from 'chance';
-import jwtDecode from 'jwt-decode';
+// import jwtDecode from 'jwt-decode';
 
 // reducer - state management
 import { LOGIN, LOGOUT } from 'store/reducers/actions';
@@ -26,20 +26,23 @@ const verifyToken = (serviceToken) => {
   if (!serviceToken) {
     return false;
   }
-  const decoded = jwtDecode(serviceToken);
+  // const decoded = jwtDecode(serviceToken);
   /**
    * Property 'exp' does not exist on type '<T = unknown>(token: string, options?: JwtDecodeOptions | undefined) => T'.
    */
-  return decoded.exp > Date.now() / 1000;
+  // return decoded.exp > Date.now() / 1000;
+  return true;
 };
 
 const setSession = (serviceToken) => {
   if (serviceToken) {
     localStorage.setItem('serviceToken', serviceToken);
-    axios.defaults.headers.common.Authorization = `Bearer ${serviceToken}`;
+    console.log('this is setSeesion');
+    // axios.defaults.headers.common.Authorization = `Bearer ${serviceToken}`;
   } else {
+    console.log('this is setSeesion');
     localStorage.removeItem('serviceToken');
-    delete axios.defaults.headers.common.Authorization;
+    // delete axios.defaults.headers.common.Authorization;
   }
 };
 
@@ -49,20 +52,20 @@ const JWTContext = createContext(null);
 
 export const JWTProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
-
   useEffect(() => {
     const init = async () => {
       try {
         const serviceToken = window.localStorage.getItem('serviceToken');
         if (serviceToken && verifyToken(serviceToken)) {
           setSession(serviceToken);
-          const response = await axios.get('/api/account/me');
-          const { user } = response.data;
+          // const response = await axios.get('/api/account/me');
+          // const { user } = response.data;
+          // console.log(user, 'user information');
           dispatch({
             type: LOGIN,
             payload: {
-              isLoggedIn: true,
-              user
+              isLoggedIn: true
+              // user
             }
           });
         } else {
@@ -82,16 +85,41 @@ export const JWTProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const response = await axios.post('/api/account/login', { email, password });
-    const { serviceToken, user } = response.data;
-    setSession(serviceToken);
-    dispatch({
-      type: LOGIN,
-      payload: {
-        isLoggedIn: true,
-        user
-      }
-    });
+    console.log(email, password);
+    let users = {};
+    // const response = await axios.post('/api/account/login', { email, password });
+    // const { serviceToken, user } = response.data;
+    if (email === 'info@codedthemes.com' && password === '123456') {
+      setSession('sdfdsfas');
+      users = {
+        name: 'Jhon',
+        role: 1
+      };
+      localStorage.setItem('user', JSON.stringify(users));
+      dispatch({
+        type: LOGIN,
+        payload: {
+          isLoggedIn: false,
+          user: users
+        }
+      });
+    } else if (email === 'CodeMaster.Han1022@gmail.com' && password === '123456') {
+      setSession('2dfaheawbew');
+      users = {
+        name: 'James',
+        role: 2
+      };
+      localStorage.setItem('user', JSON.stringify(users));
+      dispatch({
+        type: LOGIN,
+        payload: {
+          isLoggedIn: false,
+          user: users
+        }
+      });
+    } else {
+      setSession(null);
+    }
   };
 
   const register = async (email, password, firstName, lastName) => {

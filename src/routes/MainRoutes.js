@@ -128,5 +128,101 @@ const MainRoutes = {
     }
   ]
 };
-
-export default MainRoutes;
+const LPMainRoutes = {
+  path: '/',
+  children: [
+    {
+      path: '/',
+      element: (
+        <AuthGuard>
+          <MainLayout />
+        </AuthGuard>
+      ),
+      children: [
+        {
+          path: 'sample-page',
+          element: <SamplePage />
+        },
+        {
+          path: 'dashboard-page',
+          element: <Investor />
+        },
+        {
+          path: 'funds',
+          // element: <Funds />,
+          children: [
+            // {
+            //   path: 'fund-list',
+            //   element: <FundList />
+            // },
+            {
+              path: 'fund-view',
+              element: <InvestorView />
+            },
+            {
+              path: '',
+              element: <FundList />
+            }
+          ]
+        },
+        {
+          path: 'investors',
+          children: [
+            {
+              path: 'fund-view'
+              // element: <InvestorView />
+            },
+            {
+              path: ''
+              // element: <Investor />
+            },
+            {
+              path: 'investor-list'
+              // element: <InvestorList />
+            }
+          ]
+        },
+        {
+          path: 'widget',
+          children: [
+            {
+              path: 'statistics',
+              element: <WidgetStatistics />
+            },
+            {
+              path: 'data',
+              element: <WidgetData />
+            },
+            {
+              path: 'chart',
+              element: <WidgetChart />
+            }
+          ]
+        }
+      ]
+    },
+    {
+      path: '/maintenance',
+      element: <CommonLayout />,
+      children: [
+        {
+          path: '404',
+          element: <MaintenanceError />
+        },
+        {
+          path: '500',
+          element: <MaintenanceError500 />
+        },
+        {
+          path: 'under-construction',
+          element: <MaintenanceUnderConstruction />
+        },
+        {
+          path: 'coming-soon',
+          element: <MaintenanceComingSoon />
+        }
+      ]
+    }
+  ]
+};
+export { MainRoutes, LPMainRoutes };
