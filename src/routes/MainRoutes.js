@@ -148,6 +148,10 @@ const LPMainRoutes = {
           element: <Investor />
         },
         {
+          path: 'fund-view',
+          element: <InvestorView />
+        },
+        {
           path: 'funds',
           // element: <Funds />,
           children: [
@@ -157,31 +161,31 @@ const LPMainRoutes = {
             // },
             {
               path: 'fund-view',
-              element: <InvestorView />
+              element: <FundsView />
             },
             {
               path: '',
-              element: <FundList />
+              element: <InvestorList />
             }
           ]
         },
-        {
-          path: 'investors',
-          children: [
-            {
-              path: 'fund-view'
-              // element: <InvestorView />
-            },
-            {
-              path: ''
-              // element: <Investor />
-            },
-            {
-              path: 'investor-list'
-              // element: <InvestorList />
-            }
-          ]
-        },
+        // {
+        //   path: 'investors',
+        //   children: [
+        //     {
+        //       path: 'fund-view',
+        //       element: <InvestorView />
+        //     },
+        //     {
+        //       path: '',
+        //       element: <Investor />
+        //     },
+        //     {
+        //       path: 'investor-list',
+        //       element: <InvestorList />
+        //     }
+        //   ]
+        // },
         {
           path: 'widget',
           children: [

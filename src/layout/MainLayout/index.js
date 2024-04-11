@@ -30,7 +30,7 @@ const MainLayout = () => {
   const downLG = useMediaQuery(theme.breakpoints.down('lg'));
 
   const { container, miniDrawer, menuOrientation } = useConfig();
-
+  const role = (JSON.parse(localStorage.getItem('user')) || {}).role;
   const isHorizontal = menuOrientation === MenuOrientation.HORIZONTAL && !downLG;
 
   // set media wise responsive drawer
@@ -59,7 +59,7 @@ const MainLayout = () => {
           }}
         >
           <Box sx={{ display: 'flex', justifyContent: 'space-between', paddingX: '12px' }}>
-            {currentLocation.pathname === '/dashboard-page' && (
+            {currentLocation.pathname === '/dashboard-page' && role == 1 && (
               <>
                 <Breadcrumbs navigation={navigation} title titleBottom card={false} divider={false} />
                 <WidgetButton title="Add Widget" />
@@ -71,7 +71,7 @@ const MainLayout = () => {
                 <FundViewDropdownButton title="actions" />
               </>
             )}
-            {currentLocation.pathname === '/funds' && (
+            {currentLocation.pathname === '/funds' && role === 1 && (
               <>
                 <h2>Funds</h2>
                 <FundButton title="Add Fund" />
