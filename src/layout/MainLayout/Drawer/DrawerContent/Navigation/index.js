@@ -11,10 +11,12 @@ import useConfig from 'hooks/useConfig';
 // project import
 import NavGroup from './NavGroup';
 import menuItem from 'menu-items';
+import menuItemLP from 'menu-items/LP';
 
 // ==============================|| DRAWER CONTENT - NAVIGATION ||============================== //
 
 const Navigation = () => {
+  const role = (JSON.parse(localStorage.getItem('user')) || {}).role;
   const theme = useTheme();
 
   const downLG = useMediaQuery(theme.breakpoints.down('lg'));
@@ -26,9 +28,13 @@ const Navigation = () => {
   const [menuItems, setMenuItems] = useState({ items: [] });
 
   useLayoutEffect(() => {
-    setMenuItems(menuItem);
+    if (role == 1) {
+      setMenuItems(menuItem);
+    } else {
+      setMenuItems(menuItemLP);
+    }
     // eslint-disable-next-line
-  }, [menuItem]);
+  }, [role, menuItem, menuItemLP]);
 
   const isHorizontal = menuOrientation === MenuOrientation.HORIZONTAL && !downLG;
 
