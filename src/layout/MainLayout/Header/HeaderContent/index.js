@@ -5,12 +5,13 @@ import { Box, useMediaQuery } from '@mui/material';
 // import { useTheme } from '@mui/material/styles';
 import useConfig from 'hooks/useConfig';
 // project import
-import Search from './Search';
+import { Search, SearchLP } from './Search';
 import Message from './Message';
 import Profile from './Profile';
-import Notification from './Notification';
+import Notification, { NotificationLP } from './Notification';
 import MobileSection from './MobileSection';
 import MegaMenuSection from './MegaMenuSection';
+import { MegaMenuSectionLP } from './MegaMenuSection';
 // import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import { ThemeMode } from 'config';
@@ -88,24 +89,36 @@ const HeaderContent = () => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const megaMenu = useMemo(() => <MegaMenuSection />, []);
-
+  const megaMenuLP = useMemo(() => <MegaMenuSectionLP />, []);
   return (
     <>
-      <Box sx={{ width: '100%' }}>
-        {role == 2 ? (
-          <h2 style={{ marginBlockEnd: '0', marginBlockStart: '0' }}>Hamilton Lane</h2>
-        ) : (
-          <h2 style={{ marginBlockEnd: '0', marginBlockStart: '0' }}>Apollo Global managment Inc.</h2>
-        )}
-      </Box>
-      {!matchesXs && <Search />}
-      {!matchesXs && megaMenu}
-      {/* {matchesXs && <Box sx={{ width: '100%', ml: 1 }} />} */}
-      <MaterialUISwitch sx={{ m: 1 }} defaultChecked onChange={handleCheckboxChange} />
-      <Notification />
-      <Message />
-      {!matchesXs && <Profile />}
-      {matchesXs && <MobileSection />}
+      {role == 1 ? (
+        <>
+          <Box sx={{ width: '100%' }}>
+            <h2 style={{ marginBlockEnd: '0', marginBlockStart: '0' }}>Apollo Global managment Inc.</h2>
+          </Box>
+          {!matchesXs && <Search />}
+          {!matchesXs && megaMenu}
+          <MaterialUISwitch sx={{ m: 1 }} defaultChecked onChange={handleCheckboxChange} />
+          <Notification />
+          <Message />
+          {!matchesXs && <Profile />}
+          {matchesXs && <MobileSection />}
+        </>
+      ) : (
+        <>
+          <Box sx={{ width: '100%' }}>
+            <h2 style={{ marginBlockEnd: '0', marginBlockStart: '0' }}>Hamilton Lane</h2>
+          </Box>
+          {!matchesXs && <SearchLP />}
+          {!matchesXs && megaMenuLP}
+          <MaterialUISwitch sx={{ m: 1 }} defaultChecked onChange={handleCheckboxChange} />
+          <NotificationLP />
+          <Message />
+          {!matchesXs && <Profile />}
+          {matchesXs && <MobileSection />}
+        </>
+      )}
     </>
   );
 };

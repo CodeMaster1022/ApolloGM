@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Search from '../Header/HeaderContent/Search';
+import { Search } from '../Header/HeaderContent/Search';
 import { Box } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
