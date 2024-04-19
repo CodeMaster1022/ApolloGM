@@ -7,7 +7,7 @@ import useAuth from 'hooks/useAuth';
 // import AuthWrapper from 'sections/auth/AuthWrapper';
 import AuthLogin from 'sections/auth/auth-forms/AuthLogin';
 import { makeStyles } from '@material-ui/core/styles';
-import dashboard from '../../assets/images/landing/Dashboard.png';
+import dashboard from '../../assets/images/landing/dashboard.jpg';
 // import { Email, Key, Lock } from '@mui/icons-material';
 // import InputLabel from 'themes/overrides/InputLabel';
 // ================================|| LOGIN ||================================ //
@@ -36,7 +36,7 @@ const Login = () => {
           </Stack>
         </div>
       </Grid>
-      <Grid xs={false} sm={8} md={6} className={classes.rightSideContainer}>
+      {/* <Grid xs={false} sm={8} md={6} className={classes.rightSideContainer}>
         <Typography className={classes.styeledTitle}>
           Streamline Fund
           <br />
@@ -48,7 +48,7 @@ const Login = () => {
         </Typography>
         <Typography className={classes.styledText}>Manage your funds, investments and drive the difference</Typography>
         <Grid className={classes.image} fullWidth />
-      </Grid>
+      </Grid> */}
     </Grid>
     // </AuthWrapper>
   );

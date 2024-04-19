@@ -1,0 +1,613 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13rem;
+  overflow: hidden;
+  height: 3rem;
+  background-size: 300% 300%;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(#fe6e06, #efaf64), linear-gradient(137.48deg, #ffdb3b 10%, #fcbf47 45%, #f2d5ad 67%, #f2d5ad 87%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+#container-stars {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+}
+
+strong {
+  z-index: 2;
+  font-family: 'Avalors Personal Use';
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: #ffffff;
+  text-shadow: 0 0 4px white;
+}
+
+#glow {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+
+.circle {
+  width: 100%;
+  height: 30px;
+  filter: blur(2rem);
+  animation: pulse_3011 4s infinite;
+  z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+  background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+  background: rgba(142, 81, 234, 0.704);
+}
+
+.btn:hover #container-stars {
+  z-index: 1;
+  background-color: #fe6e06;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  border: double 4px #ffdb3b;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: none;
+}
+
+.btn:active .circle {
+  background: #ffdb3b;
+}
+
+#stars {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+
+#stars::after {
+  content: '';
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+#stars::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-135rem);
+  }
+}
+
+@keyframes animStarRotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes gradient_301 {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse_3011 {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+/* Card */
+
+.dashcircle {
+  height: 60vh;
+  width: 60vh;
+  /* background-color: orange; */
+  border-radius: 100%;
+}
+.dashcircleTwo {
+  height: 52vh;
+  width: 52vh;
+  /* background-color: orange; */
+  border-radius: 100%;
+}
+.dashcircle:before {
+  position: absolute;
+  content: '';
+  height: calc(100% + 10px);
+  width: calc(100% + 10px);
+  border: 1px dashed #00b5c0;
+  border-radius: inherit;
+  animation: spin 150s linear infinite;
+  z-index: 10;
+}
+.dashcircleTwo:before {
+  position: absolute;
+  content: '';
+  height: calc(100% + 10px);
+  width: calc(100% + 10px);
+  border: 1px dashed #00c5ff;
+  border-radius: inherit;
+  animation: spinTwo 150s linear infinite;
+  z-index: 10;
+}
+.dashcircleThree {
+  height: 44vh;
+  width: 44vh;
+  /* background-color: orange; */
+  border-radius: 100%;
+}
+.dashcircleThree:before {
+  position: absolute;
+  content: '';
+  height: calc(100% + 10px);
+  width: calc(100% + 10px);
+  border: 1px dashed orange;
+  border-radius: inherit;
+  animation: spinTwo 150s linear infinite;
+  z-index: 10;
+}
+@keyframes spin {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes spinTwo {
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+.dotfirst {
+  bottom: 30.5vh;
+  left: 51vh;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  /* transform: rotate(-145deg) translateX(28vh); */
+  background-color: #00b5c0;
+  z-index: 4;
+  animation: 2.5s circlerotate infinite;
+  animation-timing-function: linear;
+}
+.dotfirst:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: rotate(-45deg);
+  background: #00b5c0;
+}
+@keyframes circlerotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.dotsecond {
+  bottom: 20vh;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  /* transform: rotate(-145deg) translateX(28vh); */
+  background-color: #00c5ff;
+  z-index: 4;
+  animation: 2.5s circlerotate infinite;
+  animation-timing-function: linear;
+}
+.dotsecond:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: rotate(-45deg);
+  background: #00c5ff;
+}
+.dotthird {
+  bottom: 40vh;
+  left: 10.5vh;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  /* transform: rotate(-145deg) translateX(28vh); */
+  background-color: orange;
+  z-index: 4;
+  animation: 2.5s circlerotate infinite;
+  animation-timing-function: linear;
+}
+.dotthird:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: rotate(-45deg);
+  background: orange;
+}
+@keyframes circlerotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Button */
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 200px;
+  border-radius: 36px;
+  font-weight: 700;
+  height: 45px;
+  font-size: 16px;
+  padding-inline: 20px;
+  background-color: transparent;
+  color: #b0c3cc;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.25s ease-in-out;
+  z-index: 1;
+  border: none;
+}
+
+.button:is(:hover, :focus)::before {
+  transform: translateX(0%);
+}
+
+.text {
+  white-space: nowrap;
+  line-height: 1.2;
+  padding-inline-end: 44px;
+  z-index: 2;
+}
+
+/* change the width and height to 100% when you use it in your layout */
+.button::after {
+  content: '';
+  position: absolute;
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  border: 1px solid #e2d6ba;
+  border-radius: 36px;
+  z-index: 2;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #e2d6ba;
+  z-index: 1;
+  left: -2px;
+  transform: translateX(90%);
+  transition: all 0.3s ease-out;
+}
+
+.icon {
+  display: inherit;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: #e2d6ba;
+  z-index: 2;
+}
+
+.sky {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+
+/* Here we are making roundabout balls  */
+.star {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 2px;
+  border-radius: 885px;
+  background: linear-gradient(-45deg, #eef0f5, rgb(243, 241, 231));
+
+  -webkit-filter: drop-shadow(0 0 6px #eef1f8);
+  filter: drop-shadow(0 0 6px #d7dff0);
+  -webkit-animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+  animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+}
+
+/* Here we add before and after effect to star */
+.star::before,
+.star::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  height: 2px;
+  background: linear-gradient(-45deg, rgba(249, 225, 101, 1), #eaeef8, rgba(216, 219, 222, 1));
+  -webkit-transform: translateX(50%) rotateZ(45deg);
+  transform: translateX(50%) rotateZ(45deg);
+  border-radius: 100%;
+  -webkit-animation: shining 3000ms ease-in-out infinite;
+  animation: shining 3000ms ease-in-out infinite;
+}
+
+.star::after {
+  -webkit-transform: translateX(50%) rotateZ(-45deg);
+  transform: translateX(50%) rotateZ(-45deg);
+}
+
+/* Here we are adding location of each 
+     nth-child, animations, delays, and 
+     before and after effects to each 
+     and every balls(stars) */
+.star:nth-child(1) {
+  top: calc(50% - -119px);
+  left: calc(50% - 43px);
+  -webkit-animation-delay: 4000ms;
+  animation-delay: 4000ms;
+}
+
+.star:nth-child(1)::before,
+.star:nth-child(1)::after {
+  -webkit-animation-delay: 4000ms;
+  animation-delay: 4000ms;
+}
+
+.star:nth-child(2) {
+  top: calc(50% - -43px);
+  left: calc(50% - 37px);
+  -webkit-animation-delay: 5000ms;
+  animation-delay: 5000ms;
+}
+
+.star:nth-child(2)::before,
+.star:nth-child(2)::after {
+  -webkit-animation-delay: 5000ms;
+  animation-delay: 5000ms;
+}
+
+.star:nth-child(3) {
+  top: calc(50% - -40px);
+  left: calc(50% - 222px);
+  -webkit-animation-delay: 7000ms;
+  animation-delay: 7000ms;
+}
+
+.star:nth-child(3)::before,
+.star:nth-child(3)::after {
+  -webkit-animation-delay: 7000ms;
+  animation-delay: 7000ms;
+}
+
+.star:nth-child(4) {
+  top: calc(50% - -29px);
+  left: calc(50% - 113px);
+  -webkit-animation-delay: 7000ms;
+  animation-delay: 7000ms;
+}
+
+.star:nth-child(4)::before,
+.star:nth-child(4)::after {
+  -webkit-animation-delay: 7000ms;
+  animation-delay: 7000ms;
+}
+
+.star:nth-child(5) {
+  top: calc(50% - 146px);
+  left: calc(50% - 112px);
+  -webkit-animation-delay: 3000ms;
+  animation-delay: 3000ms;
+}
+
+.star:nth-child(5)::before,
+.star:nth-child(5)::after {
+  -webkit-animation-delay: 3000ms;
+  animation-delay: 3000ms;
+}
+
+.star:nth-child(6) {
+  top: calc(50% - -108px);
+  left: calc(50% - 160px);
+  -webkit-animation-delay: 3000ms;
+  animation-delay: 3000ms;
+}
+
+.star:nth-child(6)::before,
+.star:nth-child(6)::after {
+  -webkit-animation-delay: 3000ms;
+  animation-delay: 3000ms;
+}
+
+.star:nth-child(7) {
+  top: calc(50% - 52px);
+  left: calc(50% - 72px);
+  -webkit-animation-delay: 7000ms;
+  animation-delay: 7000ms;
+}
+
+.star:nth-child(7)::before,
+.star:nth-child(7)::after {
+  -webkit-animation-delay: 7000ms;
+  animation-delay: 7000ms;
+}
+
+/* This code will help to generate 
+  effect in tail of star */
+@keyframes tail {
+  0% {
+    width: 0;
+  }
+
+  30% {
+    width: 100px;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+/* This code will generate shining 
+  effect in head of star */
+@keyframes shining {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 30px;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+/* Here we are adding webkit-animation 
+  to head of star for shining */
+@-webkit-keyframes shining {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 30px;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+/* Here we are adding webkit-animation 
+  to tail of star */
+@-webkit-keyframes tail {
+  0% {
+    width: 0;
+  }
+
+  30% {
+    width: 100px;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+/* Here we are adding webkit-animation 
+  for shooting effect */
+@-webkit-keyframes shooting {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(270px);
+    transform: translateX(270px);
+  }
+}
+
+/* Here we make shooting effect */
+@keyframes shooting {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(270px);
+    transform: translateX(270px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

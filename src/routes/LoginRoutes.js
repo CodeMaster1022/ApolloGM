@@ -6,7 +6,8 @@ import CommonLayout from 'layout/CommonLayout';
 import Loadable from 'components/Loadable';
 
 // render - login
-const AuthLogin = Loadable(lazy(() => import('pages/auth/login')));
+// const AuthLogin = Loadable(lazy(() => import('pages/auth/login')));
+const Landing = Loadable(lazy(() => import('pages/landingpage')));
 const AuthRegister = Loadable(lazy(() => import('pages/auth/register')));
 const AuthForgotPassword = Loadable(lazy(() => import('pages/auth/forgot-password')));
 const AuthCheckMail = Loadable(lazy(() => import('pages/auth/check-mail')));
@@ -28,11 +29,11 @@ const LoginRoutes = {
       children: [
         {
           path: '/',
-          element: <AuthLogin />
+          element: <Landing />
         },
         {
           path: 'login',
-          element: <AuthLogin />
+          element: <Landing />
         },
         {
           path: 'register',

@@ -23,7 +23,7 @@ import Button from '@mui/material/Button';
 import OtpInput from 'react18-input-otp';
 import Swal from 'sweetalert2';
 // import { display } from '@mui/system';
-import dashboard from '../../assets/images/landing/Dashboard.png';
+// import dashboard from '../../assets/images/landing/Dashboard.png';
 // import { FixedSizeGrid } from 'react-window';
 // ================================|| REGISTER ||================================ //
 import InputLabel from '@mui/material/InputLabel';
@@ -412,7 +412,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#7E8487'
   },
   image: {
-    backgroundImage: `url(${dashboard})`,
+    // backgroundImage: `url(${dashboard})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
